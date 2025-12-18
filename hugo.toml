@@ -30,5 +30,5 @@ theme = 'PaperMod'
   [[menu.main]]
     identifier = "about"
     name = "About"
-    url = "/About"
+    url = "/about"
     weight = 20

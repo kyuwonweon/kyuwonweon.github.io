@@ -1,6 +1,7 @@
 ---
 title: "PenPal: Robot Writing Assistant"
 date: 2025-12-12
+draft: false
 tags: ["ROS 2", "Python", "Motion planning", "Franka Emika"]
 summary: "Engineering a 7-DOF Franka Emika robot arm to answer questions by writing on hand-held whiteboards."
 weight: 1
