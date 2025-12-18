@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Franka Emika on Kyuwon Weon</title>
+    <link>http://localhost:1313/tags/franka-emika/</link>
+    <description>Recent content in Franka Emika on Kyuwon Weon</description>
+    <generator>Hugo -- 0.152.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/franka-emika/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PenPal: Robot Writing Assistant</title>
+      <link>http://localhost:1313/projects/penpal/</link>
+      <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/penpal/</guid>
+      <description>Engineering a 7-DOF Franka Emika robot arm to answer questions by writing on hand-held whiteboards.</description>
+    </item>
+  </channel>
+</rss>

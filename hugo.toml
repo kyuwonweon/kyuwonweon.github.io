@@ -1,0 +1,34 @@
+baseURL = 'https://kyuwonweon.github.io/'
+languageCode = 'en-us'
+title = 'Kyuwon Weon'
+theme = 'PaperMod'
+
+[params]
+    defaultTheme = "dark"
+    description = "Robotics Engineer | MS in Robotics Student | ROS 2"
+    ShowReadingTime = false
+    ShowShareButtons = false
+    # Start with the Projects page, not a blog list
+    mainSections = ["projects"]
+
+[menu]
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 10
+  [[menu.main]]
+    identifier = "resume"
+    name = "Resume"
+    url = "/resume.pdf"
+    weight = 20
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact"
+    weight = 20
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/About"
+    weight = 20
