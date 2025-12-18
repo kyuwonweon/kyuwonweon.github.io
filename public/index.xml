@@ -6,7 +6,7 @@
     <description>Recent content on Kyuwon Weon</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Dec 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PenPal: Robot Writing Assistant</title>
@@ -14,6 +14,27 @@
       <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/penpal/</guid>
       <description>Engineering a 7-DOF Franka Emika robot arm to answer questions by writing on hand-held whiteboards.</description>
+    </item>
+    <item>
+      <title>About Me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Hello! I am a Master’s candidate in Robotics at Northwestern University, specializing in Motion Planning, Controls, Product Design and Embedded Systems.&lt;/p&gt;
+&lt;p&gt;Previously, I spent 3 years as an R&amp;amp;D Engineer at Alcon, where I designed and validated safety-critical medical devices for mass production. This experience gave me a rigorous engineering foundation, specifically in validation, reliability, and bridging the sim-to-real gap.&lt;/p&gt;
+&lt;p&gt;I have since pivoted to robotics, applying that engineering rigor to autonomous systems. My current focus areas include: * System Integration: Integrating vision (RealSense), planning (MoveIt), and control on Franka and PincherX platforms. * Robotics Software: Developing modular, testable nodes in Python within the ROS2 ecosystem. * Simulation &amp;amp; Design: Validating in Gazebo/CoppeliaSim and designing hardware in 3D CAD.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Contact</title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;h3 id=&#34;get-in-touch&#34;&gt;Get in Touch&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&#34;mailto:kyuwon0917@gmail.com&#34;&gt;kyuwon0917@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LinkedIn:&lt;/strong&gt; &lt;a href=&#34;www.linkedin.com/in/kyuwon-weon-a6bb2a213&#34;&gt;linkedin.com/in/kyuwonweon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a href=&#34;https://github.com/kyuwonweon&#34;&gt;github.com/kyuwonweon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>
