@@ -4,11 +4,10 @@ title = 'Kyuwon Weon'
 theme = 'PaperMod'
 
 [params]
-    defaultTheme = "dark"
+    defaultTheme = "light"
     description = "Robotics Engineer | MS in Robotics Student | ROS 2"
     ShowReadingTime = false
     ShowShareButtons = false
-    # Start with the Projects page, not a blog list
     mainSections = ["projects"]
 
 [menu]
