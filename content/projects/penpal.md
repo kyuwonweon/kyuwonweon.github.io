@@ -9,7 +9,7 @@ cover:
     image: "images/penpal-cover.jpg"
     alt: "PenPal Robot"
     relative: false
-    hidden: true
+    hiddenInSingle: true
 ---
 
 ## The Demo

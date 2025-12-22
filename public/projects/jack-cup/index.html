@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="light">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Jack in a Cup: Hybrid Dynamics Simulation | Kyuwon Weon</title>
+<meta name="keywords" content="Python, SymPy, Computational Dynamics, Simulation">
+<meta name="description" content="Simulating rigid body collisions and Lagrangian dynamics for a multi-body constrained system using symbolic derivation.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/projects/jack-cup/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dfa4269b374776ed052b426ba7928e9f15a27302bbd5f55379342e0b72fc33f4.css" integrity="sha256-36QmmzdHdu0FK0Jrp5KOnxWicwK71fVTeTQuC3L8M/Q=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/jack-cup/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Kyuwon Weon (Alt + H)">Kyuwon Weon</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/resume.pdf" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Jack in a Cup: Hybrid Dynamics Simulation
+    </h1>
+    <div class="post-meta"><span title='2025-12-15 00:00:00 +0000 UTC'>December 15, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="simulation-demo">Simulation Demo<a hidden class="anchor" aria-hidden="true" href="#simulation-demo">#</a></h2>
+<blockquote>
+<p><code><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/uo32M8EQnbg?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+</code></p>
+</blockquote>
+<p>Link to the full code <a href="https://colab.research.google.com/drive/11C2A4lP5c3aaAlLjqFaonxYHd9u5vhHk?usp=sharing"><img alt="Open In Colab" loading="lazy" src="https://colab.research.google.com/assets/colab-badge.svg"></a></p>
+<h2 id="project-overview">Project Overview<a hidden class="anchor" aria-hidden="true" href="#project-overview">#</a></h2>
+<p><strong>Tech Stack:</strong> Python, SymPy, NumPy, Plotly</p>
+<p>This project models the dynamics of a Jack (a cross-shaped rigid body) bouncing inside a moving cup (square box). The system <strong>combines continuous</strong> differential equations of motion with discrete impact events.</p>
+<h2 id="technical-implementation">Technical Implementation<a hidden class="anchor" aria-hidden="true" href="#technical-implementation">#</a></h2>
+<h3 id="1-symbolic-lagrangian-dynamics">1. Symbolic Lagrangian Dynamics<a hidden class="anchor" aria-hidden="true" href="#1-symbolic-lagrangian-dynamics">#</a></h3>
+<p>I used <strong>SymPy</strong> to mathematically derive the Equations of Motion (EOM) from scratch using the Euler-Lagrange method.</p>
+<ul>
+<li><strong>SE(3) Formulation:</strong> Modeled the 6-DOF configuration space using transformation matrices for the Cup frame and Jack frame.</li>
+<li><strong>Symbolic Derivation:</strong> Automatically calculated the Mass Matrix and Coriolis/Gravity terms by taking the Jacobian of the Lagrangian with respect to the state vectors.</li>
+</ul>
+<h3 id="2-impact--collision-handling">2. Impact &amp; Collision Handling<a hidden class="anchor" aria-hidden="true" href="#2-impact--collision-handling">#</a></h3>
+<p>The core challenge was handling the <strong>discrete jumps</strong> in velocity when the Jack hits the Cup walls.</p>
+<ul>
+<li><strong>Geometric Constraints:</strong> Defined boundary conditions for all 4 walls of the cup relative to the 4 tips of the jack.</li>
+<li><strong>Impulse Solver:</strong> Implemented an impact update law that solves for the instantaneous change in velocity and the constraint force by solving the system of linear equations derived from the impact Hamiltonian.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+      <li><a href="http://localhost:1313/tags/sympy/">SymPy</a></li>
+      <li><a href="http://localhost:1313/tags/computational-dynamics/">Computational Dynamics</a></li>
+      <li><a href="http://localhost:1313/tags/simulation/">Simulation</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Kyuwon Weon</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
