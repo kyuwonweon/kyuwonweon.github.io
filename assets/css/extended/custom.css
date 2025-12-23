@@ -46,18 +46,23 @@
     display: block; 
 }
 
-/* 5. GRID LAYOUT */
+/* 5. GRID LAYOUT (THE FIX) */
 @media (min-width: 600px) {
-    .main {
+    /* ONLY apply grid to List pages (Homepage), NOT Single pages (Projects) */
+    body.list .main {
         display: grid;
         grid-template-columns: 1fr 1fr; 
         gap: 30px; 
         align-items: start; 
     }
-    .page-header, .pagination, .first-entry-home-info {
+
+    body.list .page-header, 
+    body.list .pagination, 
+    body.list .first-entry-home-info {
         grid-column: 1 / -1;
     }
-    .page-header {
+    
+    body.list .page-header {
         margin-bottom: 20px;
     }
 }
