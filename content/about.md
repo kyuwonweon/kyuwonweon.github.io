@@ -1,13 +1,34 @@
 ---
 title: "About Me"
-date: 2025-12-17
-draft: false
+hidemeta: true
+layout: "about"
 ---
 
-Hello! I am a Master’s candidate in Robotics at Northwestern University, specializing in Motion Planning, Controls, Product Design and Embedded Systems.
+## The Short Story
+I am a **Robotics Engineer** with a background in **R&D & Mechanical Design**. After 3 years of designing medical devices in a strictly regulated environment, I transitioned to robotics to apply that same engineering rigor to autonomous systems.
 
-Previously, I spent 3 years as an R&D Engineer at Alcon, where I designed and validated safety-critical medical devices for mass production. This experience gave me a rigorous engineering foundation, specifically in validation, reliability, and bridging the sim-to-real gap.
+Currently, I am an MSR (Master of Science in Robotics) candidate at **Northwestern University**, focusing on **manipulation, controls, and dynamic simulation**.
 
-I have since pivoted to robotics, applying that engineering rigor to autonomous systems. My current focus areas include: * System Integration: Integrating vision (RealSense), planning (MoveIt), and control on Franka and PincherX platforms. * Robotics Software: Developing modular, testable nodes in Python within the ROS2 ecosystem. * Simulation & Design: Validating in Gazebo/CoppeliaSim and designing hardware in 3D CAD.
+---
 
-I am seeking Summer 2026 internships in Robotics, Autonomy, or R&D Engineering.
+## Professional Experience
+
+### **R&D Mechanical Engineer | Alcon**
+*(2021 – 2024)*
+Prior to robotics, I led mechanical design for next-generation intraocular lenses (IOLs).
+* **Precision Micro-Manufacturing:** Spearheaded the DFM (Design for Manufacturing) of micro-molded optical components with sub-micron tolerances.
+* **Regulated Engineering:** Managed the full lifecycle of Class III medical devices under strict FDA regulations (failure was not an option).
+* **Cross-Functional Leadership:** Bridged the gap between R&D, Quality, and Manufacturing teams to scale prototypes into mass-production ready products.
+
+---
+
+## Why Robotics?
+At Alcon, I learned how to build hardware that *works*. Now, I am learning how to make it *think*.
+
+My goal is to bridge the gap between robust mechanical hardware and intelligent software control. I am specifically interested in **manipulation**—giving robots the dexterity to interact with the world as precisely as a surgeon (or a lens designer) would.
+
+## Technical Stack
+* **Languages:** Python, C++, MATLAB
+* **Robotics:** ROS 2, MoveIt, MuJoCo, Gazebo
+* **Hardware:** Franka Emika Panda, Unitree Go1, Precision Metrology
+* **Design:** SolidWorks (CSWP), GD&T, DFM

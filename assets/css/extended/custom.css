@@ -130,18 +130,29 @@ body .entry-footer {
 }
 
 /* =========================================
-   6. GRID LAYOUT
+   6. GRID LAYOUT (FIXED)
    ========================================= */
 @media (min-width: 600px) {
     body.list .main {
         display: grid !important;
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; 
         
-        /* THE KEY FIX: GAP CONTROL */
-        /* 15px vertical space, 40px horizontal space */
+        /* Spacing: 15px vertical, 40px horizontal */
         gap: 15px 40px !important; 
         
         align-items: start !important; 
+    }
+
+    body.list .page-header, 
+    body.list .pagination, 
+    body.list .first-entry-home-info {
+        grid-column: 1 / -1 !important;
+        width: 100% !important;
+        text-align: left; /* Keep Projects title on left */
+    }
+    
+    body.list .first-entry-home-info {
+        text-align: center !important;
     }
 }
 

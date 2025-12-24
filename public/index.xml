@@ -23,15 +23,6 @@
       <description>Simulating rigid body collisions and Lagrangian dynamics for a multi-body constrained system using symbolic derivation.</description>
     </item>
     <item>
-      <title>About Me</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;Hello! I am a Master’s candidate in Robotics at Northwestern University, specializing in Motion Planning, Controls, Product Design and Embedded Systems.&lt;/p&gt;
-&lt;p&gt;Previously, I spent 3 years as an R&amp;amp;D Engineer at Alcon, where I designed and validated safety-critical medical devices for mass production. This experience gave me a rigorous engineering foundation, specifically in validation, reliability, and bridging the sim-to-real gap.&lt;/p&gt;
-&lt;p&gt;I have since pivoted to robotics, applying that engineering rigor to autonomous systems. My current focus areas include: * System Integration: Integrating vision (RealSense), planning (MoveIt), and control on Franka and PincherX platforms. * Robotics Software: Developing modular, testable nodes in Python within the ROS2 ecosystem. * Simulation &amp;amp; Design: Validating in Gazebo/CoppeliaSim and designing hardware in 3D CAD.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>Contact</title>
       <link>http://localhost:1313/contact/</link>
       <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
@@ -39,9 +30,23 @@
       <description>&lt;h3 id=&#34;get-in-touch&#34;&gt;Get in Touch&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&#34;mailto:kyuwon0917@gmail.com&#34;&gt;kyuwon0917@gmail.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LinkedIn:&lt;/strong&gt; &lt;a href=&#34;www.linkedin.com/in/kyuwon-weon-a6bb2a213&#34;&gt;linkedin.com/in/kyuwonweon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LinkedIn:&lt;/strong&gt; &lt;a href=&#34;https://www.linkedin.com/in/kyuwon-weon-a6bb2a213&#34;&gt;linkedin.com/in/kyuwon-weon&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a href=&#34;https://github.com/kyuwonweon&#34;&gt;github.com/kyuwonweon&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>About Me</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;h2 id=&#34;the-short-story&#34;&gt;The Short Story&lt;/h2&gt;
+&lt;p&gt;I am a &lt;strong&gt;Robotics Engineer&lt;/strong&gt; with a background in &lt;strong&gt;R&amp;amp;D &amp;amp; Mechanical Design&lt;/strong&gt;. After 3 years of designing medical devices in a strictly regulated environment, I transitioned to robotics to apply that same engineering rigor to autonomous systems.&lt;/p&gt;
+&lt;p&gt;Currently, I am an MSR (Master of Science in Robotics) candidate at &lt;strong&gt;Northwestern University&lt;/strong&gt;, focusing on &lt;strong&gt;manipulation, controls, and dynamic simulation&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;professional-experience&#34;&gt;Professional Experience&lt;/h2&gt;
+&lt;h3 id=&#34;rd-mechanical-engineer--alcon&#34;&gt;&lt;strong&gt;R&amp;amp;D Mechanical Engineer | Alcon&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;(2021 – 2024)&lt;/em&gt;
+Prior to robotics, I led mechanical design for next-generation intraocular lenses (IOLs).&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
