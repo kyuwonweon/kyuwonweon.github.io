@@ -8,31 +8,60 @@ theme = 'PaperMod'
     description = "Robotics Engineer | MS in Robotics Student | ROS 2"
     ShowReadingTime = false
     ShowShareButtons = false
+    
+    # CRITICAL: This ensures PenPal looks identical to Jack in a Cup (Grid Fix)
+    disableSpecial1stPost = true
+    
+    # Only show the "Projects" folder on the homepage
     mainSections = ["projects"]
 
+    # --- HERO SECTION (Option A + Skill Badges) ---
+    [params.homeInfoParams]
+      Title = "Kyuwon Weon"
+      Content = """
+  **ROBOTICS ENGINEER | CONTROLS & MANIPULATION**
+
+  MSR candidate at Northwestern University specializing in robotic manipulation, dynamic simulation, and hybrid control systems.
+
+  `ROS 2` `Python` `C++` `MoveIt` `Controls` `Dynamics`
+  """
+
+    # --- SOCIAL ICONS (Update these links!) ---
+    [[params.socialIcons]]
+        name = "github"
+        url = "https://github.com/YOUR_GITHUB_ID"
+
+    [[params.socialIcons]]
+        name = "linkedin"
+        url = "https://linkedin.com/in/YOUR_LINKEDIN_ID"
+
+    [[params.socialIcons]]
+        name = "email"
+        url = "mailto:your.email@example.com"
+
 [menu]
-  [[menu.main]]
-    identifier = "projects"
-    name = "Projects"
-    url = "/projects/"
-    weight = 10
-  [[menu.main]]
-    identifier = "resume"
-    name = "Resume"
-    url = "/resume.pdf"
-    weight = 20
-  [[menu.main]]
-    identifier = "contact"
-    name = "Contact"
-    url = "/contact"
-    weight = 20
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about"
-    weight = 20
+    [[menu.main]]
+        identifier = "projects"
+        name = "Projects"
+        url = "/projects/"
+        weight = 10
+    [[menu.main]]
+        identifier = "resume"
+        name = "Resume"
+        url = "/resume.pdf"
+        weight = 20
+    [[menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+        weight = 30
+    [[menu.main]]
+        identifier = "contact"
+        name = "Contact"
+        url = "/contact"
+        weight = 40
 
 [markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
