@@ -29,15 +29,15 @@ theme = 'PaperMod'
     # --- SOCIAL ICONS (Update these links!) ---
     [[params.socialIcons]]
         name = "github"
-        url = "https://github.com/YOUR_GITHUB_ID"
+        url = "https://github.com/kyuwonweon"
 
     [[params.socialIcons]]
         name = "linkedin"
-        url = "https://linkedin.com/in/YOUR_LINKEDIN_ID"
+        url = "https://linkedin.com/in/kyuwon-weon-a6bb2a213"
 
     [[params.socialIcons]]
         name = "email"
-        url = "mailto:your.email@example.com"
+        url = "mailto:kyuwon0917@gmail.com"
 
 [menu]
     [[menu.main]]
