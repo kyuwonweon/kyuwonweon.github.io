@@ -57,5 +57,26 @@
       <guid>http://localhost:1313/tags/ros-2/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Creo</title>
+      <link>http://localhost:1313/tags/creo/</link>
+      <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/creo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DFSS</title>
+      <link>http://localhost:1313/tags/dfss/</link>
+      <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dfss/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Product Dev</title>
+      <link>http://localhost:1313/tags/product-dev/</link>
+      <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/product-dev/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -1,171 +1,143 @@
 /* =========================================
-   1. GLOBAL & RESET
+   1. GLOBAL VARIABLES & RESET
    ========================================= */
+:root {
+    --main-width: 1400px !important; /* Maximum width of the site */
+    --gap: 40px !important;          /* Standard spacing gap */
+}
+
 body .post-entry *,
 body .first-entry * {
     box-sizing: border-box !important;
 }
 
-/* HIDE TOP LEFT NAME ON HOMEPAGE ONLY */
-body.list .logo {
-    display: none !important;
+/* =========================================
+   2. MAIN LAYOUT (Responsive Grid)
+   ========================================= */
+/* Pull content closer to top navigation */
+.header {
+    margin-bottom: 10px !important;
+}
+
+/* The Main Container */
+.main {
+    margin-top: 10px !important;
+    padding-top: 0 !important;
+    max-width: var(--main-width) !important;
+    width: 90%;
+    margin: 0 auto;
+    
+    /* Grid Setup */
+    display: grid;
+    /* This automatically fits 3 columns on wide screens, 2 on tablets, 1 on mobile */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    /* Gap: 20px vertical (between profile & cards), 40px horizontal (between cards) */
+    gap: 20px 40px !important; 
 }
 
 /* =========================================
-   2. FIX HOME PROFILE (COMPACT & CLEAN)
+   3. PROFILE & HEADER SECTIONS
    ========================================= */
-body .first-entry.home-info {
-    grid-column: 1 / -1 !important;
+/* Force Profile/Intro to span the full top row */
+.profile, .page-header, .first-entry.home-info {
+    grid-column: 1 / -1 !important; /* Spans all columns */
+    justify-self: center;
+    text-align: center;
+    width: 100%;
+    max-width: 800px; /* Keep text readable width */
+    margin-bottom: 0 !important; /* Let the grid gap handle spacing */
     background: transparent !important;
-    border: none !important;
     box-shadow: none !important;
-    text-align: center !important;
-    
-    /* REMOVED EXTRA SPACE HERE */
-    margin-bottom: 0px !important; 
-    padding-bottom: 0 !important;
-    height: auto !important;
-    display: block !important;
+    border: none !important;
 }
 
-/* Main Name Title */
+/* Profile Title Size */
 body .first-entry.home-info .entry-title {
     font-size: 3rem !important;
     font-weight: 800 !important;
-    margin-bottom: 5px !important; 
 }
 
-/* Bio Content Wrapper */
-body .first-entry.home-info .entry-content {
-    font-size: 1.1rem !important;
-    max-width: 800px !important;
-    margin: 0 auto !important;
-    background: transparent !important; 
-}
-
-/* KILL HIDDEN TEXT MARGINS */
-body .first-entry.home-info .entry-content p {
-    margin-bottom: 10px !important; /* Small space between bio lines */
-}
-body .first-entry.home-info .entry-content p:last-child {
-    margin-bottom: 0 !important; /* No space after the badges */
-}
-
-/* FIX: Prevent giant code blocks if indented */
-body .first-entry.home-info .entry-content pre {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    white-space: normal !important; 
-}
-
-/* TECH BADGES */
+/* Profile Badges (ROS 2, Python, etc.) */
 body .first-entry.home-info .entry-content code {
     background-color: #333 !important;
     color: #fff !important;
     border-radius: 6px !important;
-    padding: 4px 10px !important; 
+    padding: 4px 10px !important;
     font-family: monospace !important;
-    font-weight: 600 !important;
-    font-size: 0.85rem !important;
-    margin: 3px !important;
     display: inline-block !important;
-    box-shadow: none !important;
+    margin: 3px !important;
 }
 
 /* =========================================
-   3. IMAGE STYLING (Framed Look)
+   4. PROJECT CARDS (The Box)
    ========================================= */
-body .entry-cover,
-body .first-entry:not(.home-info) .entry-cover {
-    padding: 20px 20px 0 20px !important; 
+.post-entry {
+    background: var(--entry) !important;
+    border-radius: 12px !important;
+    border: 1px solid #333 !important; /* Subtle border */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    
     width: 100% !important;
-    display: block !important;
-    background: transparent !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important; /* Ensures image respects rounded corners */
+    
+    padding: 0 !important; /* FULL BLEED: No padding around the edges */
+    margin-bottom: 0 !important;
+    height: 100%; /* Makes all cards same height */
 }
 
-body .entry-cover img {
-    height: 250px !important;           
+/* =========================================
+   5. CARD IMAGES (Full Width & Spaced)
+   ========================================= */
+.entry-cover {
     width: 100% !important;
-    object-fit: cover !important;       
-    border-radius: 8px !important;      
-    border: 1px solid #eee !important;  
+    /* KEY FIX: 30px margin at bottom pushes the title down */
+    margin: 0 0 30px 0 !important; 
+}
+
+.entry-cover img {
+    width: 100% !important;
+    height: 250px !important;      /* Fixed height for uniformity */
+    object-fit: cover !important;  /* Prevents squashing */
+    border-radius: 0 !important;   /* Sharp corners to fit the card edge */
     margin: 0 !important;
 }
 
 /* =========================================
-   4. CARD CONTAINER (Projects Only)
+   6. CARD TEXT (Centered & Padded)
    ========================================= */
-body .post-entry, 
-body .first-entry:not(.home-info) {
-    background: var(--entry) !important; 
-    border-radius: 12px !important;
-    border: 1px solid #333 !important; 
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
-    
-    height: 550px !important;           
-    width: 100% !important; 
-    
-    display: flex !important;
-    flex-direction: column !important;
-    overflow: hidden !important; 
-    margin-bottom: 30px !important; 
-    margin-top: 0 !important; 
-    min-height: 0 !important;
+/* We removed padding from the card, so we add it back to the text blocks */
+.entry-header, 
+.entry-content, 
+.entry-footer {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+    text-align: center !important; /* Center all text */
 }
 
-/* =========================================
-   5. TEXT PADDING
-   ========================================= */
-body .entry-header,
-body .entry-content,
-body .entry-footer {
-    padding: 0 20px !important; 
+/* Title Specifics */
+.entry-header h2 {
+    font-size: 1.5rem !important;
+    margin: 0 auto !important;
 }
 
-body .entry-footer {
-    padding-bottom: 20px !important;
-    margin-top: auto !important; 
-}
-
-/* =========================================
-   6. GRID LAYOUT (FIXED)
-   ========================================= */
-@media (min-width: 600px) {
-    body.list .main {
-        display: grid !important;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; 
-        
-        /* Spacing: 15px vertical, 40px horizontal */
-        gap: 15px 40px !important; 
-        
-        align-items: start !important; 
-    }
-
-    body.list .page-header, 
-    body.list .pagination, 
-    body.list .first-entry-home-info {
-        grid-column: 1 / -1 !important;
-        width: 100% !important;
-        text-align: left; /* Keep Projects title on left */
-    }
-    
-    body.list .first-entry-home-info {
-        text-align: center !important;
-    }
-}
-
-/* =========================================
-   7. TYPOGRAPHY MATCHING
-   ========================================= */
-body .first-entry:not(.home-info) .entry-title,
-body .post-entry .entry-title {
-    font-size: 24px !important; 
-    line-height: 1.3 !important;
-}
-body .first-entry:not(.home-info) .entry-content,
-body .post-entry .entry-content {
-    font-size: 16px !important; 
+/* Summary Text */
+.entry-content {
+    font-size: 1rem !important;
     margin-top: 10px !important;
+    flex-grow: 1; /* Pushes footer to the bottom */
+}
+
+/* Footer (Tags) */
+.entry-footer {
+    padding-bottom: 25px !important;
+    margin-top: auto !important;
+}
+
+/* =========================================
+   7. NAVIGATION MENU
+   ========================================= */
+.nav {
+    justify-content: center !important; /* Centers the Resume/About links */
 }

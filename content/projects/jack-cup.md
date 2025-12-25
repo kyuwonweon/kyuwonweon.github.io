@@ -4,7 +4,7 @@ date: 2025-12-15
 draft: false
 weight: 2
 tags: ["Python", "SymPy", "Computational Dynamics", "Simulation"]
-summary: "Simulating rigid body collisions and Lagrangian dynamics for a multi-body constrained system using symbolic derivation."
+summary: "Simulation of rigid body collisions and Lagrangian dynamics"
 cover:
     image: "images/jack-cover.jpg"
     alt: "Jack in a Cup Simulation"

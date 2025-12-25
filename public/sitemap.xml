@@ -8,6 +8,9 @@
     <loc>http://localhost:1313/projects/jack-cup/</loc>
     <lastmod>2025-12-15T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/projects/alcon/</loc>
+    <lastmod>2025-07-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/contact/</loc>
     <lastmod>2025-12-17T00:00:00+00:00</lastmod>
   </url><url>
@@ -40,6 +43,15 @@
   </url><url>
     <loc>http://localhost:1313/tags/ros-2/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/creo/</loc>
+    <lastmod>2025-07-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dfss/</loc>
+    <lastmod>2025-07-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/product-dev/</loc>
+    <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
   </url><url>
