@@ -2,8 +2,9 @@
    1. GLOBAL VARIABLES & RESET
    ========================================= */
 :root {
-    --main-width: 1400px !important; /* Maximum width of the site */
-    --gap: 40px !important;          /* Standard spacing gap */
+    /* UX UPDATE: 1100px is the industry standard "comfortable" desktop width */
+    --main-width: 1100px !important; 
+    --gap: 40px !important;
 }
 
 body .post-entry *,
@@ -12,14 +13,12 @@ body .first-entry * {
 }
 
 /* =========================================
-   2. MAIN LAYOUT (Responsive Grid)
+   2. MAIN LAYOUT (Homepage Grid)
    ========================================= */
-/* Pull content closer to top navigation */
 .header {
     margin-bottom: 10px !important;
 }
 
-/* The Main Container */
 .main {
     margin-top: 10px !important;
     padding-top: 0 !important;
@@ -27,37 +26,32 @@ body .first-entry * {
     width: 90%;
     margin: 0 auto;
     
-    /* Grid Setup */
     display: grid;
-    /* This automatically fits 3 columns on wide screens, 2 on tablets, 1 on mobile */
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    /* Gap: 20px vertical (between profile & cards), 40px horizontal (between cards) */
+    /* ADJUSTMENT: Lowered min-width to 300px so 3 columns fit in the new 1100px space */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px 40px !important; 
 }
 
 /* =========================================
-   3. PROFILE & HEADER SECTIONS
+   3. PROFILE & HEADER
    ========================================= */
-/* Force Profile/Intro to span the full top row */
 .profile, .page-header, .first-entry.home-info {
-    grid-column: 1 / -1 !important; /* Spans all columns */
+    grid-column: 1 / -1 !important;
     justify-self: center;
     text-align: center;
     width: 100%;
-    max-width: 800px; /* Keep text readable width */
-    margin-bottom: 0 !important; /* Let the grid gap handle spacing */
+    max-width: 800px; /* Keeps bio compact */
+    margin-bottom: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
     border: none !important;
 }
 
-/* Profile Title Size */
 body .first-entry.home-info .entry-title {
     font-size: 3rem !important;
     font-weight: 800 !important;
 }
 
-/* Profile Badges (ROS 2, Python, etc.) */
 body .first-entry.home-info .entry-content code {
     background-color: #333 !important;
     color: #fff !important;
@@ -69,75 +63,86 @@ body .first-entry.home-info .entry-content code {
 }
 
 /* =========================================
-   4. PROJECT CARDS (The Box)
+   4. HOMEPAGE PROJECT CARDS
    ========================================= */
 .post-entry {
     background: var(--entry) !important;
     border-radius: 12px !important;
-    border: 1px solid #333 !important; /* Subtle border */
+    border: 1px solid #333 !important;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
-    
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
-    overflow: hidden !important; /* Ensures image respects rounded corners */
-    
-    padding: 0 !important; /* FULL BLEED: No padding around the edges */
+    overflow: hidden !important;
+    padding: 0 !important;
     margin-bottom: 0 !important;
-    height: 100%; /* Makes all cards same height */
+    height: 100%;
 }
 
-/* =========================================
-   5. CARD IMAGES (Full Width & Spaced)
-   ========================================= */
 .entry-cover {
     width: 100% !important;
-    /* KEY FIX: 30px margin at bottom pushes the title down */
     margin: 0 0 30px 0 !important; 
 }
 
 .entry-cover img {
     width: 100% !important;
-    height: 250px !important;      /* Fixed height for uniformity */
-    object-fit: cover !important;  /* Prevents squashing */
-    border-radius: 0 !important;   /* Sharp corners to fit the card edge */
+    height: 250px !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
     margin: 0 !important;
 }
 
-/* =========================================
-   6. CARD TEXT (Centered & Padded)
-   ========================================= */
-/* We removed padding from the card, so we add it back to the text blocks */
 .entry-header, 
 .entry-content, 
 .entry-footer {
     padding-left: 25px !important;
     padding-right: 25px !important;
-    text-align: center !important; /* Center all text */
+    text-align: center !important;
 }
 
-/* Title Specifics */
 .entry-header h2 {
     font-size: 1.5rem !important;
     margin: 0 auto !important;
 }
 
-/* Summary Text */
 .entry-content {
     font-size: 1rem !important;
     margin-top: 10px !important;
-    flex-grow: 1; /* Pushes footer to the bottom */
+    flex-grow: 1;
 }
 
-/* Footer (Tags) */
 .entry-footer {
     padding-bottom: 25px !important;
     margin-top: auto !important;
 }
 
-/* =========================================
-   7. NAVIGATION MENU
-   ========================================= */
 .nav {
-    justify-content: center !important; /* Centers the Resume/About links */
+    justify-content: center !important;
+}
+
+/* =========================================
+   5. SINGLE PROJECT PAGE (Media Fixes)
+   ========================================= */
+.post-content {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+/* IMAGES: Let them decide their own height based on the image file */
+.post-content img {
+    max-width: 100% !important;
+    height: auto !important; 
+    display: block !important;
+    margin: 20px auto !important;
+}
+
+/* VIDEOS (YouTube): Force them to be a standard 16:9 Rectangle */
+.post-content iframe, 
+.post-content video {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important; /* <--- THIS FIXES THE SQUASHING */
+    height: auto !important;
+    display: block !important;
+    margin: 20px auto !important;
+    border: none !important; /* Removes any default borders */
 }

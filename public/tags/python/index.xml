@@ -13,14 +13,14 @@
       <link>http://localhost:1313/projects/penpal/</link>
       <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/penpal/</guid>
-      <description>Engineering a 7-DOF Franka Emika robot arm to answer questions by writing on hand-held whiteboards.</description>
+      <description>7-DOF Franka Emika robot arm answers questions by writing on hand-held whiteboards</description>
     </item>
     <item>
       <title>Jack in a Cup: Hybrid Dynamics Simulation</title>
       <link>http://localhost:1313/projects/jack-cup/</link>
       <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/jack-cup/</guid>
-      <description>Simulating rigid body collisions and Lagrangian dynamics for a multi-body constrained system using symbolic derivation.</description>
+      <description>Simulation of rigid body collisions and Lagrangian dynamics</description>
     </item>
   </channel>
 </rss>

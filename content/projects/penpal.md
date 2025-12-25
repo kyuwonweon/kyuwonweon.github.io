@@ -13,7 +13,7 @@ cover:
 ---
 
 ## The Demo
-> `{{< youtube xrn48SnPuLs >}}`
+{{<youtube xrn48SnPuLs>}}
 [![View Code on GitHub](https://img.shields.io/badge/View%20Code-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/kyuwonweon/penpal)
 ## Project Overview
 **Role:** Motion Planning & Control

@@ -5,14 +5,15 @@ summary: "Engineered high-reliability surgical delivery systems for cateract pro
 tags: ["Creo", "DFSS", "Product Dev"]
 weight: 3
 cover:
-    image: "images/alcon_cover.jpg" # Don't forget to add your image!
+    image: "images/alcon_cover.jpg" 
     alt: "CAD rendering of surgical mechanism"
-    relative: true
+    relative: false
+    hiddenInSingle: true
 ---
 
 ## Project Overview
 
-As a Medical Device Design Engineer at **Alcon**, I managed the lifecycle of next-generation intraocular lens delivery systems. My role bridged the gap between rapid iterative design and rigorous quality engineering, ensuring devices met strict FDA standards through data-driven validation.
+As a Medical Device Design Engineer at **Alcon** for three years, I managed the lifecycle of next-generation intraocular lens delivery systems. My role bridged the gap between rapid iterative design and rigorous quality engineering, ensuring devices met strict FDA standards through data-driven validation.
 
 ## Technical Contributions
 

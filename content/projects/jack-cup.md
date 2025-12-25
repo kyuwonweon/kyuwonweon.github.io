@@ -13,7 +13,7 @@ cover:
 ---
 
 ## Simulation Demo
-> `{{< youtube uo32M8EQnbg >}}`
+{{<youtube uo32M8EQnbg>}}
 
 Link to the full code [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11C2A4lP5c3aaAlLjqFaonxYHd9u5vhHk?usp=sharing)
 
