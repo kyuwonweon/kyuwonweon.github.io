@@ -8,25 +8,19 @@ theme = 'PaperMod'
     description = "Robotics Engineer | MS in Robotics Student | ROS 2"
     ShowReadingTime = false
     ShowShareButtons = false
-    
-    # CRITICAL: This ensures PenPal looks identical to Jack in a Cup (Grid Fix)
     disableSpecial1stPost = true
-    
-    # Only show the "Projects" folder on the homepage
     mainSections = ["projects"]
 
-    # --- HERO SECTION (Option A + Skill Badges) ---
     [params.homeInfoParams]
       Title = "Kyuwon Weon"
       Content = """
   **ROBOTICS ENGINEER | CONTROLS & MANIPULATION**
 
-  MSR candidate at Northwestern University specializing in robotic manipulation, dynamic simulation, and hybrid control systems.
+  MSR candidate at Northwestern University specializing in robotic manipulation and control.
 
   `ROS 2` `Python` `C++` `MoveIt` `Controls` `Dynamics`
   """
 
-    # --- SOCIAL ICONS (Update these links!) ---
     [[params.socialIcons]]
         name = "github"
         url = "https://github.com/kyuwonweon"
@@ -62,6 +56,12 @@ theme = 'PaperMod'
         weight = 40
 
 [markup]
-    [markup.goldmark]
-        [markup.goldmark.renderer]
-            unsafe = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['$$', '$$'], ['\\[', '\\]']]
+          inline = [['$', '$'], ['\\(', '\\)']]

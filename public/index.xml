@@ -6,14 +6,21 @@
     <description>Recent content on Kyuwon Weon</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Dec 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PenPal: VLM-Guided Writing Robot</title>
       <link>http://localhost:1313/projects/penpal/</link>
       <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/penpal/</guid>
-      <description>7-DOF Franka Emika robot arm answers questions by writing on hand-held whiteboards</description>
+      <description>7-DOF Franka answers questions by writing on hand-held whiteboards</description>
+    </item>
+    <item>
+      <title>Reactive Control &amp; Obstacle Avoidance</title>
+      <link>http://localhost:1313/projects/reactive_control/</link>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/reactive_control/</guid>
+      <description>Real-time kinematic control with Artificial Potential Fields</description>
     </item>
     <item>
       <title>Jack in a Cup: Hybrid Dynamics Simulation</title>
@@ -46,14 +53,13 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;h2 id=&#34;the-short-story&#34;&gt;The Short Story&lt;/h2&gt;
-&lt;p&gt;I am a &lt;strong&gt;Robotics Engineer&lt;/strong&gt; with a background in &lt;strong&gt;R&amp;amp;D &amp;amp; Mechanical Design&lt;/strong&gt;. After 3 years of designing medical devices in a strictly regulated environment, I transitioned to robotics to apply that same engineering rigor to autonomous systems.&lt;/p&gt;
+      <description>&lt;p&gt;I am a &lt;strong&gt;Robotics Engineer&lt;/strong&gt; with a background in &lt;strong&gt;R&amp;amp;D &amp;amp; Mechanical Design&lt;/strong&gt;. After 3 years of designing medical devices in a strictly regulated environment, I transitioned to robotics to apply that same engineering rigor to autonomous systems.&lt;/p&gt;
 &lt;p&gt;Currently, I am an MSR (Master of Science in Robotics) candidate at &lt;strong&gt;Northwestern University&lt;/strong&gt;, focusing on &lt;strong&gt;manipulation, controls, and dynamic simulation&lt;/strong&gt;.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;professional-experience&#34;&gt;Professional Experience&lt;/h2&gt;
 &lt;h3 id=&#34;rd-mechanical-engineer--alcon&#34;&gt;&lt;strong&gt;R&amp;amp;D Mechanical Engineer | Alcon&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;(2021 – 2024)&lt;/em&gt;
-Prior to robotics, I led mechanical design for next-generation intraocular lenses (IOLs).&lt;/p&gt;</description>
+&lt;p&gt;&lt;em&gt;(2022 – 2025)&lt;/em&gt;
+Prior to robotics, I led mechanical design for next-generation intraocular lenses (IOLs) and injector devices.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

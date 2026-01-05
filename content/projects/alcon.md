@@ -3,7 +3,7 @@ title: "Product Design & Statistical Validation"
 date: 2025-07-05
 summary: "Engineered high-reliability surgical delivery systems for cateract procedures" 
 tags: ["Creo", "DFSS", "Product Dev"]
-weight: 3
+weight: 4
 cover:
     image: "images/alcon_cover.jpg" 
     alt: "CAD rendering of surgical mechanism"

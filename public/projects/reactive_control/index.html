@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Categories | Kyuwon Weon</title>
-<meta name="keywords" content="">
-<meta name="description" content="Robotics Engineer | MS in Robotics Student | ROS 2">
+<title>Reactive Control &amp; Obstacle Avoidance | Kyuwon Weon</title>
+<meta name="keywords" content="Robotics, Control Theory, Artificial Potential Fields, Python, MuJoCo">
+<meta name="description" content="Real-time kinematic control with Artificial Potential Fields">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/categories/">
+<link rel="canonical" href="http://localhost:1313/projects/reactive_control/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.c2d22b09955d8024e6c1261b066dfe2369dcd9f9e33cf60d58f94a3d98a65039.css" integrity="sha256-wtIrCZVdgCTmwSYbBm3&#43;I2nc2fnjPPYNWPlKPZimUDk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/categories/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/reactive_control/">
 <noscript>
     <style>
         #theme-toggle,
@@ -36,7 +35,7 @@
 
 </script>
 </head>
-<body class="list" id="top">
+<body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
@@ -89,12 +88,68 @@
     </nav>
 </header>
 <main class="main">
-<header class="page-header">
-    <h1>Categories</h1>
-</header>
 
-<ul class="terms-tags">
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Reactive Control &amp; Obstacle Avoidance
+    </h1>
+    <div class="post-meta"><span title='2026-01-05 00:00:00 +0000 UTC'>January 5, 2026</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="the-demo">The Demo<a hidden class="anchor" aria-hidden="true" href="#the-demo">#</a></h2>
+<p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/ni3_9UhF_6E?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<a href="https://github.com/kyuwonweon/franka_reflex"><img alt="View Code on GitHub" loading="lazy" src="https://img.shields.io/badge/View%20Code-GitHub-181717?style=for-the-badge&logo=github"></a></p>
+<h2 id="project-overview">Project Overview<a hidden class="anchor" aria-hidden="true" href="#project-overview">#</a></h2>
+<p>This project implements a <strong>Reactive Controller</strong> for the 7-DOF Franka Emika Panda robot. This system uses <strong>Artificial Potential Fields (APF)</strong> to calculate control commands made from scratch in real-time (100Hz). This approach allows the robot to instantly adapt to dynamic environments, dodging obstacles while reaching for the target position.</p>
+<h2 id="background">Background<a hidden class="anchor" aria-hidden="true" href="#background">#</a></h2>
+<ol>
+<li><strong>The Goal:</strong> The target position naturally pulls the robot&rsquo;s end effector.</li>
+<li><strong>The Obstacles:</strong> Obstacles generate a repulsive &ldquo;energy hill&rdquo; that pushes the robot away. This force activates only when the robot breaches a safety threshold. It grows exponentially as the robot gets closer to an obstacle, creating a virtual bumper.</li>
+<li><strong>The Result:</strong> The robot acts as a particle moving through this energy landscape, naturally flowing around obstacles to reach the goal without explicit path planning.</li>
+</ol>
+<h2 id="challenge--resolution">Challenge &amp; Resolution<a hidden class="anchor" aria-hidden="true" href="#challenge--resolution">#</a></h2>
+<p><strong>The Challenge: Instability and Oscillation</strong>
+A major difficulty in implementing APF is tuning the gain parameters (zeta and eta).</p>
+<ul>
+<li>High gains allowed the robot to overpower the repulsion field and reach the target, but caused violent high-frequency oscillation when forces conflicted.</li>
+<li>Low gains resulted in smooth motion but left the robot &ldquo;stuck&rdquo; in local minima, unable to push through the safety threshold of the obstacle or overcome its own posture constraints.</li>
 </ul>
+<p><strong>The Resolution: Global Damping and Gain Scheduling</strong>
+To stabilize the system without sacrificing strength:</p>
+<ol>
+<li><strong>Global Damping:</strong> Implemented a velocity scaling factor. This allowed for high stiffness gains while dissipating the kinetic energy that caused vibrations.</li>
+<li><strong>Safety Clamping:</strong> Capped the maximum repulsive force to prevent mathematical singularities when the robot operated extremely close to obstacle surfaces.</li>
+<li><strong>Dynamic Braking:</strong> Designed a non-linear braking profile that smoothly decelerated the robot within the final 2cm of the target.</li>
+</ol>
+<h2 id="simulation-results">Simulation Results<a hidden class="anchor" aria-hidden="true" href="#simulation-results">#</a></h2>
+<p>The simulation, built in <strong>MuJoCo</strong> and wrapped in <strong>ROS 2</strong>, demonstrates the robot successfully navigating a &ldquo;glancing blow&rdquo; scenario. The robot curves around a central obstacle to reach a target, adjusting its path instantaneously as the obstacle pushes against the repulsion field.</p>
+<h2 id="key-learning-outcomes">Key Learning Outcomes<a hidden class="anchor" aria-hidden="true" href="#key-learning-outcomes">#</a></h2>
+<ul>
+<li><strong>Artificial Potential Fields (APF):</strong> Developed a strong intuition for designing reactive control. Learned to shape robot behavior mathematically by constructing virtual energy landscapes—defining attraction basins for goals and exponential repulsion fields for safety.</li>
+<li><strong>Tuning Non-Linear Systems:</strong> Explored the trade-off between <strong>Stiffness</strong> (Accuracy) and <strong>Stability</strong> (Smoothness). Discovered that high-gain systems require robust &ldquo;shock absorbers&rdquo; (global damping) to prevent high-frequency oscillations when conflicting forces meet.</li>
+</ul>
+<h2 id="citation">Citation<a hidden class="anchor" aria-hidden="true" href="#citation">#</a></h2>
+<p><a href="https://www.cs.cmu.edu/~motionplanning/lecture/Chap4-Potential-Field_howie.pdf">https://www.cs.cmu.edu/~motionplanning/lecture/Chap4-Potential-Field_howie.pdf</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/robotics/">Robotics</a></li>
+      <li><a href="http://localhost:1313/tags/control-theory/">Control Theory</a></li>
+      <li><a href="http://localhost:1313/tags/artificial-potential-fields/">Artificial Potential Fields</a></li>
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+      <li><a href="http://localhost:1313/tags/mujoco/">MuJoCo</a></li>
+    </ul>
+  </footer>
+</article>
     </main>
     
 <footer class="footer">
