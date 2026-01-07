@@ -1,5 +1,6 @@
 ---
 title: "Product Design & Statistical Validation" 
+draft: true
 date: 2025-07-05
 summary: "Engineered high-reliability surgical delivery systems for cateract procedures" 
 tags: ["Creo", "DFSS", "Product Dev"]
@@ -9,6 +10,7 @@ cover:
     alt: "CAD rendering of surgical mechanism"
     relative: false
     hiddenInSingle: true
+
 ---
 
 ## Project Overview

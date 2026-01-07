@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Kyuwon Weon</title>
+    <title>Q1 Portfolio</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on Kyuwon Weon</description>
+    <description>Recent content on Q1 Portfolio</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate>
@@ -54,7 +54,16 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;I am a &lt;strong&gt;Robotics Engineer&lt;/strong&gt; with a background in &lt;strong&gt;R&amp;amp;D &amp;amp; Mechanical Design&lt;/strong&gt;. After 3 years of designing medical devices in a strictly regulated environment, I transitioned to robotics to apply that same engineering rigor to autonomous systems.&lt;/p&gt;
-&lt;p&gt;Currently, I am an MSR (Master of Science in Robotics) candidate at &lt;strong&gt;Northwestern University&lt;/strong&gt;, focusing on &lt;strong&gt;manipulation, controls, and dynamic simulation&lt;/strong&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Northwestern University&lt;/strong&gt; | M.S. in Robotics (Expected 2026)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Focus: Robotic Manipulation, Control, Dynamics.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Carnegie Mellon University&lt;/strong&gt; | B.S. in Mechanical Engineering and Biomedical Engineering (Graduated May 2022)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Focus: Mechanical Design and Simulations&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;professional-experience&#34;&gt;Professional Experience&lt;/h2&gt;
 &lt;h3 id=&#34;rd-mechanical-engineer--alcon&#34;&gt;&lt;strong&gt;R&amp;amp;D Mechanical Engineer | Alcon&lt;/strong&gt;&lt;/h3&gt;

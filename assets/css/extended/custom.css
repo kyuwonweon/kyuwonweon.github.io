@@ -2,7 +2,6 @@
    1. GLOBAL VARIABLES & RESET
    ========================================= */
 :root {
-    /* UX UPDATE: 1100px is the industry standard "comfortable" desktop width */
     --main-width: 1100px !important; 
     --gap: 40px !important;
 }
@@ -13,7 +12,7 @@ body .first-entry * {
 }
 
 /* =========================================
-   2. MAIN LAYOUT (Homepage Grid)
+   2. MAIN LAYOUT (The Grid)
    ========================================= */
 .header {
     margin-bottom: 10px !important;
@@ -26,44 +25,76 @@ body .first-entry * {
     width: 90%;
     margin: 0 auto;
     
-    display: grid;
-    /* ADJUSTMENT: Lowered min-width to 300px so 3 columns fit in the new 1100px space */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px 40px !important; 
+    /* FORCE GRID LAYOUT */
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 40px !important; 
 }
 
 /* =========================================
-   3. PROFILE & HEADER
+   3. HEADER SECTIONS (The Fix)
    ========================================= */
-.profile, .page-header, .first-entry.home-info {
-    grid-column: 1 / -1 !important;
+
+/* A. SHARED SETTINGS (For both Home & Projects titles) */
+/* This ensures the title spans the whole top row */
+.first-entry.home-info,
+.page-header {
+    grid-column: 1 / -1 !important; /* Span all columns */
     justify-self: center;
     text-align: center;
     width: 100%;
-    max-width: 800px; /* Keeps bio compact */
-    margin-bottom: 0 !important;
+    max-width: 800px;
     background: transparent !important;
     box-shadow: none !important;
     border: none !important;
 }
 
-body .first-entry.home-info .entry-title {
-    font-size: 3rem !important;
-    font-weight: 800 !important;
+/* B. HOMEPAGE PROFILE ONLY (Kyuwon Weon) */
+/* Negative margin pulls the cards UP to close the gap */
+.first-entry.home-info {
+    margin-bottom: -100px !important; 
+    padding-bottom: 0 !important;
+    z-index: 10;
 }
 
-body .first-entry.home-info .entry-content code {
-    background-color: #333 !important;
-    color: #fff !important;
-    border-radius: 6px !important;
-    padding: 4px 10px !important;
-    font-family: monospace !important;
-    display: inline-block !important;
-    margin: 3px !important;
+/* C. GENERIC PAGE HEADERS ("Projects", "Posts") */
+/* Positive margin pushes cards DOWN to prevent overlap */
+.page-header {
+    margin-bottom: 50px !important; 
+    margin-top: 20px !important;
+}
+
+/* --- BIG NAME FIX (Homepage) --- */
+body .main .first-entry.home-info .entry-title,
+body .main .first-entry.home-info h1 {
+    font-size: 4rem !important; 
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    margin-bottom: 5px !important; 
+}
+
+/* Cleanup internal spacing */
+body .first-entry.home-info .entry-content p {
+    margin-bottom: 5px !important; 
+}
+body .first-entry.home-info .entry-content {
+    margin-bottom: 0 !important; 
+}
+
+/* SOCIAL ICONS POSITIONING */
+body .social-icons {
+    /* 1. Move icons UP closer to the bio text */
+    margin-top: 5px !important;  
+    
+    /* 2. Create a small "Safety Zone" below the icons so cards don't overlap them */
+    margin-bottom: 50px !important; 
+    
+    /* Ensure they are centered */
+    justify-content: center;
 }
 
 /* =========================================
-   4. HOMEPAGE PROJECT CARDS
+   4. CARD STYLING
    ========================================= */
 .post-entry {
     background: var(--entry) !important;
@@ -116,19 +147,22 @@ body .first-entry.home-info .entry-content code {
     margin-top: auto !important;
 }
 
+/* =========================================
+   5. NAVIGATION & SINGLE PAGE
+   ========================================= */
 .nav {
-    justify-content: center !important;
+    justify-content: flex-end !important; /* Aligns menu to right */
+    max-width: var(--main-width) !important;
+    width: 90% !important;
+    margin: 0 auto !important;
 }
 
-/* =========================================
-   5. SINGLE PROJECT PAGE (Media Fixes)
-   ========================================= */
+/* Single Project Page Media */
 .post-content {
     max-width: 800px !important;
     margin: 0 auto !important;
 }
 
-/* IMAGES: Let them decide their own height based on the image file */
 .post-content img {
     max-width: 100% !important;
     height: auto !important; 
@@ -136,13 +170,12 @@ body .first-entry.home-info .entry-content code {
     margin: 20px auto !important;
 }
 
-/* VIDEOS (YouTube): Force them to be a standard 16:9 Rectangle */
 .post-content iframe, 
 .post-content video {
     width: 100% !important;
-    aspect-ratio: 16 / 9 !important; /* <--- THIS FIXES THE SQUASHING */
+    aspect-ratio: 16 / 9 !important;
     height: auto !important;
     display: block !important;
     margin: 20px auto !important;
-    border: none !important; /* Removes any default borders */
+    border: none !important;
 }

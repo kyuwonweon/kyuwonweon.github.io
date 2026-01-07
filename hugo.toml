@@ -1,6 +1,6 @@
 baseURL = 'https://kyuwonweon.github.io/'
 languageCode = 'en-us'
-title = 'Kyuwon Weon'
+title = 'Q1 Portfolio'
 theme = 'PaperMod'
 
 [params]
@@ -14,13 +14,10 @@ theme = 'PaperMod'
     [params.homeInfoParams]
       Title = "Kyuwon Weon"
       Content = """
-  **ROBOTICS ENGINEER | CONTROLS & MANIPULATION**
+  **MS IN ROBOTICS @NORTHWESTERN | CONTROLS & MANIPULATION**
 
-  MSR candidate at Northwestern University specializing in robotic manipulation and control.
-
-  `ROS 2` `Python` `C++` `MoveIt` `Controls` `Dynamics`
+  Bridging 3 years of industrial product design with software stack for agile, contact-rich manipulation.
   """
-
     [[params.socialIcons]]
         name = "github"
         url = "https://github.com/kyuwonweon"

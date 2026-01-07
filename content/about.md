@@ -6,7 +6,14 @@ layout: "about"
 
 I am a **Robotics Engineer** with a background in **R&D & Mechanical Design**. After 3 years of designing medical devices in a strictly regulated environment, I transitioned to robotics to apply that same engineering rigor to autonomous systems.
 
-Currently, I am an MSR (Master of Science in Robotics) candidate at **Northwestern University**, focusing on **manipulation, controls, and dynamic simulation**.
+---
+
+## Education
+**Northwestern University** | M.S. in Robotics (Expected 2026)
+* Focus: Robotic Manipulation, Control, Dynamics.
+
+**Carnegie Mellon University** | B.S. in Mechanical Engineering and Biomedical Engineering (Graduated May 2022)
+* Focus: Mechanical Design and Simulations
 
 ---
 
