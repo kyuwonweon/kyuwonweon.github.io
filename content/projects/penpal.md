@@ -2,7 +2,7 @@
 title: "PenPal: VLM-Guided Writing Robot"
 date: 2025-12-12
 draft: false
-tags: ["ROS 2", "Python", "Motion planning", "Franka Emika"]
+tags: ["ROS 2", "Python", "Motion planning", "Franka Emika", "MoveIt 2"]
 summary: "7-DOF Franka answers questions by writing on hand-held whiteboards"
 weight: 1
 cover:
@@ -15,48 +15,36 @@ cover:
 ## The Demo
 {{<youtube xrn48SnPuLs>}}
 [![View Code on GitHub](https://img.shields.io/badge/View%20Code-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/kyuwonweon/penpal)
+
 ## Project Overview
-**Role:** Motion Planning & Control
+**Role:** Motion Planning & Control  
+**Tech Stack:** ROS 2 (Humble), Python, MoveIt 2, Franka Emika Panda
 
-**Tech Stack:** ROS 2 (Kilted), Python, MoveIt 2, Franka Emika Panda
+PenPal is a vision-guided robotic system that bridges the gap between Large Language Models (LLMs) and physical actuation. It reads handwritten questions and physically writes answers in real-time. My role focused on the **hardware interface layer**: ensuring the robot could autonomously grasp a marker, safely approach a dynamic surface, and execute precise writing strokes without triggering safety stops.
 
-PenPal is a vision-guided robotic system that reads handwritten questions from a whiteboard and physically writes answers back in real-time.
+## Key Technical Contributions
 
-I engineered a hybrid control framework. While Cartesian planning was used for the actual writing strokes, I developed a custom constraint-based motion planner to handle the complex approach and retreat maneuvers required to grab the pen and approach the board.
+### 1. Hybrid Motion Planning Architecture
+I engineered a two-stage control framework to handle the distinct requirements of "free space" vs. "contact" motion:
+I utilized sampling-based planners (OMPL) for global tasks like "Pick Up Pen" and "Return to Home," navigating complex joint configurations to avoid self-collisions.
+* **Fine Motion (Cartesian):** Implemented a custom Cartesian interpolator for the actual writing phase. This ensured linearity and consistent velocity during strokes, which standard planners often fail to guarantee.
 
-## Key Contributions
+### 2. Integration Testing & Validation
+To prove the system could handle physical contact before full deployment, I built a **standalone integration test suite**.
+* Developed a parameterized test node that commanded the robot to draw geometric primitives (circles, squares, arrows) in the air and on surfaces.
+* This validated that our "Writing Mode" logic held up under sustained contact, proving the system was ready for the variability of VLM-generated text.
 
-### 1. Dynamic Safety & Collision Management
-A critical challenge was allowing the robot to touch the whiteboard (collision) while writing, but preventing dangerous collisions elsewhere. I engineered a dynamic safety system that modifies the robot's reflex thresholds in real-time.
+### 3. Dynamic Safety ("Orange Zone" Logic)
+Writing requires *collision*, but robots are designed to *stop* on collision.
+* I implemented a dynamic client that interacts with the Franka reflex controller.
+* **The Logic:** The system monitors the proximity to the whiteboard. Millimeters before contact, it creates an "Orange Zone" where torque thresholds are raised (desensitized). Instantly upon retreat, thresholds drop back to nominal levels, ensuring human safety is never compromised during rapid movements.
 
-* **"Orange Zone" Logic:** Implemented a service client (`SetFullCollisionBehavior`) that dynamically raises the torque/force thresholds just before the pen touches the board and lowers them back to sensitive levels during free-space motion.
-* **Integration Testing:** Developed a standalone integration test node to visualize and validate complex trajectories (Circles, Squares, Arrows) in Rviz before executing them on hardware.
+## Challenge & Solution
 
-### 2. Constraint-Based Motion Planning
-Instead of relying on standard `move_group.go()` calls, I implemented a custom `MotionPlanRequest` generator. This allowed for precise control over the planning volume and solved the issue of the robot getting stuck in local minima when moving near the whiteboard surface.
-* **Tolerance Handling:** Defined strict `PositionConstraint` and `OrientationConstraint` bounding boxes (SolidPrimitives) to ensure the end-effector (TCP) remained perpendicular to the writing surface during approach.
-* **Safety Scaling:** Dynamically adjusted `max_velocity_scaling_factor` (0.1) and `max_acceleration_scaling_factor` (0.1) during the delicate approach phase to prevent overshoot.
+### The "Wrist vs. Tip" TF Mismatch
+**The Problem:** During early tests, the robot would approach the whiteboard at unpredictable, "weird" angles—often tilting the marker away from the surface. This occurred because the motion planner was solving for the robot's **Flange (Wrist)** frame, ignoring the orientation of the marker tip.
 
-
-## Code Snippet: Dynamic Collision Tuning
-This snippet from my integration test node demonstrates how I dynamically adjusted safety thresholds for the "Writing Phase" to prevent false-positive safety stops due to friction.
-
-```python
-async def integration_test(node, ctl):
-    """
-    Orchestrates the writing sequence with dynamic safety parameters.
-    """
-    # 1. Define High Thresholds (For Writing Contact)
-    # Allows higher torque resistance (friction) without triggering safety stop
-    high_req = SetFullCollisionBehavior.Request()
-    high_req.lower_torque_thresholds_nominal = [20.0] * 7
-    high_req.upper_torque_thresholds_nominal = [50.0] * 7 # Increased for contact
-    
-    node.get_logger().info('Setting High Thresholds for Writing Phase')
-    await collision_service.call_async(high_req)
-    await asyncio.sleep(2.0)
-
-    # 2. Execute Trajectory
-    for traj in seq:
-        logger.info(f'Executing trajectory {traj.label}...')
-        await ctl.execute_trajectory(traj, speed=0.01)
+**The Solution:** I restructured the **TF (Transform) Tree**.
+* Defined a precise static transform from the wrist to a end effector frame.
+* Updated the MoveIt planning group to solve specifically for `marker_tip` orientation constraints.
+* **Result:** The robot decoupled the wrist rotation from the writing task, ensuring the marker always touched the board perfectly perpendicular ($90^{\circ}$), regardless of the arm's configuration.

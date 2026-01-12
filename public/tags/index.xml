@@ -79,6 +79,13 @@
       <description></description>
     </item>
     <item>
+      <title>MoveIt 2</title>
+      <link>http://localhost:1313/tags/moveit-2/</link>
+      <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/moveit-2/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>ROS 2</title>
       <link>http://localhost:1313/tags/ros-2/</link>
       <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
