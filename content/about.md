@@ -31,4 +31,4 @@ Prior to robotics, I led mechanical design for next-generation intraocular lense
 ## Why Robotics?
 At Alcon, I learned how to build hardware that *works*. Now, I am learning how to make it *think*.
 
-My goal is to bridge the gap between robust mechanical hardware and intelligent software control. I am specifically interested in **manipulation**—giving robots the dexterity to interact with the world.
+My goal is to bridge the gap between robust mechanical hardware and intelligent software control. I am specifically interested in **motion planning and control**—giving robots the ability to interact with the world.
