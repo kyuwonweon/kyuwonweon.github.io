@@ -6,8 +6,8 @@ weight: 4
 tags: ["Python", "SymPy", "Computational Dynamics", "Simulation"]
 summary: "Simulation of rigid body collisions and Lagrangian dynamics"
 cover:
-    image: "images/jack-cover.jpg"
-    alt: "Jack in a Cup Simulation"
+    image: "images/jackincup.mp4"
+    alt: "Jack in cup Demo Video"
     relative: false
     hiddenInSingle: true
 ---

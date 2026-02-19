@@ -1,14 +1,15 @@
 ---
 title: "Reactive Control & Obstacle Avoidance"
 date: 2026-01-05
+draft: false
 math: true
 summary: "Real-time kinematic control with Artificial Potential Fields"
 tags: ["Robotics", "Control Theory", "Artificial Potential Fields", "Python", "MuJoCo"]
 weight: 3
 cover:
-    image: "/images/apf_cover.png" 
-    alt: "Robot Avoiding Obstacle"
-    relative: true
+    image: "images/apf.mp4"
+    alt: "APF Demo Video"
+    relative: false
     hiddenInSingle: true
 ---
 ## The Demo

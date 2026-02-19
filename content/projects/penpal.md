@@ -6,8 +6,8 @@ tags: ["ROS 2", "Python", "Motion planning", "Franka Emika", "MoveIt 2"]
 summary: "7-DOF Franka answers questions by writing on hand-held whiteboards"
 weight: 2
 cover:
-    image: "images/penpal-cover.jpg"
-    alt: "PenPal Robot"
+    image: "images/penpal.mp4"
+    alt: "PenPal Robot Demo Video"
     relative: false
     hiddenInSingle: true
 ---
