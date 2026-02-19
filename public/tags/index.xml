@@ -156,13 +156,6 @@
       <description></description>
     </item>
     <item>
-      <title>Medical Devices</title>
-      <link>http://localhost:1313/tags/medical-devices/</link>
-      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/medical-devices/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Product Design</title>
       <link>http://localhost:1313/tags/product-design/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
@@ -174,6 +167,13 @@
       <link>http://localhost:1313/tags/solidworks/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/solidworks/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Static Structural</title>
+      <link>http://localhost:1313/tags/static-structural/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/static-structural/</guid>
       <description></description>
     </item>
     <item>

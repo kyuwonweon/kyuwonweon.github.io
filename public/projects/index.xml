@@ -23,13 +23,6 @@
       <description>7-DOF Franka answers questions by writing on hand-held whiteboards</description>
     </item>
     <item>
-      <title>Medtronic NextGen Cervical Plate</title>
-      <link>http://localhost:1313/projects/cervical_plate/</link>
-      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/cervical_plate/</guid>
-      <description>Topology-optimized anterior cervical plate reducing patient dysphagia risks.</description>
-    </item>
-    <item>
       <title>Reactive Control &amp; Obstacle Avoidance</title>
       <link>http://localhost:1313/projects/reactive_control/</link>
       <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
@@ -49,6 +42,13 @@
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/alcon/</guid>
       <description>Engineered surgical devices for cateract procedures</description>
+    </item>
+    <item>
+      <title>Medtronic NextGen Cervical Plate</title>
+      <link>http://localhost:1313/projects/cervical_plate/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/cervical_plate/</guid>
+      <description>Topology-optimized anterior cervical plate</description>
     </item>
   </channel>
 </rss>

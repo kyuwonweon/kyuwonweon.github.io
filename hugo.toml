@@ -4,7 +4,7 @@ title = 'Q1 Portfolio'
 theme = 'PaperMod'
 
 [params]
-    defaultTheme = "light"
+    defaultTheme = "dark"
     description = "Robotics Engineer | MS in Robotics Student | ROS 2"
     ShowReadingTime = false
     ShowShareButtons = false
