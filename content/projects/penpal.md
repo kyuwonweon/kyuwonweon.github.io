@@ -4,7 +4,7 @@ date: 2025-12-12
 draft: false
 tags: ["ROS 2", "Python", "Motion planning", "Franka Emika", "MoveIt 2"]
 summary: "7-DOF Franka answers questions by writing on hand-held whiteboards"
-weight: 1
+weight: 2
 cover:
     image: "images/penpal-cover.jpg"
     alt: "PenPal Robot"

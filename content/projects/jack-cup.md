@@ -2,7 +2,7 @@
 title: "Jack in a Cup: Hybrid Dynamics Simulation"
 date: 2025-12-15
 draft: false
-weight: 3
+weight: 4
 tags: ["Python", "SymPy", "Computational Dynamics", "Simulation"]
 summary: "Simulation of rigid body collisions and Lagrangian dynamics"
 cover:

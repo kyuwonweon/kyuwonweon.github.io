@@ -4,7 +4,7 @@ date: 2026-01-05
 math: true
 summary: "Real-time kinematic control with Artificial Potential Fields"
 tags: ["Robotics", "Control Theory", "Artificial Potential Fields", "Python", "MuJoCo"]
-weight: 2
+weight: 3
 cover:
     image: "/images/apf_cover.png" 
     alt: "Robot Avoiding Obstacle"
