@@ -4,7 +4,7 @@ hidemeta: true
 layout: "about"
 ---
 
-I am a **Robotics Engineer** with a background in **R&D & Mechanical Design**. After 3 years of designing medical devices in a strictly regulated environment, I transitioned to robotics to apply that same engineering rigor to autonomous systems.
+I am a **Robotics Engineer** with a background in **R&D & Mechanical Design**. After 3 years of designing medical devices, I transitioned to robotics to apply that same engineering rigor to autonomous systems.
 
 ---
 
