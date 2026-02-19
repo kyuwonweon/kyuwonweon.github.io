@@ -141,5 +141,47 @@
       <guid>http://localhost:1313/tags/product-dev/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Ansys</title>
+      <link>http://localhost:1313/tags/ansys/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ansys/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>FEA</title>
+      <link>http://localhost:1313/tags/fea/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/fea/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Medical Devices</title>
+      <link>http://localhost:1313/tags/medical-devices/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/medical-devices/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Product Design</title>
+      <link>http://localhost:1313/tags/product-design/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/product-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SolidWorks</title>
+      <link>http://localhost:1313/tags/solidworks/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/solidworks/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Topology Optimization</title>
+      <link>http://localhost:1313/tags/topology-optimization/</link>
+      <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/topology-optimization/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
