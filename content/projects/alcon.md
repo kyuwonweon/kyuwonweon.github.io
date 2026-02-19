@@ -8,8 +8,8 @@ weight: 4
 cover:
     image: "images/alcon_cover.jpg" 
     alt: "CAD rendering of surgical mechanism"
-    relative: false
-    hiddenInSingle: false
+    relative: true
+    hiddenInSingle: true
 
 ---
 
