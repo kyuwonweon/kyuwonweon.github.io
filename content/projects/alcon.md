@@ -18,7 +18,8 @@ cover:
 As a Medical Device Design Engineer at **Alcon** for three years, I managed the lifecycle of next-generation intraocular lens delivery systems. My role bridged the gap between rapid iterative design and rigorous quality engineering, ensuring devices met strict FDA standards through data-driven validation.
 
 ## Technical Contributions
-
+{{< figure src="/images/iol.jpg" title="Figure 1: Types of intraocular lenses I worked on" >}}
+{{< figure src="/images/alcon_cover.jpg" title="Figure 2: Delivery devices I worked on" >}}
 ### 1. Rapid Prototyping & DFM
 3D CAD concepts with **PTC Creo** for mechanical design and 3D printing for immediate validation.
 * Transformed functional prototypes into mass-producible designs by performing **Design for Manufacturing (DFM)** analysis for injection molding.
