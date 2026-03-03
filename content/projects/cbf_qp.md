@@ -13,7 +13,7 @@ cover:
 ---
 
 ## The Demo
-{{<youtube wF6EKuGE6ak>}}
+{{<youtube NbHQxQ84qVs>}}
 [![View Code on GitHub](https://img.shields.io/badge/View%20Code-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/kyuwonweon/cbf_safety_layer)
 
 ## Project Overview
