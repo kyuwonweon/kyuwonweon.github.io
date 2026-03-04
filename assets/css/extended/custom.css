@@ -180,3 +180,41 @@ body .social-icons {
     border: none !important;
 }
 
+/* =========================================
+   6. VIDEO SHOWCASE (Wider, Responsive & Vertical)
+   ========================================= */
+.video-showcase {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+    width: 120%;        /* Makes it 20% wider than the text */
+    margin-left: -10%;  /* Pulls it left to keep it perfectly centered */
+}
+
+.video-showcase .video-wrapper {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Professional drop shadow */
+}
+
+/* Default widescreen videos */
+.video-showcase iframe {
+    width: 100% !important;
+    aspect-ratio: 16/9 !important;
+    display: block !important;
+}
+
+/* Vertical/Phone-shaped videos (Overrides the 16/9 rule) */
+body .post-content .video-showcase.vertical iframe {
+    aspect-ratio: 9/16 !important; 
+}
+
+/* On Mobile & Tablets: Stack them normally so they don't shrink */
+@media (max-width: 850px) {
+    .video-showcase {
+        flex-direction: column;
+        width: 100%;
+        margin-left: 0;
+    }
+}
