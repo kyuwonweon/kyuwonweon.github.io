@@ -1,6 +1,6 @@
 ---
-title: "Collision Prevention Package: CBF-QP"
-date: 2026-02-12
+title: "Robot Collision Prevention Package: CBF-QP"
+date: 2026-03-11
 math: true
 summary: "Real-time safety filter with Control Barrier Functions."
 tags: ["Robotics", "Control Theory", "Optimization", "C++", "Python", "ROS 2 Kilted", "Pinocchio"]
@@ -11,16 +11,6 @@ cover:
     relative: true
     hiddenInSingle: true
 ---
-<div class="video-showcase vertical">
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/CJ427VDBa4E?autoplay=1&mute=1&loop=1&playlist=CJ427VDBa4E" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
-  </div>
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/qM3LcE7e87Y?autoplay=1&mute=1&loop=1&playlist=qM3LcE7e87Y" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
-  </div>
-</div>
-
-[![View Code on GitHub](https://img.shields.io/badge/View%20Code-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/kyuwonweon/cbf_safety_layer)
 
 ## Project Overview
 This project implements a **Real-Time Dynamic Collision Prevention System** for the 7-DOF Franka Emika Panda. 
@@ -29,6 +19,8 @@ This project implements a **Real-Time Dynamic Collision Prevention System** for 
 While my [Reactive Control project]({{< relref "reactive_control.md" >}}) used Artificial Potential Fields (APF) to create soft repulsive forces that could lead to local minima or oscillations, this system upgrades to **Control Barrier Functions (CBF)**. This approach treats safety as a **hard mathematical constraint**, guaranteeing collision freedom without altering the robot's path unless absolutely necessary.
 
 **Tech Stack:** ROS 2 Kilted, Python (Launch/Teleop), C++ (Solver), Pinocchio (Kinematics), ProxQP.
+
+[![View Code on GitHub](https://img.shields.io/badge/View%20Code-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/kyuwonweon/cbf_safety_layer)
 
 <div class="video-showcase vertical">
   <div class="video-wrapper">
@@ -42,6 +34,18 @@ While my [Reactive Control project]({{< relref "reactive_control.md" >}}) used A
 **Video 1**: Demonstration of the solver preventing robot from colliding. Only the downward velocity command is being sent from the xbox controller for joint 1 to rotate forward.
 
 **Video 2**: Demonstration of how interactive obstacle (red sphere) moves the robot when it collides with the robot. 
+
+
+<div class="video-showcase vertical">
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/CJ427VDBa4E?autoplay=1&mute=1&loop=1&playlist=CJ427VDBa4E" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
+  </div>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/qM3LcE7e87Y?autoplay=1&mute=1&loop=1&playlist=qM3LcE7e87Y" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+Two robotic arms moving in commanded velocities with and without my collision prevention layer
 
 ## System Architecture
 

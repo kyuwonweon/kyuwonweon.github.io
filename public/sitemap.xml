@@ -2,113 +2,113 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:35487/projects/cbf_qp/</loc>
+    <loc>http://localhost:44037/projects/cbf_qp/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/projects/penpal/</loc>
+    <loc>http://localhost:44037/projects/penpal/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/projects/reactive_control/</loc>
+    <loc>http://localhost:44037/projects/reactive_control/</loc>
     <lastmod>2026-01-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/projects/jack-cup/</loc>
+    <loc>http://localhost:44037/projects/jack-cup/</loc>
     <lastmod>2025-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/projects/alcon/</loc>
+    <loc>http://localhost:44037/projects/alcon/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/projects/cervical_plate/</loc>
+    <loc>http://localhost:44037/projects/cervical_plate/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/c&#43;&#43;/</loc>
+    <loc>http://localhost:44037/tags/c&#43;&#43;/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/control-theory/</loc>
+    <loc>http://localhost:44037/tags/control-theory/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/optimization/</loc>
+    <loc>http://localhost:44037/tags/optimization/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/pinocchio/</loc>
+    <loc>http://localhost:44037/tags/pinocchio/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/projects/</loc>
+    <loc>http://localhost:44037/projects/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/python/</loc>
+    <loc>http://localhost:44037/tags/python/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/</loc>
+    <loc>http://localhost:44037/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/robotics/</loc>
+    <loc>http://localhost:44037/tags/robotics/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/ros-2-kilted/</loc>
+    <loc>http://localhost:44037/tags/ros-2-kilted/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/</loc>
+    <loc>http://localhost:44037/tags/</loc>
     <lastmod>2026-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/artificial-potential-fields/</loc>
+    <loc>http://localhost:44037/tags/artificial-potential-fields/</loc>
     <lastmod>2026-01-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/mujoco/</loc>
+    <loc>http://localhost:44037/tags/mujoco/</loc>
     <lastmod>2026-01-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/contact/</loc>
+    <loc>http://localhost:44037/contact/</loc>
     <lastmod>2025-12-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/computational-dynamics/</loc>
+    <loc>http://localhost:44037/tags/computational-dynamics/</loc>
     <lastmod>2025-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/simulation/</loc>
+    <loc>http://localhost:44037/tags/simulation/</loc>
     <lastmod>2025-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/sympy/</loc>
+    <loc>http://localhost:44037/tags/sympy/</loc>
     <lastmod>2025-12-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/franka-emika/</loc>
+    <loc>http://localhost:44037/tags/franka-emika/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/motion-planning/</loc>
+    <loc>http://localhost:44037/tags/motion-planning/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/moveit-2/</loc>
+    <loc>http://localhost:44037/tags/moveit-2/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/ros-2/</loc>
+    <loc>http://localhost:44037/tags/ros-2/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/creo/</loc>
+    <loc>http://localhost:44037/tags/creo/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/dfss/</loc>
+    <loc>http://localhost:44037/tags/dfss/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/product-dev/</loc>
+    <loc>http://localhost:44037/tags/product-dev/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/ansys/</loc>
+    <loc>http://localhost:44037/tags/ansys/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/fea/</loc>
+    <loc>http://localhost:44037/tags/fea/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/product-design/</loc>
+    <loc>http://localhost:44037/tags/product-design/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/solidworks/</loc>
+    <loc>http://localhost:44037/tags/solidworks/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/static-structural/</loc>
+    <loc>http://localhost:44037/tags/static-structural/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/tags/topology-optimization/</loc>
+    <loc>http://localhost:44037/tags/topology-optimization/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:35487/about/</loc>
+    <loc>http://localhost:44037/about/</loc>
   </url><url>
-    <loc>http://localhost:35487/categories/</loc>
+    <loc>http://localhost:44037/categories/</loc>
   </url>
 </urlset>
