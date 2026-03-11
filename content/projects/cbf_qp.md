@@ -11,8 +11,6 @@ cover:
     relative: true
     hiddenInSingle: true
 ---
-
-## The Demo
 <div class="video-showcase vertical">
   <div class="video-wrapper">
     <iframe src="https://www.youtube.com/embed/CJ427VDBa4E?autoplay=1&mute=1&loop=1&playlist=CJ427VDBa4E" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
@@ -24,70 +22,62 @@ cover:
 
 [![View Code on GitHub](https://img.shields.io/badge/View%20Code-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/kyuwonweon/cbf_safety_layer)
 
-
 ## Project Overview
-This project implements a **Real-Time Dynamic Collision Prevention System** for the 7-DOF Franka Emika Panda.
+This project implements a **Real-Time Dynamic Collision Prevention System** for the 7-DOF Franka Emika Panda. 
 
 **Evolution from Previous Work:**
-While my [Reactive Control project]({{< relref "reactive_control.md" >}}) used Artificial Potential Fields (APF) to create "soft" repulsive forces that could lead to local minima or oscillations, this system upgrades to **Control Barrier Functions (CBF)**. This approach treats safety as a **hard mathematical constraint**, guaranteeing collision freedom without altering the robot's path unless absolutely necessary.
-
-**The Result:** A transparent safety filter that intercepts human or planner commands and modifies them via a Quadratic Program (QP) solver at **1kHz**, ensuring the robot remains within the safe set of states regardless of input aggression.
+While my [Reactive Control project]({{< relref "reactive_control.md" >}}) used Artificial Potential Fields (APF) to create soft repulsive forces that could lead to local minima or oscillations, this system upgrades to **Control Barrier Functions (CBF)**. This approach treats safety as a **hard mathematical constraint**, guaranteeing collision freedom without altering the robot's path unless absolutely necessary.
 
 **Tech Stack:** ROS 2 Kilted, Python (Launch/Teleop), C++ (Solver), Pinocchio (Kinematics), ProxQP.
 
+<div class="video-showcase vertical">
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/K__zg9qQ8F8?autoplay=1&mute=1&loop=1&playlist=K__zg9qQ8F8" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
+  </div>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/0J_KxRtb3-s?autoplay=1&mute=1&loop=1&playlist=0J_KxRtb3-s" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+**Video 1**: Demonstration of the solver preventing robot from colliding. Only the downward velocity command is being sent from the xbox controller for joint 1 to rotate forward.
+
+**Video 2**: Demonstration of how interactive obstacle (red sphere) moves the robot when it collides with the robot. 
+
+## System Architecture
+
+*(TODO : Create BLOCK DIAGRAM)*
+![System Architecture Block Diagram](/images/placeholder_block_diagram.png)
+
+The system operates as a strict middleware layer, resolving constraints in real-time at 1kHz. 
+
 ## Mathematical Foundation
-The core of the safety layer is a constrained optimization problem.
 
-**1. Distance Metric ($h(x)$)**
-We approximate the robot as **Capsules** and obstacles as **Spheres**. The safety function $h(x)$ defines the distance to danger:
-$$h(x) = d(C_{robot}, P_{obs}) - (r_{robot} + r_{obs} + \delta_{margin})$$
-* $h(x) > 0$: Safe.
-* $h(x) \le 0$: Collision.
+Unlike standard kinematic safety filters, this implementation treats safety as a dynamic constraint. It accounts for the robot's physical inertia and kinetic energy to guarantee it always has the stopping power required to avoid an impact.
 
-**2. Energy-Aware Control Barrier Function (CBF)**
-To ensure the robot can safely dissipate its momentum before an impact, we define a dynamic barrier function $B(q, \dot{q})$ that couples the distance to the robot's Kinetic Energy ($KE = \frac{1}{2}\dot{q}^T M(q) \dot{q}$), where $M(q)$ is the joint-space mass matrix:
-$$B(q, \dot{q}) = \gamma h(q) - KE \geq 0$$
+**1. The Energy-Aware Barrier Function ($h(x)$)**
+Let $h(q)$ be the geometric distance between the robot capsule and a hazard. We define a dynamic barrier function $B(q, \dot{q})$ that couples this distance to the robot's kinetic energy ($E_k$):
+$$E_k = \frac{1}{2}\dot{q}^T M(q) \dot{q}$$
+$$B(q, \dot{q}) = \gamma \max(h(q), -0.05) - E_k$$
 
-To guarantee forward invariance of the safe set (the robot always has enough distance to brake), we enforce the derivative inequality limit:
-$$\dot{B}(q, \dot{q}) \geq -\alpha B(q, \dot{q})$$
+To ensure the robot does not enter an unavoidable collision state, we enforce the derivative inequality $\dot{B} \ge -\alpha B$, which bounds the allowable kinetic energy relative to the distance to the obstacle.
 
-Simultaneously, we apply a 2nd-order kinematic CBF to constrain the approach acceleration using the geometric Jacobian $J$:
-$$J\ddot{q} \geq -k_p h(q) - k_d \dot{h}(q)$$
+**2. High-Order Kinematic Constraints**
+Because the robot is commanded at the acceleration level internally, we apply a PD-style High-Order CBF (HOCBF) to constrain the approach rate. Using the geometric Jacobian $J(q)$, the distance constraint is bounded by:
+$$l_{kin} = -k_p h(q) - k_d \dot{h}(q)$$
+$$l_{kin} \le J(q) \ddot{q} \le \infty$$
 
-**3. Acceleration Quadratic Program (QP)**
-Instead of solving blindly for velocity, we resolve a desired acceleration $\ddot{q}_{des} = K_p(\dot{q}_{des} - \dot{q}_{safe})$ and use a Dense QP Solver to find the optimal safe acceleration ($\ddot{q}^*$) that tracks the user's command without violating the dynamic energy limits:
+**3. The Dense Quadratic Program (QP)**
+The solver maps the user's desired velocity into a desired acceleration $\ddot{q}_{des} = k_p(\dot{q}_{des} - \dot{q}_{safe})$ and finds the optimal safe acceleration ($\ddot{q}^*$) using ProxQP. 
+
 $$\min_{\ddot{q}} \frac{1}{2} || \ddot{q} - \ddot{q}_{des} ||^2$$
-$$\text{s.t.} \quad A_{cbf} \ddot{q} \leq b_{cbf} \quad \text{(Energy \& Kinematic Bounds)}$$
-$$\quad \quad \ddot{q}_{min} \leq \ddot{q} \leq \ddot{q}_{max} \quad \text{(Hardware Slew-Rate Limits)}$$
 
-The resulting safe acceleration is then numerically integrated ($\dot{q}_{safe} = \dot{q}_{safe} + \ddot{q}^* \Delta t$) and published to the physical hardware controllers.
+**Subject to:**
+* $L_{cbf} \le C_{cbf} \ddot{q} \le U_{cbf}$  (Energy and Geometry Bounds)
+* $a_{min} \le \ddot{q} \le a_{max}$  (Hardware Acceleration Limits)
+* $\dot{q}_{min} \le \dot{q} \le \dot{q}_{max}$  (Hardware Velocity Limits)
+* $q_{min} \le q \le q_{max}$  (Hardware Joint Limits)
 
-## System Architecture (Nodes)
-The system is built on a modular ROS 2 Kilted architecture:
-
-* **`joy_node` (C++):** Interacts with the hardware driver to read raw Xbox controller states (axes/buttons).
-* **`teleop_node` (Python):** Converts raw joystick inputs into a Twist or Joint Velocity command. It handles mode switching (e.g., enabling "Turbo" speed or resetting the robot).
-* **`safety_node` (C++):** The brain of the operation.
-    * **Subscribes** to `/joint_states` (Real Robot) and `/cmd_vel` (Teleop).
-    * **Computes** the CBF constraints using Pinocchio.
-    * **Solves** the QP using ProxQP.
-    * **Publishes** the safe command to the robot controller.
-* **`robot_state_publisher`:** Broadcasts the URDF and TF tree, visualizing both the "Real Robot" and the "Ghost" (Commanded) robot.
-* **`rviz2`:** Visualizes the geometric primitives (Capsules/Spheres) and the safety intervention in real-time.
-
-## Key Challenges & Resolutions
-
-**1. Optimization Latency**
-* **Challenge:** Initial debug builds resulted in loop times >3.5ms, causing control lag.
-* **Resolution:** Migrated to `Release` builds with `-O3` flags, reducing QP solve time to **<0.5ms** for a robust 1kHz loop.
-
-**2. Visual "Ghosting"**
-* **Challenge:** Safety geometry (capsules) trailed behind the robot during fast motions due to timestamp mismatches.
-* **Resolution:** Synchronized visualization markers with the joint state update loop, ensuring 1:1 alignment between the physical robot and safety bubbles.
-
-**3. Geometric Approximation**
-* **Challenge:** Full mesh collision checking is too slow for 1kHz control.
-* **Resolution:** Implemented a **Capsule-to-Point** distance algorithm. This reduces complex mesh interactions to simple algebraic line-segment math, drastically lowering computational cost.
+The optimal acceleration is integrated numerically ($v_{safe} = v_{safe} + \ddot{q}^* \Delta t$) and clamped to hardware limits before publishing.
 
 
 ## Citation
