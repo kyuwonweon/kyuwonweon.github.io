@@ -45,10 +45,15 @@ While my [Reactive Control project]({{< relref "reactive_control.md" >}}) used A
 
 ## System Architecture
 
-*(TODO : Create BLOCK DIAGRAM)*
-![System Architecture Block Diagram](/images/placeholder_block_diagram.png)
+### Core Node: `/safety_node_cpp`
+* **Inputs (Intention & State):** Subscribes to `/joint_states_source` (1kHz hardware states) and `/teleop_vel` (the desired user or global planner velocity commands). It also listens to `/shared_obstacle` for dynamic hazard tracking.
+* **Internal Processing Pipeline:**
+    1. **Kinematic Update:** Uses **Pinocchio** to compute forward kinematics, frame placements, joint Jacobians, and the Mass Matrix via CRBA.
+    2. **Geometric Evaluation:** Models the robot using 8 overlapping capsules. Calculates point-to-segment and segment-to-segment distances algebraically to completely bypass the latency of heavy mesh-collision libraries.
+    3. **Constraint Formulation:** Constructs the dense matrices ($C$, $l$, $u$) for Floor, Dynamic Obstacles, Inter-Robot collisions, and Self-Collisions.
+    4. **Optimization:** Solves the constrained Quadratic Program using **ProxQP**.
+* **Outputs (Action):** Publishes the mathematically verified safe velocity commands to the hardware controller, alongside RViz2 visualization markers.
 
-The system operates as a strict middleware layer, resolving constraints in real-time at 1kHz. 
 
 ## Mathematical Foundation
 

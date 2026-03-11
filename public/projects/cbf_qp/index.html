@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="dark">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=45563&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=35487&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
@@ -9,16 +9,16 @@
 <meta name="keywords" content="Robotics, Control Theory, Optimization, C&#43;&#43;, Python, ROS 2 Kilted, Pinocchio">
 <meta name="description" content="Real-time safety filter with Control Barrier Functions.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:45563/projects/cbf_qp/">
+<link rel="canonical" href="http://localhost:35487/projects/cbf_qp/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.ddd4d51d26bd7ca9c39f2f7f4e9498f408890c78438b317eabe6d74568eeebf4.css" integrity="sha256-3dTVHSa9fKnDny9/TpSY9AiJDHhDizF&#43;q&#43;bXRWju6/Q=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:45563/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:45563/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:45563/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:45563/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:45563/safari-pinned-tab.svg">
+<link rel="icon" href="http://localhost:35487/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:35487/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:35487/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:35487/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:35487/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:45563/projects/cbf_qp/">
+<link rel="alternate" hreflang="en" href="http://localhost:35487/projects/cbf_qp/">
 <noscript>
     <style>
         #theme-toggle,
@@ -62,7 +62,7 @@
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:45563/" accesskey="h" title="Q1 Portfolio (Alt + H)">Q1 Portfolio</a>
+            <a href="http://localhost:35487/" accesskey="h" title="Q1 Portfolio (Alt + H)">Q1 Portfolio</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -88,22 +88,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:45563/projects/" title="Projects">
+                <a href="http://localhost:35487/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:45563/resume.pdf" title="Resume">
+                <a href="http://localhost:35487/resume.pdf" title="Resume">
                     <span>Resume</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:45563/about" title="About">
+                <a href="http://localhost:35487/about" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:45563/contact" title="Contact">
+                <a href="http://localhost:35487/contact" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
@@ -147,9 +147,19 @@ While my <a href="/projects/reactive_control/">Reactive Control project</a> used
 <p><strong>Video 1</strong>: Demonstration of the solver preventing robot from colliding. Only the downward velocity command is being sent from the xbox controller for joint 1 to rotate forward.</p>
 <p><strong>Video 2</strong>: Demonstration of how interactive obstacle (red sphere) moves the robot when it collides with the robot.</p>
 <h2 id="system-architecture">System Architecture<a hidden class="anchor" aria-hidden="true" href="#system-architecture">#</a></h2>
-<p><em>(TODO : Create BLOCK DIAGRAM)</em>
-<img alt="System Architecture Block Diagram" loading="lazy" src="/images/placeholder_block_diagram.png"></p>
-<p>The system operates as a strict middleware layer, resolving constraints in real-time at 1kHz.</p>
+<h3 id="core-node-safety_node_cpp">Core Node: <code>/safety_node_cpp</code><a hidden class="anchor" aria-hidden="true" href="#core-node-safety_node_cpp">#</a></h3>
+<ul>
+<li><strong>Inputs (Intention &amp; State):</strong> Subscribes to <code>/joint_states_source</code> (1kHz hardware states) and <code>/teleop_vel</code> (the desired user or global planner velocity commands). It also listens to <code>/shared_obstacle</code> for dynamic hazard tracking.</li>
+<li><strong>Internal Processing Pipeline:</strong>
+<ol>
+<li><strong>Kinematic Update:</strong> Uses <strong>Pinocchio</strong> to compute forward kinematics, frame placements, joint Jacobians, and the Mass Matrix via CRBA.</li>
+<li><strong>Geometric Evaluation:</strong> Models the robot using 8 overlapping capsules. Calculates point-to-segment and segment-to-segment distances algebraically to completely bypass the latency of heavy mesh-collision libraries.</li>
+<li><strong>Constraint Formulation:</strong> Constructs the dense matrices ($C$, $l$, $u$) for Floor, Dynamic Obstacles, Inter-Robot collisions, and Self-Collisions.</li>
+<li><strong>Optimization:</strong> Solves the constrained Quadratic Program using <strong>ProxQP</strong>.</li>
+</ol>
+</li>
+<li><strong>Outputs (Action):</strong> Publishes the mathematically verified safe velocity commands to the hardware controller, alongside RViz2 visualization markers.</li>
+</ul>
 <h2 id="mathematical-foundation">Mathematical Foundation<a hidden class="anchor" aria-hidden="true" href="#mathematical-foundation">#</a></h2>
 <p>Unlike standard kinematic safety filters, this implementation treats safety as a dynamic constraint. It accounts for the robot&rsquo;s physical inertia and kinetic energy to guarantee it always has the stopping power required to avoid an impact.</p>
 <p><strong>1. The Energy-Aware Barrier Function ($h(x)$)</strong>
@@ -195,20 +205,20 @@ $$\min_{\ddot{q}} \frac{1}{2} || \ddot{q} - \ddot{q}_{des} ||^2$$<p><strong>Subj
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:45563/tags/robotics/">Robotics</a></li>
-      <li><a href="http://localhost:45563/tags/control-theory/">Control Theory</a></li>
-      <li><a href="http://localhost:45563/tags/optimization/">Optimization</a></li>
-      <li><a href="http://localhost:45563/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
-      <li><a href="http://localhost:45563/tags/python/">Python</a></li>
-      <li><a href="http://localhost:45563/tags/ros-2-kilted/">ROS 2 Kilted</a></li>
-      <li><a href="http://localhost:45563/tags/pinocchio/">Pinocchio</a></li>
+      <li><a href="http://localhost:35487/tags/robotics/">Robotics</a></li>
+      <li><a href="http://localhost:35487/tags/control-theory/">Control Theory</a></li>
+      <li><a href="http://localhost:35487/tags/optimization/">Optimization</a></li>
+      <li><a href="http://localhost:35487/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+      <li><a href="http://localhost:35487/tags/python/">Python</a></li>
+      <li><a href="http://localhost:35487/tags/ros-2-kilted/">ROS 2 Kilted</a></li>
+      <li><a href="http://localhost:35487/tags/pinocchio/">Pinocchio</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:45563/">Q1 Portfolio</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:35487/">Q1 Portfolio</a></span> · 
 
     <span>
         Powered by
