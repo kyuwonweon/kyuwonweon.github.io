@@ -13,6 +13,7 @@ cover:
 ---
 
 ## Project Overview
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/68CW9JTyOSY?autoplay=1&mute=1&loop=1&playlist=68CW9JTyOSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 This project implements a **Real-Time Dynamic Collision Prevention System** for the 7-DOF Franka Emika Panda. 
 
 **Evolution from Previous Work:**
@@ -22,26 +23,13 @@ While my [Reactive Control project]({{< relref "reactive_control.md" >}}) used A
 
 [![View Code on GitHub](https://img.shields.io/badge/View%20Code-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/kyuwonweon/cbf_safety_layer)
 
-<div class="video-showcase vertical">
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/K__zg9qQ8F8?autoplay=1&mute=1&loop=1&playlist=K__zg9qQ8F8" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
-  </div>
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/0J_KxRtb3-s?autoplay=1&mute=1&loop=1&playlist=0J_KxRtb3-s" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
-  </div>
-</div>
-
-**Video 1**: Demonstration of the solver preventing robot from colliding. Only the downward velocity command is being sent from the xbox controller for joint 1 to rotate forward.
-
-**Video 2**: Demonstration of how interactive obstacle (red sphere) moves the robot when it collides with the robot. 
-
 
 <div class="video-showcase vertical">
   <div class="video-wrapper">
     <iframe src="https://www.youtube.com/embed/CJ427VDBa4E?autoplay=1&mute=1&loop=1&playlist=CJ427VDBa4E" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
   </div>
   <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/qM3LcE7e87Y?autoplay=1&mute=1&loop=1&playlist=qM3LcE7e87Y" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/qM3LcE7e87Y?autoplay=1&mute=1&loop=1&playlist=SAKC8gtJvGA" frameborder="0" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
   </div>
 </div>
 
