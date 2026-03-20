@@ -5,6 +5,9 @@
     <loc>http://localhost:1313/projects/cbf_qp/</loc>
     <lastmod>2026-03-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/projects/slam/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/projects/penpal/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
   </url><url>
@@ -21,7 +24,34 @@
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/c&#43;&#43;/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linear-algebra/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/robotics/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ros-2/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/slam/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/state-estimation/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/turtlebot3/</loc>
+    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/control-theory/</loc>
     <lastmod>2026-03-11T00:00:00+00:00</lastmod>
@@ -32,22 +62,10 @@
     <loc>http://localhost:1313/tags/pinocchio/</loc>
     <lastmod>2026-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2026-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/robotics/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/ros-2-kilted/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/artificial-potential-fields/</loc>
@@ -77,9 +95,6 @@
     <loc>http://localhost:1313/tags/moveit-2/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ros-2/</loc>
-    <lastmod>2025-12-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/creo/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -106,8 +121,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/topology-optimization/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/slam/</loc>
   </url><url>
     <loc>http://localhost:1313/about/</loc>
   </url><url>

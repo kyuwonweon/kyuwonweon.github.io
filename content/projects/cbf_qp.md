@@ -46,6 +46,7 @@ Two robotic arms moving in commanded velocities with and without my collision pr
     4. **Optimization:** Solves the constrained Quadratic Program using **ProxQP**.
 * **Outputs (Action):** Publishes the mathematically verified safe velocity commands to the hardware controller, alongside RViz2 visualization markers.
 
+![My Robot Description](/images/cbf_blockdiagram.svg)
 
 ## Mathematical Foundation
 

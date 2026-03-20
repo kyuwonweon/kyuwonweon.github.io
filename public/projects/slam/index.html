@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Q1 Portfolio</title>
-<meta name="keywords" content="">
-<meta name="description" content=" - Q1 Portfolio">
+<title>Autonomous Mapping &amp; Navigation: EKF SLAM | Q1 Portfolio</title>
+<meta name="keywords" content="Robotics, State Estimation, SLAM, C&#43;&#43;, ROS 2, Linear Algebra, TurtleBot3">
+<meta name="description" content="ROS 2 pipeline for SLAM using an Extended Kalman Filter and unknown data association">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/projects/slam/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.ddd4d51d26bd7ca9c39f2f7f4e9498f408890c78438b317eabe6d74568eeebf4.css" integrity="sha256-3dTVHSa9fKnDny9/TpSY9AiJDHhDizF&#43;q&#43;bXRWju6/Q=" rel="preload stylesheet" as="style">
@@ -34,6 +34,29 @@
     }
 
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOdBnHPnbdbcZ8FnrWyuaC10gMcjQGu+u95xIkyfJvGmb568q518jB3y8S53" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof renderMathInElement === 'function') {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError : false
+            });
+        } else {
+            console.error("KaTeX failed to load.");
+        }
+    });
+</script>
+
 </head>
 <body id="top">
     <header class="header">
@@ -93,15 +116,88 @@
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      
+      Autonomous Mapping &amp; Navigation: EKF SLAM
     </h1>
-    <div class="post-meta">
+    <div class="post-meta"><span title='2026-03-20 00:00:00 +0000 UTC'>March 20, 2026</span>
 
 </div>
   </header>
+  <div class="post-content"><h2 id="project-overview">Project Overview<a hidden class="anchor" aria-hidden="true" href="#project-overview">#</a></h2>
+<p>This project implements <strong>Simultaneous Localization and Mapping (SLAM)</strong> pipeline from scratch for a differential-drive robot.</p>
+<video width="100%" autoplay loop muted playsinline controls>
+    <source src="/videos/SLAM SIM VIDEO.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<p><strong>The Core Problem:</strong> If a robot drives blindfolded and only counts its wheel rotations (Odometry), microscopic wheel slips will cause its internal sense of location to drift exponentially over time. SLAM solves this by letting the robot use its sensors to build a map of its surroundings, which is used to correct its own drifting location.</p>
+<p>Instead of relying on perfect simulation data, this system processes raw, noisy LiDAR point clouds, extracts geometric features, and uses an <strong>Extended Kalman Filter (EKF) with Unknown Data Association</strong> to statistically fuse sensor data and odometry into a highly accurate single source of truth.</p>
+<p><strong>Tech Stack:</strong> ROS 2, C++, Armadillo (Matrix Math), Eigen3, TF2, RViz2.</p>
+<p><a href="https://github.com/ME495-Navigation/slam-kyuwonweon"><img alt="View Code on GitHub" loading="lazy" src="https://img.shields.io/badge/View%20Code-GitHub-181717?style=for-the-badge&logo=github"></a></p>
+<div class="video-showcase vertical">
+  </div>
+<h2 id="system-architecture">System Architecture<a hidden class="anchor" aria-hidden="true" href="#system-architecture">#</a></h2>
+<p>The pipeline is entirely custom-built and broken into three distinct layers:</p>
+<h3 id="1-core-kinematics-turtlelib">1. Core Kinematics (<code>turtlelib</code>)<a hidden class="anchor" aria-hidden="true" href="#1-core-kinematics-turtlelib">#</a></h3>
+<p>A standalone C++ geometry engine handling 2D rigid body transformations ($SE(2)$) and the forward/inverse kinematics of a differential drive robot.</p>
+<h3 id="2-perception-pipeline-landmarks">2. Perception Pipeline (<code>landmarks</code>)<a hidden class="anchor" aria-hidden="true" href="#2-perception-pipeline-landmarks">#</a></h3>
+<ul>
+<li><strong>Inputs:</strong> Subscribes to <code>/laser</code> for raw 2D LiDAR scans.</li>
+<li><strong>Processing:</strong> 1. <strong>Clustering:</strong> Groups adjacent laser hits using a Euclidean distance threshold.
+2. <strong>Circle Fitting:</strong> Passes the clusters through an algebraic circle-fitting algorithm to estimate the exact center $(x, y)$ and radius $r$ of cylindrical obstacles in the environment.</li>
+<li><strong>Outputs:</strong> Publishes clean <code>visualization_msgs::MarkerArray</code> cylinder coordinates, transforming a noisy room of dots into distinct mathematical landmarks.</li>
+</ul>
+<h3 id="3-state-estimation-slam">3. State Estimation (<code>slam</code>)<a hidden class="anchor" aria-hidden="true" href="#3-state-estimation-slam">#</a></h3>
+<p>The heart of the system. This node tracks a massive $12 \times 12$ (or larger) state vector matrix containing both the robot&rsquo;s pose and the coordinates of every landmark it has ever seen. It continuously loops through Prediction (trusting the wheels) and Correction (trusting the LiDAR) to bound positional error.</p>
+<h2 id="mathematical-foundation">Mathematical Foundation<a hidden class="anchor" aria-hidden="true" href="#mathematical-foundation">#</a></h2>
+<h3 id="1-the-prediction-step-motion-model">1. The Prediction Step (Motion Model)<a hidden class="anchor" aria-hidden="true" href="#1-the-prediction-step-motion-model">#</a></h3>
+<p>When the robot moves, we update the state vector $q_{t}$ (containing robot pose $\theta, x, y$ and landmark coordinates) based on wheel encoder data. Because the robot moves in arcs, we use exact arc integration to update the pose:</p>
+$$q_{t} = f(q_{t-1}, u_t)$$<p>Simultaneously, we expand our uncertainty (Covariance Matrix, $\Sigma$) using the motion model Jacobian ($A$) and process noise ($Q$):
+</p>
+$$\Sigma_{t} = A \Sigma_{t-1} A^T + Q$$<h3 id="2-unknown-data-association">2. Unknown Data Association<a hidden class="anchor" aria-hidden="true" href="#2-unknown-data-association">#</a></h3>
+<p>When the LiDAR detects a cylinder, the robot doesn&rsquo;t inherently know which cylinder it is looking at. We use the <strong>Mahalanobis Distance</strong> to mathematically determine if the detected obstacle is a new discovery or a previously mapped landmark, taking our current uncertainty into account:</p>
+$$d_m = (z - \hat{z})^T S^{-1} (z - \hat{z})$$<p>Where $z$ is the actual measurement, $\hat{z}$ is the predicted measurement, and $S$ is the innovation covariance. If $d_m$ falls below a strict threshold, we associate the measurement with an existing landmark. If not, we initialize a new landmark in the state vector.</p>
+<h3 id="3-the-correction-step-measurement-model">3. The Correction Step (Measurement Model)<a hidden class="anchor" aria-hidden="true" href="#3-the-correction-step-measurement-model">#</a></h3>
+<p>Once a landmark is identified, we calculate the difference between where the robot <em>thinks</em> the landmark should be and where the LiDAR <em>actually</em> sees it (the innovation). We compute the Kalman Gain ($K$) to decide how much to trust the sensor vs. the odometry:</p>
+$$K = \Sigma_t H^T (H \Sigma_t H^T + R)^{-1}$$<p>Finally, we pull the robot&rsquo;s estimated position back toward reality and shrink our uncertainty map:
+</p>
+$$q_{t} = q_{t} + K(z - \hat{z})$$<p>
+</p>
+$$\Sigma_{t} = (I - KH)\Sigma_{t}$$<h2 id="results-the-three-realities">Results: The Three Realities<a hidden class="anchor" aria-hidden="true" href="#results-the-three-realities">#</a></h2>
+<p>To prove the algorithm&rsquo;s effectiveness, the simulation visualizes three distinct &ldquo;realities&rdquo; simultaneously:
+<strong>Red (Ground Truth):</strong> The absolute truth of where the robot is.
+<strong>Blue (Odometry):</strong> The odometry estimate based only on wheel spins.
+<strong>Green (SLAM):</strong> The EKF-corrected estimate.</p>
+<p><strong>Performance:</strong>
+<video width="100%" autoplay loop muted playsinline controls>
+<source src="/videos/SLAM with real robot.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+Over a sustained run in an unknown environment, pure wheel odometry accumulated severe drift—offsetting the robot by over $14$cm in X, $36$cm in Y, and approximately $40^\circ$ in heading.</p>
+<p>The EKF SLAM implementation successfully bounded this drift. By continuously correcting its internal map, the SLAM algorithm maintained near-perfect alignment with the ground truth, resulting in a final positional error of just <strong>4 millimeters</strong>.</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError : false
+    });">
+</script>
+
+  </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/robotics/">Robotics</a></li>
+      <li><a href="http://localhost:1313/tags/state-estimation/">State Estimation</a></li>
+      <li><a href="http://localhost:1313/tags/slam/">SLAM</a></li>
+      <li><a href="http://localhost:1313/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+      <li><a href="http://localhost:1313/tags/ros-2/">ROS 2</a></li>
+      <li><a href="http://localhost:1313/tags/linear-algebra/">Linear Algebra</a></li>
+      <li><a href="http://localhost:1313/tags/turtlebot3/">TurtleBot3</a></li>
     </ul>
   </footer>
 </article>
