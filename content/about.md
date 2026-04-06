@@ -1,34 +1,27 @@
 ---
-title: "About Me"
+title: "Kyuwon Weon"
 hidemeta: true
 layout: "about"
 ---
 
-I am a **Robotics Engineer** with a background in **R&D & Mechanical Design**. After 3 years of designing medical devices, I transitioned to robotics to apply that same engineering rigor to autonomous systems.
-
----
-
 ## Education
-**Northwestern University** | M.S. in Robotics (Expected 2026)
-* Focus: Robotic Manipulation, Control, Dynamics.
+**Northwestern University** | M.S. in Robotics | Expected Dec 2026
+* **Focus**: Robot Control and Manipulation
 
-**Carnegie Mellon University** | B.S. in Mechanical Engineering and Biomedical Engineering (Graduated May 2022)
-* Focus: Mechanical Design and Simulations
+**Carnegie Mellon University** | B.S. in Mechanical & Biomedical Engineering | May 2022 with University Honors
 
 ---
 
 ## Professional Experience
 
-### **R&D Mechanical Engineer | Alcon**
-*(2022 – 2025)*
-Prior to robotics, I led mechanical design for next-generation intraocular lenses (IOLs) and injector devices.
-* **Precision Micro-Manufacturing:** Spearheaded the DFM (Design for Manufacturing) of micro-molded optical components with sub-micron tolerances.
-* **Regulated Engineering:** Managed the full lifecycle of Class III medical devices under strict FDA regulations.
-* **Cross-Functional Leadership:** Bridged the gap between R&D, Quality, and Manufacturing teams to scale prototypes into mass-production ready products.
+### **Medical Device Design Engineer | Alcon** *Fort Worth, TX | 2022 – 2025*
+* Led full-lifecycle design of Class III cataract surgery implant devices, scaling concepts to high-volume injection molding.
+* Performed validation testing and root cause analysis of different failure modes.
 
 ---
 
-## Why Robotics?
-At Alcon, I learned how to build hardware that *works*. Now, I am learning how to make it *think*.
-
-My goal is to bridge the gap between robust mechanical hardware and intelligent software control. I am specifically interested in **motion planning and control**—giving robots the ability to interact with the world.
+## Technical Focus
+My work focuses on giving robots the ability to interact safely and intelligently with their environment. I have experince in:
+* **Control Theory**: Real-time safety filters (CBF-QP) and cascaded motor control.
+* **Manipulation**: Motion planning in MoveIt and reactive controllers using Artificial Potential Fields.
+* **Embedded Systems**: C firmware and deterministic control loops.

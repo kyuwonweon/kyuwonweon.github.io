@@ -18,6 +18,18 @@ body .first-entry * {
     margin-bottom: 10px !important;
 }
 
+/* FORCE HIDE FLOATING ANCHOR SYMBOLS */
+.post-content h1:hover .anchor, 
+.post-content h2:hover .anchor, 
+.post-content h3:hover .anchor, 
+.post-content h4:hover .anchor, 
+.post-content h5:hover .anchor, 
+.post-content h6:hover .anchor,
+.anchor {
+    display: none !important;
+    visibility: hidden !important;
+}
+
 .main {
     margin-top: 10px !important;
     padding-top: 0 !important;

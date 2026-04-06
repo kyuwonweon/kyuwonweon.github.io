@@ -65,31 +65,31 @@
       <description>&lt;h3 id=&#34;get-in-touch&#34;&gt;Get in Touch&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;a href=&#34;mailto:kyuwon0917@gmail.com&#34;&gt;kyuwon0917@gmail.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LinkedIn:&lt;/strong&gt; &lt;a href=&#34;https://www.linkedin.com/in/kyuwon-weon-a6bb2a213&#34;&gt;linkedin.com/in/kyuwon-weon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LinkedIn:&lt;/strong&gt; &lt;a href=&#34;https://www.linkedin.com/in/kyuwon-weon-a6bb2a213&#34;&gt;linkedin.com/in/kyuwon-weon-a6bb2a213&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;GitHub:&lt;/strong&gt; &lt;a href=&#34;https://github.com/kyuwonweon&#34;&gt;github.com/kyuwonweon&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     <item>
-      <title>About Me</title>
+      <title>Kyuwon Weon</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;I am a &lt;strong&gt;Robotics Engineer&lt;/strong&gt; with a background in &lt;strong&gt;R&amp;amp;D &amp;amp; Mechanical Design&lt;/strong&gt;. After 3 years of designing medical devices, I transitioned to robotics to apply that same engineering rigor to autonomous systems.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Northwestern University&lt;/strong&gt; | M.S. in Robotics (Expected 2026)&lt;/p&gt;
+      <description>&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Northwestern University&lt;/strong&gt; | M.S. in Robotics | Expected Dec 2026&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Focus: Robotic Manipulation, Control, Dynamics.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Focus&lt;/strong&gt;: Robot Control and Manipulation&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Carnegie Mellon University&lt;/strong&gt; | B.S. in Mechanical Engineering and Biomedical Engineering (Graduated May 2022)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Focus: Mechanical Design and Simulations&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Carnegie Mellon University&lt;/strong&gt; | B.S. in Mechanical &amp;amp; Biomedical Engineering | May 2022 with University Honors&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;professional-experience&#34;&gt;Professional Experience&lt;/h2&gt;
-&lt;h3 id=&#34;rd-mechanical-engineer--alcon&#34;&gt;&lt;strong&gt;R&amp;amp;D Mechanical Engineer | Alcon&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;(2022 – 2025)&lt;/em&gt;
-Prior to robotics, I led mechanical design for next-generation intraocular lenses (IOLs) and injector devices.&lt;/p&gt;</description>
+&lt;h3 id=&#34;medical-device-design-engineer--alcon-fort-worth-tx--2022--2025&#34;&gt;&lt;strong&gt;Medical Device Design Engineer | Alcon&lt;/strong&gt; &lt;em&gt;Fort Worth, TX | 2022 – 2025&lt;/em&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Led full-lifecycle design of Class III cataract surgery implant devices, scaling concepts to high-volume injection molding.&lt;/li&gt;
+&lt;li&gt;Performed validation testing and root cause analysis of different failure modes.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;technical-focus&#34;&gt;Technical Focus&lt;/h2&gt;
+&lt;p&gt;My work focuses on giving robots the ability to interact safely and intelligently with their environment. I have experince in:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
