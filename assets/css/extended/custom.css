@@ -76,33 +76,68 @@ body .first-entry * {
     margin-top: 20px !important;
 }
 
-/* --- BIG NAME FIX (Homepage) --- */
+/* --- UPDATED NAME & SPACING FIX --- */
 body .main .first-entry.home-info .entry-title,
 body .main .first-entry.home-info h1 {
-    font-size: 4rem !important; 
+    font-size: 3.0rem !important; /* Reduced from 4rem to make it smaller */
     font-weight: 800 !important;
     line-height: 1.1 !important;
-    margin-bottom: 5px !important; 
+    margin-bottom: 0px !important; /* Removed bottom margin */
 }
 
-/* Cleanup internal spacing */
+/* Shrink the bio text size slightly if needed */
 body .first-entry.home-info .entry-content p {
-    margin-bottom: 5px !important; 
-}
-body .first-entry.home-info .entry-content {
-    margin-bottom: 0 !important; 
+    font-size: 1rem !important; 
+    margin-bottom: 2px !important; 
 }
 
-/* SOCIAL ICONS POSITIONING */
+/* PULL CARDS UP HIGHER */
+.first-entry.home-info {
+    margin-bottom: -140px !important; /* Increased negative margin from -100px to pull cards higher */
+    padding-bottom: 0 !important;
+    z-index: 10;
+}
+/* TIGHTEN SOCIAL ICONS - The Fix */
 body .social-icons {
-    /* 1. Move icons UP closer to the bio text */
-    margin-top: 5px !important;  
-    
-    /* 2. Create a small "Safety Zone" below the icons so cards don't overlap them */
-    margin-bottom: 50px !important; 
-    
-    /* Ensure they are centered */
+    margin-top: 0px !important;  
+    /* Increase this value until the overlap disappears */
+    margin-bottom: 80px !important; 
     justify-content: center;
+    position: relative;
+    z-index: 20; /* Ensures icons stay on top of the cards if they still touch */
+}
+
+/* Ensure the home-info block doesn't collapse too much */
+.first-entry.home-info {
+    margin-bottom: -120px !important; /* Slightly relaxed from -140px */
+    padding-bottom: 0 !important;
+    z-index: 10;
+}
+
+/* =========================================
+   PROFILE PHOTO
+   ========================================= */
+.profile-photo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    margin-top: 10px;
+}
+
+.profile-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top; /* Bias toward face */
+    border: 3px solid rgba(128, 128, 128, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
 }
 
 /* =========================================
@@ -229,4 +264,74 @@ body .post-content .video-showcase.vertical iframe {
         width: 100%;
         margin-left: 0;
     }
+}
+
+/* =========================================
+   PROFILE PHOTO
+   ========================================= */
+.profile-photo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+    margin-top: 10px;
+}
+
+.profile-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid rgba(128, 128, 128, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================
+   PROFILE - SIDE BY SIDE LAYOUT
+   ========================================= */
+.home-info-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 12px;
+}
+
+.profile-photo-wrapper {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid rgba(128, 128, 128, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+.profile-text {
+    text-align: left;
+}
+
+.profile-text .entry-header,
+.profile-text .entry-content {
+    text-align: left !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }

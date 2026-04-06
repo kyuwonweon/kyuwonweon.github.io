@@ -122,8 +122,8 @@
     <loc>http://localhost:1313/tags/topology-optimization/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
-  </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
   </url>
 </urlset>

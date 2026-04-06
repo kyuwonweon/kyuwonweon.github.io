@@ -14,9 +14,9 @@ theme = 'PaperMod'
     [params.homeInfoParams]
       Title = "Kyuwon Weon"
       Content = """
-  **MS IN ROBOTICS @NORTHWESTERN | CONTROLS & MANIPULATION**
+  **MS IN ROBOTICS @NORTHWESTERN**
 
-  Bridging 3 years of industrial product design with software stack for agile, contact-rich manipulation.
+  Bridging 3 years of industrial mechanical design with robotic software stack
   """
     [[params.socialIcons]]
         name = "github"

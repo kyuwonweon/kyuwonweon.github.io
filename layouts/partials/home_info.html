@@ -1,0 +1,25 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+
+    <div class="home-info-inner">
+        <div class="profile-photo-wrapper">
+            <img class="profile-photo" src="/images/profile.png" alt="Kyuwon Weon">
+        </div>
+
+        <div class="profile-text">
+            <header class="entry-header">
+                <h1>{{ .Title | markdownify }}</h1>
+            </header>
+            <div class="entry-content">
+                <p>{{ .Content | markdownify }}</p>
+            </div>
+        </div>
+    </div>
+
+    {{- if site.Params.socialIcons }}
+    <footer class="entry-footer">
+        {{- partial "social_icons.html" (dict "align" "center") -}}
+    </footer>
+    {{- end }}
+</article>
+{{- end }}
