@@ -14,9 +14,9 @@ layout: "about"
 
 ## Professional Experience
 
-### **Medical Device Design Engineer | Alcon** *Fort Worth, TX | 2022 – 2025*
+### **Medical Device Design Engineer | Alcon** | 2022 – 2025
 * Led full-lifecycle design of Class III cataract surgery implant devices, scaling concepts to high-volume injection molding.
-* Performed validation testing and root cause analysis of different failure modes.
+* Performed validation testing and root cause analysis of different failure modes. 
 
 ---
 
