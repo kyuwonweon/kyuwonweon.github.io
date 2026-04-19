@@ -6,14 +6,14 @@ summary: "Real-time safety filter with Control Barrier Functions."
 tags: ["Robotics", "Control Theory", "Optimization", "C++", "Python", "ROS 2 Kilted", "Pinocchio"]
 weight: 1
 cover:
-    image: "/images/cbf_qp.png"
-    alt: "Dual Arm Safety Simulation"
+    image: "/videos/cbfqp_cover.mp4"
+    alt: "Dual Arm Safety Simulation" 
     relative: true
     hiddenInSingle: true
 ---
 
-## Project Overview
-<iframe width="100%" height="450" src="https://www.youtube.com/embed/68CW9JTyOSY?autoplay=1&mute=1&loop=1&playlist=68CW9JTyOSY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/1QyJU2xgT-s?autoplay=1&mute=1&loop=1&playlist=1QyJU2xgT-s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 This project implements a **Real-Time Dynamic Collision Prevention System** for the 7-DOF Franka Emika Panda. 
 
 **Evolution from Previous Work:**
