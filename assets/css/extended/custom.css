@@ -63,6 +63,7 @@ body .first-entry * {
 
 /* B. HOMEPAGE PROFILE ONLY (Kyuwon Weon) */
 .first-entry.home-info {
+    min-height: unset !important;
     margin-bottom: -20px !important;
     padding-bottom: 0 !important;
     z-index: 10;
@@ -144,6 +145,7 @@ body .social-icons {
 .entry-cover {
     width: 100% !important;
     margin: 0 0 14px 0 !important;
+    text-align: center !important;
 }
 
 .entry-cover img {

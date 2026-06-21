@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="dark">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Jigsaw Puzzle Solving Robot | Q1 Portfolio</title>
+<meta name="keywords" content="Robotics, Computer Vision, Manipulation, Python, ROS 2">
+<meta name="description" content="Autonomous robot that detects, picks, and places jigsaw puzzle pieces using computer vision and manipulation.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/projects/jigsaw/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f7db2fa59835965b70c0ef5893e12ae7363970ee44738aed3e9c1b529a17f492.css" integrity="sha256-99svpZg1lltwwO9Yk&#43;Eq5zY5cO5Ec4rtPpwbUpoX9JI=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/jigsaw/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOdBnHPnbdbcZ8FnrWyuaC10gMcjQGu+u95xIkyfJvGmb568q518jB3y8S53" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (typeof renderMathInElement === 'function') {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError : false
+            });
+        } else {
+            console.error("KaTeX failed to load.");
+        }
+    });
+</script>
+
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Q1 Portfolio (Alt + H)">Q1 Portfolio</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/resume.pdf" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/contact" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Jigsaw Puzzle Solving Robot
+    </h1>
+    <div class="post-meta"><span title='2026-05-20 00:00:00 +0000 UTC'>May 20, 2026</span>
+
+</div>
+  </header>
+  <div class="post-content"><h2 id="project-overview">Project Overview<a hidden class="anchor" aria-hidden="true" href="#project-overview">#</a></h2>
+<p>This project implements an autonomous <strong>Jigsaw Puzzle Solving Robot</strong> that combines computer vision, robotic manipulation, and motion planning to identify, pick, and place puzzle pieces into their correct locations.</p>
+<video width="100%" autoplay loop muted playsinline controls>
+    <source src="/videos/jigsaw_demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<p><a href="https://github.com/kyuwonweon/jigsaw-puzzle-solver"><img alt="View Code on GitHub" loading="lazy" src="https://img.shields.io/badge/View%20Code-GitHub-181717?style=for-the-badge&logo=github"></a></p>
+<p><strong>The Core Problem:</strong> Solving a jigsaw puzzle requires both perception and manipulation. A robot must first determine <em>which</em> puzzle piece it is observing, then physically grasp the piece and place it at the correct location. Unlike structured industrial parts, puzzle pieces often have similar shapes, arbitrary orientations, and cluttered arrangements, making reliable identification challenging.</p>
+<p>This project was developed collaboratively with <strong>Halley Zhong</strong>. I led development of the <strong>computer vision pipeline</strong>, while Halley designed the <strong>robotic manipulation system</strong>, including the vacuum end-effector, hardware integration, and pick-and-place execution.</p>
+<p>Instead of relying on labeled object positions, the system performs real-time puzzle piece recognition using template generation, contour extraction, feature matching, and shape analysis from a live Intel RealSense camera feed. The resulting piece identity is then used to guide robotic pick-and-place operations.</p>
+<p><strong>Tech Stack:</strong> Python, OpenCV, ROS 2, Intel RealSense, Interbotix PX100 Robot Arm, NumPy.</p>
+<hr>
+<h2 id="vision-system-architecture">Vision System Architecture<a hidden class="anchor" aria-hidden="true" href="#vision-system-architecture">#</a></h2>
+<h3 id="1-vision-based-template-generation">1. Vision-Based Template Generation<a hidden class="anchor" aria-hidden="true" href="#1-vision-based-template-generation">#</a></h3>
+<p>A template generation pipeline creates a database of puzzle piece references directly from camera observations.</p>
+<ul>
+<li>
+<p><strong>Inputs:</strong> RealSense RGB images of individual puzzle pieces.</p>
+</li>
+<li>
+<p><strong>Processing:</strong></p>
+<ul>
+<li>HSV color segmentation to isolate puzzle pieces from the workspace.</li>
+<li>Morphological filtering to remove noise and fill segmentation gaps.</li>
+<li>Contour extraction to identify valid puzzle-piece boundaries.</li>
+<li>Alpha-mask generation to create transparent puzzle-piece templates.</li>
+</ul>
+</li>
+<li>
+<p><strong>Outputs:</strong> Numbered puzzle-piece template images stored for future matching.</p>
+</li>
+</ul>
+<p>This process eliminates the need for manually cropped reference images and enables rapid creation of puzzle datasets.</p>
+<h3 id="2-real-time-piece-recognition">2. Real-Time Piece Recognition<a hidden class="anchor" aria-hidden="true" href="#2-real-time-piece-recognition">#</a></h3>
+<p>The perception pipeline continuously processes incoming camera frames and identifies visible puzzle pieces.</p>
+<ul>
+<li>
+<p><strong>Inputs:</strong> Live RGB stream from Intel RealSense.</p>
+</li>
+<li>
+<p><strong>Processing:</strong></p>
+<ol>
+<li>HSV thresholding for foreground segmentation.</li>
+<li>Contour filtering based on area and geometric constraints.</li>
+<li>Feature extraction using SIFT descriptors.</li>
+<li>Template matching using brute-force nearest-neighbor matching.</li>
+<li>Ratio-test filtering to reject ambiguous correspondences.</li>
+</ol>
+</li>
+<li>
+<p><strong>Outputs:</strong> Puzzle-piece IDs and bounding-box locations.</p>
+</li>
+</ul>
+<p>The system is robust to moderate rotation, scale variation, and illumination changes due to the use of feature-based matching rather than direct pixel comparison.</p>
+<h2 id="results">Results<a hidden class="anchor" aria-hidden="true" href="#results">#</a></h2>
+<p>The completed system successfully identifies puzzle pieces from a live camera feed and enables robotic manipulation using those classifications. One major limitation of this project was human&rsquo;s intervention in manually pushing in the puzzle piece due to the positional accuracy of 8mm and repeatability of 5mm of the PincherX robot.</p>
+<p><strong>Computer Vision Performance</strong></p>
+<ul>
+<li>Real-time puzzle-piece detection and classification.</li>
+<li>Robust matching under varying orientations.</li>
+<li>Automatic template generation from camera observations.</li>
+<li>Reliable recognition of all 12 puzzle pieces.</li>
+</ul>
+<h2 id="future-improvements">Future Improvements<a hidden class="anchor" aria-hidden="true" href="#future-improvements">#</a></h2>
+<ul>
+<li><strong>Hardware Upgrade</strong> Switch from Pincher X to Franka Emika for superior positional accuracy and more workspace.</li>
+<li><strong>Puzzle Complexity</strong> Test with puzzles featuring more pieces, similar traits, and more challenging geometric designs.</li>
+<li><strong>Autonomous Learning</strong> Transition from template matching to self-learned assembly logic, allowing the robot to solve puzzles independently.</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/robotics/">Robotics</a></li>
+      <li><a href="http://localhost:1313/tags/computer-vision/">Computer Vision</a></li>
+      <li><a href="http://localhost:1313/tags/manipulation/">Manipulation</a></li>
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+      <li><a href="http://localhost:1313/tags/ros-2/">ROS 2</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Q1 Portfolio</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

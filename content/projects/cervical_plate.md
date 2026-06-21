@@ -4,7 +4,7 @@ date: 2022-05-12
 math: true
 summary: "Topology-optimized anterior cervical plate"
 tags: ["Ansys", "FEA", "Static Structural", "SolidWorks", "Topology Optimization", "Product Design"]
-weight: 6
+weight: 9
 cover:
     image: "/images/cervicalplate.png" 
     alt: "CAD for anterior cervical plate"

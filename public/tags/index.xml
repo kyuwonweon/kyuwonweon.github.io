@@ -6,8 +6,78 @@
     <description>Recent content in Tags on Q1 Portfolio</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computer Vision</title>
+      <link>http://localhost:1313/tags/computer-vision/</link>
+      <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Manipulation</title>
+      <link>http://localhost:1313/tags/manipulation/</link>
+      <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/manipulation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Robotics</title>
+      <link>http://localhost:1313/tags/robotics/</link>
+      <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/robotics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ROS 2</title>
+      <link>http://localhost:1313/tags/ros-2/</link>
+      <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ros-2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Biomechanics</title>
+      <link>http://localhost:1313/tags/biomechanics/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/biomechanics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Control</title>
+      <link>http://localhost:1313/tags/control/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/control/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Exoskeleton</title>
+      <link>http://localhost:1313/tags/exoskeleton/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/exoskeleton/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mechanical Design</title>
+      <link>http://localhost:1313/tags/mechanical-design/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mechanical-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rehabilitation</title>
+      <link>http://localhost:1313/tags/rehabilitation/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/rehabilitation/</guid>
+      <description></description>
+    </item>
     <item>
       <title>C&#43;&#43;</title>
       <link>http://localhost:1313/tags/c&#43;&#43;/</link>
@@ -20,20 +90,6 @@
       <link>http://localhost:1313/tags/linear-algebra/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/linear-algebra/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Robotics</title>
-      <link>http://localhost:1313/tags/robotics/</link>
-      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/robotics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>ROS 2</title>
-      <link>http://localhost:1313/tags/ros-2/</link>
-      <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ros-2/</guid>
       <description></description>
     </item>
     <item>
@@ -76,13 +132,6 @@
       <link>http://localhost:1313/tags/pinocchio/</link>
       <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/pinocchio/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
-      <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>

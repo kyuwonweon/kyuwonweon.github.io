@@ -8,14 +8,17 @@
     <loc>http://localhost:1313/projects/slam/</loc>
     <lastmod>2026-03-20T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/projects/exoskeleton/</loc>
+    <lastmod>2026-03-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/jigsaw/</loc>
+    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/projects/penpal/</loc>
     <lastmod>2025-12-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/reactive_control/</loc>
     <lastmod>2026-01-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/jack-cup/</loc>
-    <lastmod>2025-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/projects/alcon/</loc>
     <lastmod>2025-07-05T00:00:00+00:00</lastmod>
@@ -23,31 +26,58 @@
     <loc>http://localhost:1313/projects/cervical_plate/</loc>
     <lastmod>2022-05-12T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/projects/jack-cup/</loc>
+    <lastmod>2025-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/computer-vision/</loc>
+    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/manipulation/</loc>
+    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/robotics/</loc>
+    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ros-2/</loc>
+    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-05-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/biomechanics/</loc>
+    <lastmod>2026-03-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/control/</loc>
+    <lastmod>2026-03-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/exoskeleton/</loc>
+    <lastmod>2026-03-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mechanical-design/</loc>
+    <lastmod>2026-03-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/rehabilitation/</loc>
+    <lastmod>2026-03-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/c&#43;&#43;/</loc>
     <lastmod>2026-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/linear-algebra/</loc>
     <lastmod>2026-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
-    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/robotics/</loc>
-    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ros-2/</loc>
-    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/slam/</loc>
     <lastmod>2026-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/state-estimation/</loc>
-    <lastmod>2026-03-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/turtlebot3/</loc>
@@ -60,9 +90,6 @@
     <lastmod>2026-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/pinocchio/</loc>
-    <lastmod>2026-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2026-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ros-2-kilted/</loc>

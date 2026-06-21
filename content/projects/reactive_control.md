@@ -5,7 +5,7 @@ draft: false
 math: true
 summary: "Real-time kinematic control with Artificial Potential Fields"
 tags: ["Robotics", "Control Theory", "Artificial Potential Fields", "Python", "MuJoCo"]
-weight: 3
+weight: 7
 cover:
     image: "images/apf.mp4"
     alt: "APF Demo Video"

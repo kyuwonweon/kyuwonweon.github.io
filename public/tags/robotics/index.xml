@@ -6,7 +6,7 @@
     <description>Recent content in Robotics on Q1 Portfolio</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/robotics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Robot Collision Prevention Package: CBF-QP</title>
@@ -21,6 +21,13 @@
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/slam/</guid>
       <description>ROS 2 pipeline for SLAM using an Extended Kalman Filter and unknown data association</description>
+    </item>
+    <item>
+      <title>Jigsaw Puzzle Solving Robot</title>
+      <link>http://localhost:1313/projects/jigsaw/</link>
+      <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/jigsaw/</guid>
+      <description>Autonomous robot that detects, picks, and places jigsaw puzzle pieces using computer vision and manipulation.</description>
     </item>
     <item>
       <title>Reactive Control &amp; Obstacle Avoidance</title>

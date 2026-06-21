@@ -6,7 +6,7 @@
     <description>Recent content on Q1 Portfolio</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Robot Collision Prevention Package: CBF-QP</title>
@@ -23,6 +23,20 @@
       <description>ROS 2 pipeline for SLAM using an Extended Kalman Filter and unknown data association</description>
     </item>
     <item>
+      <title>Lower-Limb Pediatric Exoskeleton: Shirley Ryan AbilityLab</title>
+      <link>http://localhost:1313/projects/exoskeleton/</link>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/exoskeleton/</guid>
+      <description>Assistive pediatric exoskeleton research for gait rehabilitation in collaboration with Shirley Ryan AbilityLab.</description>
+    </item>
+    <item>
+      <title>Jigsaw Puzzle Solving Robot</title>
+      <link>http://localhost:1313/projects/jigsaw/</link>
+      <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/jigsaw/</guid>
+      <description>Autonomous robot that detects, picks, and places jigsaw puzzle pieces using computer vision and manipulation.</description>
+    </item>
+    <item>
       <title>PenPal: VLM-Guided Writing Robot</title>
       <link>http://localhost:1313/projects/penpal/</link>
       <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
@@ -37,13 +51,6 @@
       <description>Real-time kinematic control with Artificial Potential Fields</description>
     </item>
     <item>
-      <title>Jack in a Cup: Hybrid Dynamics Simulation</title>
-      <link>http://localhost:1313/projects/jack-cup/</link>
-      <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/jack-cup/</guid>
-      <description>Simulation of rigid body collisions and Lagrangian dynamics</description>
-    </item>
-    <item>
       <title>Product Design &amp; Statistical Validation</title>
       <link>http://localhost:1313/projects/alcon/</link>
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
@@ -56,6 +63,13 @@
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/cervical_plate/</guid>
       <description>Topology-optimized anterior cervical plate</description>
+    </item>
+    <item>
+      <title>Jack in a Cup: Hybrid Dynamics Simulation</title>
+      <link>http://localhost:1313/projects/jack-cup/</link>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/jack-cup/</guid>
+      <description>Simulation of rigid body collisions and Lagrangian dynamics</description>
     </item>
     <item>
       <title>Contact</title>
