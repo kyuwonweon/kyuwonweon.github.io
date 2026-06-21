@@ -2,8 +2,8 @@
    1. GLOBAL VARIABLES & RESET
    ========================================= */
 :root {
-    --main-width: 1100px !important; 
-    --gap: 40px !important;
+    --main-width: 1100px !important;
+    --gap: 24px !important;
 }
 
 body .post-entry *,
@@ -39,8 +39,8 @@ body .first-entry * {
     
     /* FORCE GRID LAYOUT */
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: 40px !important; 
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+    gap: 20px !important;
 }
 
 /* =========================================
@@ -62,56 +62,40 @@ body .first-entry * {
 }
 
 /* B. HOMEPAGE PROFILE ONLY (Kyuwon Weon) */
-/* Negative margin pulls the cards UP to close the gap */
 .first-entry.home-info {
-    margin-bottom: -100px !important; 
+    margin-bottom: -20px !important;
     padding-bottom: 0 !important;
     z-index: 10;
 }
 
 /* C. GENERIC PAGE HEADERS ("Projects", "Posts") */
-/* Positive margin pushes cards DOWN to prevent overlap */
 .page-header {
-    margin-bottom: 50px !important; 
+    margin-bottom: 50px !important;
     margin-top: 20px !important;
 }
 
 /* --- UPDATED NAME & SPACING FIX --- */
 body .main .first-entry.home-info .entry-title,
 body .main .first-entry.home-info h1 {
-    font-size: 3.0rem !important; /* Reduced from 4rem to make it smaller */
+    font-size: 3.0rem !important;
     font-weight: 800 !important;
     line-height: 1.1 !important;
-    margin-bottom: 0px !important; /* Removed bottom margin */
+    margin-bottom: 0px !important;
 }
 
 /* Shrink the bio text size slightly if needed */
 body .first-entry.home-info .entry-content p {
-    font-size: 1rem !important; 
-    margin-bottom: 2px !important; 
+    font-size: 1rem !important;
+    margin-bottom: 2px !important;
 }
 
-/* PULL CARDS UP HIGHER */
-.first-entry.home-info {
-    margin-bottom: -140px !important; /* Increased negative margin from -100px to pull cards higher */
-    padding-bottom: 0 !important;
-    z-index: 10;
-}
-/* TIGHTEN SOCIAL ICONS - The Fix */
+/* SOCIAL ICONS — equal gap above and below */
 body .social-icons {
-    margin-top: 0px !important;  
-    /* Increase this value until the overlap disappears */
-    margin-bottom: 80px !important; 
+    margin-top: 1px !important;
+    margin-bottom: 16px !important;
     justify-content: center;
     position: relative;
-    z-index: 20; /* Ensures icons stay on top of the cards if they still touch */
-}
-
-/* Ensure the home-info block doesn't collapse too much */
-.first-entry.home-info {
-    margin-bottom: -120px !important; /* Slightly relaxed from -140px */
-    padding-bottom: 0 !important;
-    z-index: 10;
+    z-index: 20;
 }
 
 /* =========================================
@@ -159,38 +143,38 @@ body .social-icons {
 
 .entry-cover {
     width: 100% !important;
-    margin: 0 0 30px 0 !important; 
+    margin: 0 0 14px 0 !important;
 }
 
 .entry-cover img {
     width: 100% !important;
-    height: 250px !important;
+    height: 160px !important;
     object-fit: cover !important;
     border-radius: 0 !important;
     margin: 0 !important;
 }
 
-.entry-header, 
-.entry-content, 
+.entry-header,
+.entry-content,
 .entry-footer {
-    padding-left: 25px !important;
-    padding-right: 25px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
     text-align: center !important;
 }
 
 .entry-header h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.1rem !important;
     margin: 0 auto !important;
 }
 
 .entry-content {
-    font-size: 1rem !important;
-    margin-top: 10px !important;
+    font-size: 0.85rem !important;
+    margin-top: 6px !important;
     flex-grow: 1;
 }
 
 .entry-footer {
-    padding-bottom: 25px !important;
+    padding-bottom: 14px !important;
     margin-top: auto !important;
 }
 
@@ -198,10 +182,17 @@ body .social-icons {
    5. NAVIGATION & SINGLE PAGE
    ========================================= */
 .nav {
-    justify-content: flex-end !important; /* Aligns menu to right */
+    position: relative !important;
+    justify-content: flex-end !important;
     max-width: var(--main-width) !important;
     width: 90% !important;
     margin: 0 auto !important;
+}
+
+.logo {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
 }
 
 /* Single Project Page Media */
@@ -300,7 +291,11 @@ body .post-content .video-showcase.vertical iframe {
     align-items: center;
     justify-content: center;
     gap: 28px;
-    margin-bottom: 12px;
+    margin-bottom: 0px;
+}
+
+.first-entry.home-info .entry-content {
+    margin-bottom: 0 !important;
 }
 
 .profile-photo-wrapper {

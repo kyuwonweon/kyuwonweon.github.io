@@ -16,7 +16,9 @@ theme = 'PaperMod'
       Content = """
   **MS IN ROBOTICS @NORTHWESTERN**
 
-  Bridging 3 years of industrial mechanical design with robotic software stack
+  **BS IN MECHE AND BME @CARNEGIE MELLON UNIVERSITY**
+
+  Bridging industrial mechanical design experience with robotic software stack
   """
     [[params.socialIcons]]
         name = "github"
