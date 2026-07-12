@@ -14,10 +14,10 @@ cover:
 
 ## Project Overview
 
-This project implements an autonomous **Jigsaw Puzzle Solving Robot** that combines computer vision, robotic manipulation, and motion planning to identify, pick, and place puzzle pieces into their correct locations.
+This project implements a **Jigsaw Puzzle Solving Robot** that combines computer vision, robotic manipulation, and motion planning to identify, pick, and place puzzle pieces into their correct locations.
 
 <video width="100%" autoplay loop muted playsinline controls>
-    <source src="/videos/jigsaw_demo.mp4" type="video/mp4">
+    <source src="/videos/puzzle solver.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 
