@@ -45,8 +45,8 @@ At the drive level, the AKE60-8 motor exhibits **Back-EMF drag** and **rotationa
 A feedforward term is injected at the torque junction every control tick, computed from the drive's real-time velocity and acceleration feedback:
 
 $$
-\tau_{ff} = (K_{bemf} \cdot \omega) + (K_{acc} \cdot \alpha) \\[6pt]
-\tau_{cmd} = \tau_{des} + \tau_{ff}
+\tau_{feedforward} = (K_{back-emf} \cdot \omega) + (K_{accel} \cdot \alpha) \\[6pt]
+\tau_{commanded} = \tau_{desired} + \tau_{feedforward}
 $$
 
 
@@ -64,7 +64,7 @@ Three phases were tested:
 
 With position/velocity gains zeroed and FF off, rotating the shaft by hand produces back-EMF braking current. Adding the feedforward term cancels the induced current, making the joint feel free to rotate.
 
-<img src="/images/phaseII.png" alt="Phase 2: Back-EMF feedforward only" style="width:100%;">
+<img src="/images/phaseII.png" alt="Phase 2: Back-EMF feedforward only">
 
 - Velocity–current slope: **−0.0066 → −0.0031 A/(deg/s)** (Phase 1 → Phase 2)
 
@@ -72,7 +72,7 @@ With position/velocity gains zeroed and FF off, rotating the shaft by hand produ
 
 With position and velocity feedback active, a sinusoidal trajectory was commanded. The feedforward reduces the current the drive must supply to sustain the commanded motion.
 
-<img src="/images/phaseIII.png" alt="Phase 3: Back-EMF + acceleration feedforward" style="width:100%;">
+<img src="/images/phaseIII.png" alt="Phase 3: Back-EMF + acceleration feedforward">
 
 - Velocity–current slope reduction: **16.3%** (0.0053 → 0.0045 A/(deg/s))
 - Acceleration–current slope reduction: **14.0%** (0.00046 → 0.00040 A/(deg/s²))
@@ -100,3 +100,17 @@ A torsional spring allows the lateral linkage to passively follow the patient's 
 A slotted bracket with indexed hole positions enables rapid length adjustment across the femoral link. This allows the exoskeleton to be reconfigured between patients without requiring custom hardware.
 
 **Tech Stack:** SolidWorks · Python · ROS 2 · Novanta Everest SDK · CubeMars AKE60-8
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError : false
+    });">
+</script>

@@ -139,8 +139,8 @@
 <h3 id="approach">Approach<a hidden class="anchor" aria-hidden="true" href="#approach">#</a></h3>
 <p>A feedforward term is injected at the torque junction every control tick, computed from the drive&rsquo;s real-time velocity and acceleration feedback:</p>
 $$
-\tau_{ff} = (K_{bemf} \cdot \omega) + (K_{acc} \cdot \alpha) \\[6pt]
-\tau_{cmd} = \tau_{des} + \tau_{ff}
+\tau_{feedforward} = (K_{back-emf} \cdot \omega) + (K_{accel} \cdot \alpha) \\[6pt]
+\tau_{commanded} = \tau_{desired} + \tau_{feedforward}
 $$<h3 id="experimental-results">Experimental Results<a hidden class="anchor" aria-hidden="true" href="#experimental-results">#</a></h3>
 <p>Three phases were tested:</p>
 <ul>
@@ -150,13 +150,13 @@ $$<h3 id="experimental-results">Experimental Results<a hidden class="anchor" ari
 </ul>
 <p><strong>Test 1: Manual rotation (transparency mode)</strong></p>
 <p>With position/velocity gains zeroed and FF off, rotating the shaft by hand produces back-EMF braking current. Adding the feedforward term cancels the induced current, making the joint feel free to rotate.</p>
-<img src="/images/phaseII.png" alt="Phase 2: Back-EMF feedforward only" style="width:100%;">
+<img src="/images/phaseII.png" alt="Phase 2: Back-EMF feedforward only">
 <ul>
 <li>Velocity–current slope: <strong>−0.0066 → −0.0031 A/(deg/s)</strong> (Phase 1 → Phase 2)</li>
 </ul>
 <p><strong>Test 2: Sinusoidal position trajectory</strong></p>
 <p>With position and velocity feedback active, a sinusoidal trajectory was commanded. The feedforward reduces the current the drive must supply to sustain the commanded motion.</p>
-<img src="/images/phaseIII.png" alt="Phase 3: Back-EMF + acceleration feedforward" style="width:100%;">
+<img src="/images/phaseIII.png" alt="Phase 3: Back-EMF + acceleration feedforward">
 <ul>
 <li>Velocity–current slope reduction: <strong>16.3%</strong> (0.0053 → 0.0045 A/(deg/s))</li>
 <li>Acceleration–current slope reduction: <strong>14.0%</strong> (0.00046 → 0.00040 A/(deg/s²))</li>
@@ -177,6 +177,19 @@ A torsional spring allows the lateral linkage to passively follow the patient&rs
 <p><strong>Discrete Link Length Adjustment</strong>
 A slotted bracket with indexed hole positions enables rapid length adjustment across the femoral link. This allows the exoskeleton to be reconfigured between patients without requiring custom hardware.</p>
 <p><strong>Tech Stack:</strong> SolidWorks · Python · ROS 2 · Novanta Everest SDK · CubeMars AKE60-8</p>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false},
+        {left: '\\(', right: '\\)', display: false},
+        {left: '\\[', right: '\\]', display: true}
+      ],
+      throwOnError : false
+    });">
+</script>
 
 
   </div>
