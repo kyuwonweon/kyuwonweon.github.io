@@ -118,67 +118,30 @@
     <h1 class="post-title entry-hint-parent">
       Lower-Limb Pediatric Exoskeleton: Shirley Ryan AbilityLab
     </h1>
-    <div class="post-meta"><span title='2026-03-28 00:00:00 +0000 UTC'>March 28, 2026</span>
+    <div class="post-meta"><span title='2026-05-28 00:00:00 +0000 UTC'>May 28, 2026</span>
 
 </div>
   </header>
   <div class="post-content"><h2 id="project-overview">Project Overview<a hidden class="anchor" aria-hidden="true" href="#project-overview">#</a></h2>
-<p>This project is part of ongoing assistive robotics research at <strong>Shirley Ryan AbilityLab</strong>, focused on developing a lower-limb pediatric exoskeleton for gait rehabilitation. My contributions span two areas: <strong>feedforward motor control</strong> to reduce resistive drag from back-EMF and rotor inertia, and <strong>mechanical design</strong> of the hip joint assembly to accommodate pediatric anatomy and natural gait kinematics.</p>
+<p>This project is part of ongoing assistive robotics research at <strong>Shirley Ryan AbilityLab</strong>, focused on developing a lower-limb pediatric exoskeleton for gait rehabilitation for children with cerebral palsy.</p>
+<p>My contributions span two areas: <strong>feedforward motor control</strong> to reduce resistive drag from back-EMF and rotor inertia, and <strong>mechanical design</strong> of the hip joint assembly to accommodate pediatric anatomy and natural gait kinematics.</p>
 <p><strong>Hardware:</strong> AKE60-8 KV80 brushless motor (CubeMars) · Novanta Everest CORE servo drive</p>
 <hr>
 <h2 id="control-architecture">Control Architecture<a hidden class="anchor" aria-hidden="true" href="#control-architecture">#</a></h2>
-<p>The exoskeleton runs a layered software stack bridging high-level ROS 2 controllers down to the Novanta Everest servo drive.</p>
-<p>The <strong>ROS 2 layer</strong> hosts a library of controllers — including force-feedback, oscillatory, and state-machine walking modes — that output desired torque commands. These commands travel down through a robot model layer (which converts degrees to encoder ticks) and a hardware abstraction layer over SPI to reach the drive.</p>
+<p>The exoskeleton runs a layered software stack bridging high-level control logic down to the Novanta Everest servo drive.</p>
+<p>A <strong>Python controller library</strong> — including force-feedback, oscillatory, and state-machine walking modes — computes desired torque commands. <strong>ROS 2</strong> carries these commands as messages between nodes. From there, commands travel down through a robot model layer (which converts degrees to encoder ticks) and a hardware abstraction layer over SPI to reach the drive.</p>
 <p>The <strong>Novanta Everest CORE</strong> handles low-level closed-loop control. Internally it runs a cascaded PID pipeline: position → velocity → torque → current → voltage. A state machine safety check gates all setpoints before they reach the MUX and setpoint manager, which supports linear, trapezoidal, S-curve, and PVT motion profiles.</p>
-<p>Communication between the ROS 2 host and the microcontroller uses UDP sockets (<code>udp2ROS.py</code> publishes <code>robot_state</code> and <code>ctrl_state</code> topics; <code>ROS2udp.py</code> builds 20-float control messages and 4-float robot messages). TCP is used separately for tuning and calibration commands.</p>
+<p>Communication between the ROS 2 host and the microcontroller uses UDP sockets. TCP is used separately for tuning and calibration commands.</p>
 <hr>
 <h2 id="back-emf--inertia-feedforward">Back-EMF &amp; Inertia Feedforward<a hidden class="anchor" aria-hidden="true" href="#back-emf--inertia-feedforward">#</a></h2>
 <h3 id="problem">Problem<a hidden class="anchor" aria-hidden="true" href="#problem">#</a></h3>
-<p>At the drive level, the AKE60-8 motor exhibits two sources of resistive drag that fight the patient&rsquo;s natural leg motion:</p>
-<ol>
-<li><strong>Back-EMF drag</strong> — as the rotor spins, it generates a voltage opposing motion (Ke·ω). Even when the drive commands zero current, manual rotation of the shaft induces a back-EMF current that by Lenz&rsquo;s law creates a braking torque.</li>
-<li><strong>Rotational inertia</strong> — at direction reversals, the rotor resists acceleration changes, creating a torque deficit during the transition.</li>
-</ol>
-<p>Both effects are especially problematic in a transparency-mode exoskeleton, where the goal is to make the device feel as if it isn&rsquo;t there.</p>
+<p>At the drive level, the AKE60-8 motor exhibits <strong>Back-EMF drag</strong> and <strong>rotational inertia</strong> that fight the patient&rsquo;s natural leg motion. Both effects are especially problematic in a transparent control, where the goal is to make the device feel as if it isn&rsquo;t there.</p>
 <h3 id="approach">Approach<a hidden class="anchor" aria-hidden="true" href="#approach">#</a></h3>
 <p>A feedforward term is injected at the torque junction every control tick, computed from the drive&rsquo;s real-time velocity and acceleration feedback:</p>
 $$
-\tau_{ff} = (K_{bemf} \cdot \omega) + (K_{acc} \cdot \alpha)
-$$$$
+\tau_{ff} = (K_{bemf} \cdot \omega) + (K_{acc} \cdot \alpha) \\[6pt]
 \tau_{cmd} = \tau_{des} + \tau_{ff}
-$$<table>
-  <thead>
-      <tr>
-          <th>Gain</th>
-          <th>Value</th>
-          <th>Units</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>BACKEMF_FF_GAIN</code></td>
-          <td>1.0</td>
-          <td>A/(rev/s)</td>
-      </tr>
-      <tr>
-          <td><code>ACC_FF_GAIN</code></td>
-          <td>0.1</td>
-          <td>A/(rev/s²)</td>
-      </tr>
-  </tbody>
-</table>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">_compute_feedforward</span>(self):
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>_backemf_ff_enabled:
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_tau_backemf_ff <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>BACKEMF_FF_GAIN <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>servo<span style="color:#f92672">.</span>velocity
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_tau_acc_ff     <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>ACC_FF_GAIN     <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>servo<span style="color:#f92672">.</span>acceleration
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_tau_backemf_ff <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>
-</span></span><span style="display:flex;"><span>        self<span style="color:#f92672">.</span>_tau_acc_ff     <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>_tau_commanded <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_tau_external <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_tau_backemf_ff <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_tau_acc_ff
-</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>servo<span style="color:#f92672">.</span>set_tau_offset(self<span style="color:#f92672">.</span>_tau_commanded)
-</span></span></code></pre></div><hr>
-<h2 id="experimental-results">Experimental Results<a hidden class="anchor" aria-hidden="true" href="#experimental-results">#</a></h2>
+$$<h3 id="experimental-results">Experimental Results<a hidden class="anchor" aria-hidden="true" href="#experimental-results">#</a></h3>
 <p>Three phases were tested:</p>
 <ul>
 <li><strong>Phase 1</strong> — No feedforward (baseline)</li>
@@ -187,11 +150,13 @@ $$<table>
 </ul>
 <p><strong>Test 1: Manual rotation (transparency mode)</strong></p>
 <p>With position/velocity gains zeroed and FF off, rotating the shaft by hand produces back-EMF braking current. Adding the feedforward term cancels the induced current, making the joint feel free to rotate.</p>
+<img src="/images/phaseII.png" alt="Phase 2: Back-EMF feedforward only" style="width:100%;">
 <ul>
 <li>Velocity–current slope: <strong>−0.0066 → −0.0031 A/(deg/s)</strong> (Phase 1 → Phase 2)</li>
 </ul>
 <p><strong>Test 2: Sinusoidal position trajectory</strong></p>
 <p>With position and velocity feedback active, a sinusoidal trajectory was commanded. The feedforward reduces the current the drive must supply to sustain the commanded motion.</p>
+<img src="/images/phaseIII.png" alt="Phase 3: Back-EMF + acceleration feedforward" style="width:100%;">
 <ul>
 <li>Velocity–current slope reduction: <strong>16.3%</strong> (0.0053 → 0.0045 A/(deg/s))</li>
 <li>Acceleration–current slope reduction: <strong>14.0%</strong> (0.00046 → 0.00040 A/(deg/s²))</li>
@@ -199,7 +164,7 @@ $$<table>
 <p>Across both tests, mean current draw decreased monotonically from Phase 1 → Phase 2 → Phase 3, confirming that back-EMF and inertia compensation together reduce the resistive load felt by the patient.</p>
 <hr>
 <h2 id="mechanical-design">Mechanical Design<a hidden class="anchor" aria-hidden="true" href="#mechanical-design">#</a></h2>
-<p>The hip joint assembly was redesigned around four pediatric-specific requirements:</p>
+<p>The hip joint assembly was designed from scratch around four pediatric-specific requirements:</p>
 <ul>
 <li><strong>Low inertia</strong> — minimizing distal mass to reduce metabolic cost and improve transparency</li>
 <li><strong>Hip abduction/adduction freedom</strong> — ±30° range of motion to accommodate natural pediatric gait</li>

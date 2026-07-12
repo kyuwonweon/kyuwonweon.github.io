@@ -3,7 +3,7 @@ title: "Autonomous Mapping & Navigation: EKF SLAM"
 date: 2026-03-20
 math: true
 summary: "ROS 2 pipeline for SLAM using an Extended Kalman Filter and unknown data association"
-tags: ["Robotics", "State Estimation", "SLAM", "C++", "ROS 2", "Linear Algebra", "TurtleBot3"]
+tags: ["SLAM", "State Estimation", "EKF", "C++", "ROS 2", "TurtleBot3"]
 weight: 2
 cover:
     image: "/videos/slam_cover.mp4"
@@ -21,7 +21,7 @@ This project implements **Simultaneous Localization and Mapping (SLAM)** pipelin
     Your browser does not support the video tag.
 </video>
 
-**The Core Problem:** If a robot drives blindfolded and only counts its wheel rotations (Odometry), microscopic wheel slips will cause its internal sense of location to drift exponentially over time. SLAM solves this by letting the robot use its sensors to build a map of its surroundings, which is used to correct its own drifting location.
+**The Core Problem:** If a robot positioning is calculated solely based on odometry(counting its wheel rotations), microscopic wheel slips will cause its internal sense of location to drift exponentially over time. SLAM solves this by letting the robot use its sensors to build a map of its surroundings, which is used to correct its own drifting location.
 
 Instead of relying on perfect simulation data, this system processes raw, noisy LiDAR point clouds, extracts geometric features, and uses an **Extended Kalman Filter (EKF) with Unknown Data Association** to statistically fuse sensor data and odometry into a highly accurate single source of truth.
 
@@ -47,7 +47,7 @@ A standalone C++ geometry engine handling 2D rigid body transformations ($SE(2)$
 * **Outputs:** Publishes clean `visualization_msgs::MarkerArray` cylinder coordinates, transforming a noisy room of dots into distinct mathematical landmarks.
 
 ### 3. State Estimation (`slam`)
-The heart of the system. This node tracks a massive $12 \times 12$ (or larger) state vector matrix containing both the robot's pose and the coordinates of every landmark it has ever seen. It continuously loops through Prediction (trusting the wheels) and Correction (trusting the LiDAR) to bound positional error.
+This node tracks a massive $12 \times 12$ (or larger) state vector matrix containing both the robot's pose and the coordinates of every landmark it has ever seen. It continuously loops through Prediction (odometry) and Correction (LiDAR) to bound positional error.
 
 
 ## Mathematical Foundation
@@ -77,12 +77,15 @@ $$q_{t} = q_{t} + K(z - \hat{z})$$
 $$\Sigma_{t} = (I - KH)\Sigma_{t}$$
 
 
-## Results: The Three Realities
+## Results
 
-To prove the algorithm's effectiveness, the simulation visualizes three distinct "realities" simultaneously:
-**Red (Ground Truth):** The absolute truth of where the robot is.
-**Blue (Odometry):** The odometry estimate based only on wheel spins.
-**Green (SLAM):** The EKF-corrected estimate.
+To prove the algorithm's effectiveness, the simulation visualizes three distinctly colored robots simultaneously:
+
+* **Red (Ground Truth):** The absolute truth of where the robot is.
+
+* **Blue (Odometry):** The odometry estimate based only on wheel spins.
+
+* **Green (SLAM):** The EKF-corrected estimate.
 
 **Performance:**
 <video width="100%" autoplay loop muted playsinline controls>

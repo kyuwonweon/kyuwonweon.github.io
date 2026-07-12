@@ -6,7 +6,7 @@
     <description>Recent content on Q1 Portfolio</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Robot Collision Prevention Package: CBF-QP</title>
@@ -25,7 +25,7 @@
     <item>
       <title>Lower-Limb Pediatric Exoskeleton: Shirley Ryan AbilityLab</title>
       <link>http://localhost:1313/projects/exoskeleton/</link>
-      <pubDate>Sat, 28 Mar 2026 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/exoskeleton/</guid>
       <description>Assistive pediatric exoskeleton research for gait rehabilitation in collaboration with Shirley Ryan AbilityLab.</description>
     </item>

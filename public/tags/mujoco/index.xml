@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>MuJoCo on Q1 Portfolio</title>
-    <link>http://localhost:1313/tags/mujoco/</link>
+    <link>http://localhost:1919/tags/mujoco/</link>
     <description>Recent content in MuJoCo on Q1 Portfolio</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/mujoco/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1919/tags/mujoco/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Reactive Control &amp; Obstacle Avoidance</title>
-      <link>http://localhost:1313/projects/reactive_control/</link>
+      <link>http://localhost:1919/projects/reactive_control/</link>
       <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/reactive_control/</guid>
+      <guid>http://localhost:1919/projects/reactive_control/</guid>
       <description>Real-time kinematic control with Artificial Potential Fields</description>
     </item>
   </channel>
