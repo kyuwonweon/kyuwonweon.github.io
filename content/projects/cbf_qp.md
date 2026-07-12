@@ -37,7 +37,7 @@ Two robotic arms moving in commanded velocities with and without my collision pr
 
 ## System Architecture
 
-### Core Node: `/safety_node_cpp`
+### Core Node: `safety_node_cpp`
 * **Inputs (Intention & State):** Subscribes to `/joint_states_source` (1kHz hardware states) and `/teleop_vel` (the desired user or global planner velocity commands). It also listens to `/shared_obstacle` for dynamic hazard tracking.
 * **Internal Processing Pipeline:**
     1. **Kinematic Update:** Uses **Pinocchio** to compute forward kinematics, frame placements, joint Jacobians, and the Mass Matrix via CRBA.

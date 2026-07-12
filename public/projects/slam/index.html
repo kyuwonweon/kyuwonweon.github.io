@@ -33,7 +33,28 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script>
+</script><style>
+    :root {
+        --nav-width: 1300px;
+    }
+
+    .toc li {
+        margin-block: 6px;
+    }
+
+    @media (min-width: 1700px) {
+        article.post-single .toc {
+            position: fixed;
+            top: 210px;
+            left: calc(50% - 850px);
+            width: 280px;
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+    }
+</style>
+
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOdBnHPnbdbcZ8FnrWyuaC10gMcjQGu+u95xIkyfJvGmb568q518jB3y8S53" crossorigin="anonymous"></script>
@@ -121,7 +142,43 @@
     <div class="post-meta"><span title='2026-03-20 00:00:00 +0000 UTC'>March 20, 2026</span>
 
 </div>
-  </header>
+  </header><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#project-overview" aria-label="Project Overview">Project Overview</a></li>
+                <li>
+                    <a href="#system-architecture" aria-label="System Architecture">System Architecture</a><ul>
+                        
+                <li>
+                    <a href="#1-core-kinematics-turtlelib" aria-label="1. Core Kinematics (turtlelib)">1. Core Kinematics (turtlelib)</a></li>
+                <li>
+                    <a href="#2-perception-pipeline-landmarks" aria-label="2. Perception Pipeline (landmarks)">2. Perception Pipeline (landmarks)</a></li>
+                <li>
+                    <a href="#3-state-estimation-slam" aria-label="3. State Estimation (slam)">3. State Estimation (slam)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#mathematical-foundation" aria-label="Mathematical Foundation">Mathematical Foundation</a><ul>
+                        
+                <li>
+                    <a href="#1-the-prediction-step-motion-model" aria-label="1. The Prediction Step (Motion Model)">1. The Prediction Step (Motion Model)</a></li>
+                <li>
+                    <a href="#2-unknown-data-association" aria-label="2. Unknown Data Association">2. Unknown Data Association</a></li>
+                <li>
+                    <a href="#3-the-correction-step-measurement-model" aria-label="3. The Correction Step (Measurement Model)">3. The Correction Step (Measurement Model)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#results" aria-label="Results">Results</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h2 id="project-overview">Project Overview<a hidden class="anchor" aria-hidden="true" href="#project-overview">#</a></h2>
 <p>This project implements <strong>Simultaneous Localization and Mapping (SLAM)</strong> pipeline from scratch for a differential-drive robot.</p>
 <video width="100%" autoplay loop muted playsinline controls>

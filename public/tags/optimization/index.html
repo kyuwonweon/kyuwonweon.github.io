@@ -34,7 +34,28 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script>
+</script><style>
+    :root {
+        --nav-width: 1300px;
+    }
+
+    .toc li {
+        margin-block: 6px;
+    }
+
+    @media (min-width: 1700px) {
+        article.post-single .toc {
+            position: fixed;
+            top: 210px;
+            left: calc(50% - 850px);
+            width: 280px;
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+    }
+</style>
+
+
 </head>
 <body class="list" id="top">
     <header class="header">

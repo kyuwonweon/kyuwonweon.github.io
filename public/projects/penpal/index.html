@@ -33,7 +33,28 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script>
+</script><style>
+    :root {
+        --nav-width: 1300px;
+    }
+
+    .toc li {
+        margin-block: 6px;
+    }
+
+    @media (min-width: 1700px) {
+        article.post-single .toc {
+            position: fixed;
+            top: 210px;
+            left: calc(50% - 850px);
+            width: 280px;
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+    }
+</style>
+
+
 </head>
 <body id="top">
     <header class="header">
@@ -98,7 +119,40 @@
     <div class="post-meta"><span title='2025-12-12 00:00:00 +0000 UTC'>December 12, 2025</span>
 
 </div>
-  </header>
+  </header><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#the-demo" aria-label="The Demo">The Demo</a></li>
+                <li>
+                    <a href="#project-overview" aria-label="Project Overview">Project Overview</a></li>
+                <li>
+                    <a href="#key-technical-contributions" aria-label="Key Technical Contributions">Key Technical Contributions</a><ul>
+                        
+                <li>
+                    <a href="#1-hybrid-motion-planning-architecture" aria-label="1. Hybrid Motion Planning Architecture">1. Hybrid Motion Planning Architecture</a></li>
+                <li>
+                    <a href="#2-integration-testing--validation" aria-label="2. Integration Testing &amp; Validation">2. Integration Testing &amp; Validation</a></li>
+                <li>
+                    <a href="#3-dynamic-safety-orange-zone-logic" aria-label="3. Dynamic Safety (&ldquo;Orange Zone&rdquo; Logic)">3. Dynamic Safety (&ldquo;Orange Zone&rdquo; Logic)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#challenge--solution" aria-label="Challenge &amp; Solution">Challenge &amp; Solution</a><ul>
+                        
+                <li>
+                    <a href="#the-wrist-vs-tip-tf-mismatch" aria-label="The &ldquo;Wrist vs. Tip&rdquo; TF Mismatch">The &ldquo;Wrist vs. Tip&rdquo; TF Mismatch</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h2 id="the-demo">The Demo<a hidden class="anchor" aria-hidden="true" href="#the-demo">#</a></h2>
 <p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
       <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/xrn48SnPuLs?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>

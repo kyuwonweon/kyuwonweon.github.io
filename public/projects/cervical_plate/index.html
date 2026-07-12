@@ -33,7 +33,28 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script>
+</script><style>
+    :root {
+        --nav-width: 1300px;
+    }
+
+    .toc li {
+        margin-block: 6px;
+    }
+
+    @media (min-width: 1700px) {
+        article.post-single .toc {
+            position: fixed;
+            top: 210px;
+            left: calc(50% - 850px);
+            width: 280px;
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+    }
+</style>
+
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOdBnHPnbdbcZ8FnrWyuaC10gMcjQGu+u95xIkyfJvGmb568q518jB3y8S53" crossorigin="anonymous"></script>
@@ -121,7 +142,29 @@
     <div class="post-meta"><span title='2022-05-12 00:00:00 +0000 UTC'>May 12, 2022</span>
 
 </div>
-  </header>
+  </header><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#project-overview" aria-label="Project Overview">Project Overview</a></li>
+                <li>
+                    <a href="#mathematical-foundation" aria-label="Mathematical Foundation">Mathematical Foundation</a></li>
+                <li>
+                    <a href="#system-architecture-design-process" aria-label="System Architecture (Design Process)">System Architecture (Design Process)</a></li>
+                <li>
+                    <a href="#key-challenges--resolutions" aria-label="Key Challenges &amp; Resolutions">Key Challenges &amp; Resolutions</a></li>
+                <li>
+                    <a href="#future-work" aria-label="Future Work">Future Work</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h2 id="project-overview">Project Overview<a hidden class="anchor" aria-hidden="true" href="#project-overview">#</a></h2>
 <p>This project, developed in collaboration with <strong>Medtronic</strong>, addresses a critical issue in anterior cervical discectomy and fusion (ACDF) surgeries: post-operative dysphagia caused by bulky implant profiles.</p>
 <p><strong>The Challenge:</strong> Existing cervical plates provide necessary stabilization but often impinge on the pharynx wall due to excessive thickness and mass.</p>

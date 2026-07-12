@@ -33,7 +33,28 @@
         document.querySelector("html").dataset.theme = 'light';
     }
 
-</script>
+</script><style>
+    :root {
+        --nav-width: 1300px;
+    }
+
+    .toc li {
+        margin-block: 6px;
+    }
+
+    @media (min-width: 1700px) {
+        article.post-single .toc {
+            position: fixed;
+            top: 210px;
+            left: calc(50% - 850px);
+            width: 280px;
+            max-height: calc(100vh - 180px);
+            overflow-y: auto;
+        }
+    }
+</style>
+
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
 
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-XjKyOOdBnHPnbdbcZ8FnrWyuaC10gMcjQGu+u95xIkyfJvGmb568q518jB3y8S53" crossorigin="anonymous"></script>
@@ -121,7 +142,33 @@
     <div class="post-meta"><span title='2026-05-20 00:00:00 +0000 UTC'>May 20, 2026</span>
 
 </div>
-  </header>
+  </header><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#project-overview" aria-label="Project Overview">Project Overview</a></li>
+                <li>
+                    <a href="#vision-system-architecture" aria-label="Vision System Architecture">Vision System Architecture</a><ul>
+                        
+                <li>
+                    <a href="#1-vision-based-template-generation" aria-label="1. Vision-Based Template Generation">1. Vision-Based Template Generation</a></li>
+                <li>
+                    <a href="#2-real-time-piece-recognition" aria-label="2. Real-Time Piece Recognition">2. Real-Time Piece Recognition</a></li></ul>
+                </li>
+                <li>
+                    <a href="#results" aria-label="Results">Results</a></li>
+                <li>
+                    <a href="#future-improvements" aria-label="Future Improvements">Future Improvements</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h2 id="project-overview">Project Overview<a hidden class="anchor" aria-hidden="true" href="#project-overview">#</a></h2>
 <p>This project implements a <strong>Jigsaw Puzzle Solving Robot</strong> that combines computer vision, robotic manipulation, and motion planning to identify, pick, and place puzzle pieces into their correct locations.</p>
 <video width="100%" autoplay loop muted playsinline controls>

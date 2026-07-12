@@ -10,6 +10,8 @@ theme = 'PaperMod'
     ShowShareButtons = false
     disableSpecial1stPost = true
     mainSections = ["projects"]
+    ShowToc = true
+    TocOpen = true
 
     [params.homeInfoParams]
       Title = "Kyuwon Weon"
