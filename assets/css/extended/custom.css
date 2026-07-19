@@ -61,6 +61,15 @@ body .first-entry * {
     border: none !important;
 }
 
+/* Project/post single pages also need to span the full grid width,
+   otherwise .main's auto-fit grid squeezes them into one narrow column
+   and leaves the rest of the row empty. */
+.post-single {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+    justify-self: center;
+}
+
 /* B. HOMEPAGE PROFILE ONLY (Kyuwon Weon) */
 .first-entry.home-info {
     min-height: unset !important;

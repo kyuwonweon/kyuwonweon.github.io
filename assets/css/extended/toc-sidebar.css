@@ -1,0 +1,42 @@
+/* Move the Table of Contents to a sticky sidebar next to the post content
+   on wide screens; falls back to the default stacked layout on narrow ones. */
+@media (min-width: 1150px) {
+    .post-single {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 260px;
+        column-gap: 40px;
+        grid-template-areas:
+            "header header"
+            "cover  cover"
+            "content toc"
+            "footer footer";
+        align-items: start;
+    }
+
+    .post-single>.post-header {
+        grid-area: header;
+    }
+
+    .post-single>.entry-cover {
+        grid-area: cover;
+    }
+
+    .post-single>.post-content {
+        grid-area: content;
+        min-width: 0;
+    }
+
+    .post-single>.post-footer {
+        grid-area: footer;
+    }
+
+    .post-single>.toc {
+        grid-area: toc;
+        position: sticky;
+        top: 20px;
+        align-self: start;
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
+        margin-bottom: 0;
+    }
+}
