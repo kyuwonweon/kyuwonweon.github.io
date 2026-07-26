@@ -4,7 +4,7 @@ date: 2026-03-11
 math: true
 summary: "Real-time safety filter with Control Barrier Functions."
 tags: ["Robotics", "Control Theory", "Optimization", "C++", "Python", "ROS 2 Kilted", "Pinocchio"]
-weight: 1
+weight: 2
 cover:
     image: "/videos/cbfqp_cover.mp4"
     alt: "Dual Arm Safety Simulation" 

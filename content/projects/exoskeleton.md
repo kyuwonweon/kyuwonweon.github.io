@@ -4,7 +4,7 @@ date: 2026-05-28
 math: true
 summary: "Assistive pediatric exoskeleton research for gait rehabilitation in collaboration with Shirley Ryan AbilityLab."
 tags: ["Exoskeleton", "Rehabilitation", "Control", "ROS 2", "Python", "Mechanical Design", "Biomechanics"]
-weight: 3
+weight: 4
 cover:
     image: "/videos/exoskeleton.webm"
     alt: "Lower-Limb Exoskeleton"

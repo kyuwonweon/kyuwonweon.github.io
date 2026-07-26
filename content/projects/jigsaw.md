@@ -4,7 +4,7 @@ date: 2026-05-20
 math: true
 summary: "Autonomous robot that detects, picks, and places jigsaw puzzle pieces using computer vision and manipulation."
 tags: ["Robotics", "Computer Vision", "Manipulation", "Python", "ROS 2"]
-weight: 4
+weight: 5
 cover:
     image: "/videos/jigsaw_cover.mp4"
     alt: "Jigsaw Puzzle Solving Robot"

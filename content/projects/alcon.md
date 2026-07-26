@@ -4,7 +4,7 @@ draft: false
 date: 2025-07-05
 summary: "Engineered surgical devices for cateract procedures" 
 tags: ["Creo", "DFSS", "Product Dev"]
-weight: 8
+weight: 9
 cover:
     image: "images/alcon_cover.jpg" 
     alt: "CAD rendering of surgical mechanism"

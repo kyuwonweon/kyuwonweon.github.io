@@ -6,8 +6,50 @@
     <description>Recent content in Tags on Q1 Portfolio</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 May 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:1313/tags/automation/</link>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Embedded Systems</title>
+      <link>http://localhost:1313/tags/embedded-systems/</link>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/embedded-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Manufacturing</title>
+      <link>http://localhost:1313/tags/manufacturing/</link>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/manufacturing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mechanical Design</title>
+      <link>http://localhost:1313/tags/mechanical-design/</link>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mechanical-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mechatronics</title>
+      <link>http://localhost:1313/tags/mechatronics/</link>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mechatronics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MicroPython</title>
+      <link>http://localhost:1313/tags/micropython/</link>
+      <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/micropython/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Biomechanics</title>
       <link>http://localhost:1313/tags/biomechanics/</link>
@@ -27,13 +69,6 @@
       <link>http://localhost:1313/tags/exoskeleton/</link>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/exoskeleton/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Mechanical Design</title>
-      <link>http://localhost:1313/tags/mechanical-design/</link>
-      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mechanical-design/</guid>
       <description></description>
     </item>
     <item>

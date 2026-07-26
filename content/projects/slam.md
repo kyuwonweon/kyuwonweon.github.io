@@ -4,7 +4,7 @@ date: 2026-03-20
 math: true
 summary: "ROS 2 pipeline for SLAM using an Extended Kalman Filter and unknown data association"
 tags: ["SLAM", "State Estimation", "EKF", "C++", "ROS 2", "TurtleBot3"]
-weight: 2
+weight: 3
 cover:
     image: "/videos/slam_cover.mp4"
     alt: "EKF SLAM RViz Visualization"
