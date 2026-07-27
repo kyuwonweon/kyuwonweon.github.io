@@ -38,7 +38,7 @@ The folding station is built around a small set of key components:
 4. **Vacuum pump + suction cup** — holds the box securely in position during folding
 5. **Base enclosure** — houses the electronics and mounting hardware
 
-I rapid-prototyped three candidate folding-actuation mechanisms — **linkage**, **rack & pinion**, and **rotary** — before settling on rack & pinion for the erection and bottom-fold steps, since it gave the most repeatable linear stroke for consistent folding across boxes.
+Three actuation mechanisms were paired to the motion each fold step demands: a **linkage** drives box erection and bottom-folding, a **rack & pinion** executes the side-tab tuck, and a **rotary** actuator completes the tuck-in tab fold.
 
 <video width="100%" autoplay loop muted playsinline controls>
     <source src="/videos/automation/squaring.mp4" type="video/mp4">
