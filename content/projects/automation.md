@@ -87,3 +87,10 @@ The full sequence completes in about **3 seconds per box**.
     <source src="/videos/automation/futurework.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
+
+### Progress So Far
+
+<div style="display: flex; gap: 1rem;">
+    <img src="/images/automationcad%20in%20progress.png" alt="Automation CAD In Progress" width="50%">
+    <img src="/images/realprototype.png" alt="Real Prototype" width="50%">
+</div>
