@@ -2,297 +2,297 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Q1 Portfolio</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://kyuwonweon.github.io/tags/</link>
     <description>Recent content in Tags on Q1 Portfolio</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 24 Jul 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://kyuwonweon.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automation</title>
-      <link>http://localhost:1313/tags/automation/</link>
+      <link>https://kyuwonweon.github.io/tags/automation/</link>
       <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/automation/</guid>
+      <guid>https://kyuwonweon.github.io/tags/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>Embedded Systems</title>
-      <link>http://localhost:1313/tags/embedded-systems/</link>
+      <link>https://kyuwonweon.github.io/tags/embedded-systems/</link>
       <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/embedded-systems/</guid>
+      <guid>https://kyuwonweon.github.io/tags/embedded-systems/</guid>
       <description></description>
     </item>
     <item>
       <title>Manufacturing</title>
-      <link>http://localhost:1313/tags/manufacturing/</link>
+      <link>https://kyuwonweon.github.io/tags/manufacturing/</link>
       <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/manufacturing/</guid>
+      <guid>https://kyuwonweon.github.io/tags/manufacturing/</guid>
       <description></description>
     </item>
     <item>
       <title>Mechanical Design</title>
-      <link>http://localhost:1313/tags/mechanical-design/</link>
+      <link>https://kyuwonweon.github.io/tags/mechanical-design/</link>
       <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mechanical-design/</guid>
+      <guid>https://kyuwonweon.github.io/tags/mechanical-design/</guid>
       <description></description>
     </item>
     <item>
       <title>Mechatronics</title>
-      <link>http://localhost:1313/tags/mechatronics/</link>
+      <link>https://kyuwonweon.github.io/tags/mechatronics/</link>
       <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mechatronics/</guid>
+      <guid>https://kyuwonweon.github.io/tags/mechatronics/</guid>
       <description></description>
     </item>
     <item>
       <title>MicroPython</title>
-      <link>http://localhost:1313/tags/micropython/</link>
+      <link>https://kyuwonweon.github.io/tags/micropython/</link>
       <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/micropython/</guid>
+      <guid>https://kyuwonweon.github.io/tags/micropython/</guid>
       <description></description>
     </item>
     <item>
       <title>Biomechanics</title>
-      <link>http://localhost:1313/tags/biomechanics/</link>
+      <link>https://kyuwonweon.github.io/tags/biomechanics/</link>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/biomechanics/</guid>
+      <guid>https://kyuwonweon.github.io/tags/biomechanics/</guid>
       <description></description>
     </item>
     <item>
       <title>Control</title>
-      <link>http://localhost:1313/tags/control/</link>
+      <link>https://kyuwonweon.github.io/tags/control/</link>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/control/</guid>
+      <guid>https://kyuwonweon.github.io/tags/control/</guid>
       <description></description>
     </item>
     <item>
       <title>Exoskeleton</title>
-      <link>http://localhost:1313/tags/exoskeleton/</link>
+      <link>https://kyuwonweon.github.io/tags/exoskeleton/</link>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/exoskeleton/</guid>
+      <guid>https://kyuwonweon.github.io/tags/exoskeleton/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <link>https://kyuwonweon.github.io/tags/python/</link>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
+      <guid>https://kyuwonweon.github.io/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Rehabilitation</title>
-      <link>http://localhost:1313/tags/rehabilitation/</link>
+      <link>https://kyuwonweon.github.io/tags/rehabilitation/</link>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rehabilitation/</guid>
+      <guid>https://kyuwonweon.github.io/tags/rehabilitation/</guid>
       <description></description>
     </item>
     <item>
       <title>ROS 2</title>
-      <link>http://localhost:1313/tags/ros-2/</link>
+      <link>https://kyuwonweon.github.io/tags/ros-2/</link>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ros-2/</guid>
+      <guid>https://kyuwonweon.github.io/tags/ros-2/</guid>
       <description></description>
     </item>
     <item>
       <title>Computer Vision</title>
-      <link>http://localhost:1313/tags/computer-vision/</link>
+      <link>https://kyuwonweon.github.io/tags/computer-vision/</link>
       <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/computer-vision/</guid>
+      <guid>https://kyuwonweon.github.io/tags/computer-vision/</guid>
       <description></description>
     </item>
     <item>
       <title>Manipulation</title>
-      <link>http://localhost:1313/tags/manipulation/</link>
+      <link>https://kyuwonweon.github.io/tags/manipulation/</link>
       <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/manipulation/</guid>
+      <guid>https://kyuwonweon.github.io/tags/manipulation/</guid>
       <description></description>
     </item>
     <item>
       <title>Robotics</title>
-      <link>http://localhost:1313/tags/robotics/</link>
+      <link>https://kyuwonweon.github.io/tags/robotics/</link>
       <pubDate>Wed, 20 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/robotics/</guid>
+      <guid>https://kyuwonweon.github.io/tags/robotics/</guid>
       <description></description>
     </item>
     <item>
       <title>C&#43;&#43;</title>
-      <link>http://localhost:1313/tags/c&#43;&#43;/</link>
+      <link>https://kyuwonweon.github.io/tags/c&#43;&#43;/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/c&#43;&#43;/</guid>
+      <guid>https://kyuwonweon.github.io/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     <item>
       <title>EKF</title>
-      <link>http://localhost:1313/tags/ekf/</link>
+      <link>https://kyuwonweon.github.io/tags/ekf/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ekf/</guid>
+      <guid>https://kyuwonweon.github.io/tags/ekf/</guid>
       <description></description>
     </item>
     <item>
       <title>SLAM</title>
-      <link>http://localhost:1313/tags/slam/</link>
+      <link>https://kyuwonweon.github.io/tags/slam/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/slam/</guid>
+      <guid>https://kyuwonweon.github.io/tags/slam/</guid>
       <description></description>
     </item>
     <item>
       <title>State Estimation</title>
-      <link>http://localhost:1313/tags/state-estimation/</link>
+      <link>https://kyuwonweon.github.io/tags/state-estimation/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/state-estimation/</guid>
+      <guid>https://kyuwonweon.github.io/tags/state-estimation/</guid>
       <description></description>
     </item>
     <item>
       <title>TurtleBot3</title>
-      <link>http://localhost:1313/tags/turtlebot3/</link>
+      <link>https://kyuwonweon.github.io/tags/turtlebot3/</link>
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/turtlebot3/</guid>
+      <guid>https://kyuwonweon.github.io/tags/turtlebot3/</guid>
       <description></description>
     </item>
     <item>
       <title>Control Theory</title>
-      <link>http://localhost:1313/tags/control-theory/</link>
+      <link>https://kyuwonweon.github.io/tags/control-theory/</link>
       <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/control-theory/</guid>
+      <guid>https://kyuwonweon.github.io/tags/control-theory/</guid>
       <description></description>
     </item>
     <item>
       <title>Optimization</title>
-      <link>http://localhost:1313/tags/optimization/</link>
+      <link>https://kyuwonweon.github.io/tags/optimization/</link>
       <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/optimization/</guid>
+      <guid>https://kyuwonweon.github.io/tags/optimization/</guid>
       <description></description>
     </item>
     <item>
       <title>Pinocchio</title>
-      <link>http://localhost:1313/tags/pinocchio/</link>
+      <link>https://kyuwonweon.github.io/tags/pinocchio/</link>
       <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pinocchio/</guid>
+      <guid>https://kyuwonweon.github.io/tags/pinocchio/</guid>
       <description></description>
     </item>
     <item>
       <title>ROS 2 Kilted</title>
-      <link>http://localhost:1313/tags/ros-2-kilted/</link>
+      <link>https://kyuwonweon.github.io/tags/ros-2-kilted/</link>
       <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ros-2-kilted/</guid>
+      <guid>https://kyuwonweon.github.io/tags/ros-2-kilted/</guid>
       <description></description>
     </item>
     <item>
       <title>Artificial Potential Fields</title>
-      <link>http://localhost:1313/tags/artificial-potential-fields/</link>
+      <link>https://kyuwonweon.github.io/tags/artificial-potential-fields/</link>
       <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/artificial-potential-fields/</guid>
+      <guid>https://kyuwonweon.github.io/tags/artificial-potential-fields/</guid>
       <description></description>
     </item>
     <item>
       <title>MuJoCo</title>
-      <link>http://localhost:1313/tags/mujoco/</link>
+      <link>https://kyuwonweon.github.io/tags/mujoco/</link>
       <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mujoco/</guid>
+      <guid>https://kyuwonweon.github.io/tags/mujoco/</guid>
       <description></description>
     </item>
     <item>
       <title>Computational Dynamics</title>
-      <link>http://localhost:1313/tags/computational-dynamics/</link>
+      <link>https://kyuwonweon.github.io/tags/computational-dynamics/</link>
       <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/computational-dynamics/</guid>
+      <guid>https://kyuwonweon.github.io/tags/computational-dynamics/</guid>
       <description></description>
     </item>
     <item>
       <title>Simulation</title>
-      <link>http://localhost:1313/tags/simulation/</link>
+      <link>https://kyuwonweon.github.io/tags/simulation/</link>
       <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/simulation/</guid>
+      <guid>https://kyuwonweon.github.io/tags/simulation/</guid>
       <description></description>
     </item>
     <item>
       <title>SymPy</title>
-      <link>http://localhost:1313/tags/sympy/</link>
+      <link>https://kyuwonweon.github.io/tags/sympy/</link>
       <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sympy/</guid>
+      <guid>https://kyuwonweon.github.io/tags/sympy/</guid>
       <description></description>
     </item>
     <item>
       <title>Franka Emika</title>
-      <link>http://localhost:1313/tags/franka-emika/</link>
+      <link>https://kyuwonweon.github.io/tags/franka-emika/</link>
       <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/franka-emika/</guid>
+      <guid>https://kyuwonweon.github.io/tags/franka-emika/</guid>
       <description></description>
     </item>
     <item>
       <title>Motion Planning</title>
-      <link>http://localhost:1313/tags/motion-planning/</link>
+      <link>https://kyuwonweon.github.io/tags/motion-planning/</link>
       <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/motion-planning/</guid>
+      <guid>https://kyuwonweon.github.io/tags/motion-planning/</guid>
       <description></description>
     </item>
     <item>
       <title>MoveIt 2</title>
-      <link>http://localhost:1313/tags/moveit-2/</link>
+      <link>https://kyuwonweon.github.io/tags/moveit-2/</link>
       <pubDate>Fri, 12 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/moveit-2/</guid>
+      <guid>https://kyuwonweon.github.io/tags/moveit-2/</guid>
       <description></description>
     </item>
     <item>
       <title>Creo</title>
-      <link>http://localhost:1313/tags/creo/</link>
+      <link>https://kyuwonweon.github.io/tags/creo/</link>
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/creo/</guid>
+      <guid>https://kyuwonweon.github.io/tags/creo/</guid>
       <description></description>
     </item>
     <item>
       <title>DFSS</title>
-      <link>http://localhost:1313/tags/dfss/</link>
+      <link>https://kyuwonweon.github.io/tags/dfss/</link>
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dfss/</guid>
+      <guid>https://kyuwonweon.github.io/tags/dfss/</guid>
       <description></description>
     </item>
     <item>
       <title>Product Dev</title>
-      <link>http://localhost:1313/tags/product-dev/</link>
+      <link>https://kyuwonweon.github.io/tags/product-dev/</link>
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/product-dev/</guid>
+      <guid>https://kyuwonweon.github.io/tags/product-dev/</guid>
       <description></description>
     </item>
     <item>
       <title>Ansys</title>
-      <link>http://localhost:1313/tags/ansys/</link>
+      <link>https://kyuwonweon.github.io/tags/ansys/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ansys/</guid>
+      <guid>https://kyuwonweon.github.io/tags/ansys/</guid>
       <description></description>
     </item>
     <item>
       <title>FEA</title>
-      <link>http://localhost:1313/tags/fea/</link>
+      <link>https://kyuwonweon.github.io/tags/fea/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/fea/</guid>
+      <guid>https://kyuwonweon.github.io/tags/fea/</guid>
       <description></description>
     </item>
     <item>
       <title>Product Design</title>
-      <link>http://localhost:1313/tags/product-design/</link>
+      <link>https://kyuwonweon.github.io/tags/product-design/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/product-design/</guid>
+      <guid>https://kyuwonweon.github.io/tags/product-design/</guid>
       <description></description>
     </item>
     <item>
       <title>SolidWorks</title>
-      <link>http://localhost:1313/tags/solidworks/</link>
+      <link>https://kyuwonweon.github.io/tags/solidworks/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/solidworks/</guid>
+      <guid>https://kyuwonweon.github.io/tags/solidworks/</guid>
       <description></description>
     </item>
     <item>
       <title>Static Structural</title>
-      <link>http://localhost:1313/tags/static-structural/</link>
+      <link>https://kyuwonweon.github.io/tags/static-structural/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/static-structural/</guid>
+      <guid>https://kyuwonweon.github.io/tags/static-structural/</guid>
       <description></description>
     </item>
     <item>
       <title>Topology Optimization</title>
-      <link>http://localhost:1313/tags/topology-optimization/</link>
+      <link>https://kyuwonweon.github.io/tags/topology-optimization/</link>
       <pubDate>Thu, 12 May 2022 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/topology-optimization/</guid>
+      <guid>https://kyuwonweon.github.io/tags/topology-optimization/</guid>
       <description></description>
     </item>
   </channel>

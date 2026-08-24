@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="dark">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Autonomous Mapping &amp; Navigation: EKF SLAM | Q1 Portfolio</title>
 <meta name="keywords" content="SLAM, State Estimation, EKF, C&#43;&#43;, ROS 2, TurtleBot3">
 <meta name="description" content="ROS 2 pipeline for SLAM using an Extended Kalman Filter and unknown data association">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/projects/slam/">
+<link rel="canonical" href="https://kyuwonweon.github.io/projects/slam/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.8261b668c68d3a9fdaf3ec8500a299ffd5c83df2260887b3c013e8b9f6f4f7fd.css" integrity="sha256-gmG2aMaNOp/a8&#43;yFAKKZ/9XIPfImCIezwBPoufb09/0=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://kyuwonweon.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://kyuwonweon.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://kyuwonweon.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://kyuwonweon.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://kyuwonweon.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/slam/">
+<link rel="alternate" hreflang="en" href="https://kyuwonweon.github.io/projects/slam/">
 <noscript>
     <style>
         #theme-toggle,
@@ -66,13 +66,83 @@
         }
     });
 </script>
+<meta property="og:url" content="https://kyuwonweon.github.io/projects/slam/">
+  <meta property="og:site_name" content="Q1 Portfolio">
+  <meta property="og:title" content="Autonomous Mapping & Navigation: EKF SLAM">
+  <meta property="og:description" content="ROS 2 pipeline for SLAM using an Extended Kalman Filter and unknown data association">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2026-03-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-20T00:00:00+00:00">
+    <meta property="article:tag" content="SLAM">
+    <meta property="article:tag" content="State Estimation">
+    <meta property="article:tag" content="EKF">
+    <meta property="article:tag" content="C&#43;&#43;">
+    <meta property="article:tag" content="ROS 2">
+    <meta property="article:tag" content="TurtleBot3">
+    <meta property="og:image" content="https://kyuwonweon.github.io/projects/slam/videos/slam_cover.mp4">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kyuwonweon.github.io/projects/slam/videos/slam_cover.mp4">
+<meta name="twitter:title" content="Autonomous Mapping &amp; Navigation: EKF SLAM">
+<meta name="twitter:description" content="ROS 2 pipeline for SLAM using an Extended Kalman Filter and unknown data association">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://kyuwonweon.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Autonomous Mapping \u0026 Navigation: EKF SLAM",
+      "item": "https://kyuwonweon.github.io/projects/slam/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Autonomous Mapping \u0026 Navigation: EKF SLAM",
+  "name": "Autonomous Mapping \u0026 Navigation: EKF SLAM",
+  "description": "ROS 2 pipeline for SLAM using an Extended Kalman Filter and unknown data association",
+  "keywords": [
+    "SLAM", "State Estimation", "EKF", "C++", "ROS 2", "TurtleBot3"
+  ],
+  "articleBody": "Project Overview This project implements Simultaneous Localization and Mapping (SLAM) pipeline from scratch for a differential-drive robot.\nYour browser does not support the video tag. The Core Problem: If a robot positioning is calculated solely based on odometry(counting its wheel rotations), microscopic wheel slips will cause its internal sense of location to drift exponentially over time. SLAM solves this by letting the robot use its sensors to build a map of its surroundings, which is used to correct its own drifting location.\nInstead of relying on perfect simulation data, this system processes raw, noisy LiDAR point clouds, extracts geometric features, and uses an Extended Kalman Filter (EKF) with Unknown Data Association to statistically fuse sensor data and odometry into a highly accurate single source of truth.\nTech Stack: ROS 2, C++, Armadillo (Matrix Math), Eigen3, TF2, RViz2.\nSystem Architecture The pipeline is entirely custom-built and broken into three distinct layers:\n1. Core Kinematics (turtlelib) A standalone C++ geometry engine handling 2D rigid body transformations ($SE(2)$) and the forward/inverse kinematics of a differential drive robot.\n2. Perception Pipeline (landmarks) Inputs: Subscribes to /laser for raw 2D LiDAR scans. Processing: 1. Clustering: Groups adjacent laser hits using a Euclidean distance threshold. 2. Circle Fitting: Passes the clusters through an algebraic circle-fitting algorithm to estimate the exact center $(x, y)$ and radius $r$ of cylindrical obstacles in the environment. Outputs: Publishes clean visualization_msgs::MarkerArray cylinder coordinates, transforming a noisy room of dots into distinct mathematical landmarks. 3. State Estimation (slam) This node tracks a massive $12 \\times 12$ (or larger) state vector matrix containing both the robot’s pose and the coordinates of every landmark it has ever seen. It continuously loops through Prediction (odometry) and Correction (LiDAR) to bound positional error.\nMathematical Foundation 1. The Prediction Step (Motion Model) When the robot moves, we update the state vector $q_{t}$ (containing robot pose $\\theta, x, y$ and landmark coordinates) based on wheel encoder data. Because the robot moves in arcs, we use exact arc integration to update the pose:\n$$q_{t} = f(q_{t-1}, u_t)$$Simultaneously, we expand our uncertainty (Covariance Matrix, $\\Sigma$) using the motion model Jacobian ($A$) and process noise ($Q$): $$\\Sigma_{t} = A \\Sigma_{t-1} A^T + Q$$2. Unknown Data Association When the LiDAR detects a cylinder, the robot doesn’t inherently know which cylinder it is looking at. We use the Mahalanobis Distance to mathematically determine if the detected obstacle is a new discovery or a previously mapped landmark, taking our current uncertainty into account:\n$$d_m = (z - \\hat{z})^T S^{-1} (z - \\hat{z})$$Where $z$ is the actual measurement, $\\hat{z}$ is the predicted measurement, and $S$ is the innovation covariance. If $d_m$ falls below a strict threshold, we associate the measurement with an existing landmark. If not, we initialize a new landmark in the state vector.\n3. The Correction Step (Measurement Model) Once a landmark is identified, we calculate the difference between where the robot thinks the landmark should be and where the LiDAR actually sees it (the innovation). We compute the Kalman Gain ($K$) to decide how much to trust the sensor vs. the odometry:\n$$K = \\Sigma_t H^T (H \\Sigma_t H^T + R)^{-1}$$Finally, we pull the robot’s estimated position back toward reality and shrink our uncertainty map: $$q_{t} = q_{t} + K(z - \\hat{z})$$ $$\\Sigma_{t} = (I - KH)\\Sigma_{t}$$Results To prove the algorithm’s effectiveness, the simulation visualizes three distinctly colored robots simultaneously:\nRed (Ground Truth): The absolute truth of where the robot is.\nBlue (Odometry): The odometry estimate based only on wheel spins.\nGreen (SLAM): The EKF-corrected estimate.\nPerformance: Your browser does not support the video tag. Over a sustained run in an unknown environment, pure wheel odometry accumulated severe drift—offsetting the robot by over $14$cm in X, $36$cm in Y, and approximately $40^\\circ$ in heading.\nThe EKF SLAM implementation successfully bounded this drift. By continuously correcting its internal map, the SLAM algorithm maintained near-perfect alignment with the ground truth, resulting in a final positional error of just 4 millimeters.\n",
+  "wordCount" : "656",
+  "inLanguage": "en",
+  "image":"https://kyuwonweon.github.io/projects/slam/videos/slam_cover.mp4","datePublished": "2026-03-20T00:00:00Z",
+  "dateModified": "2026-03-20T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kyuwonweon.github.io/projects/slam/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Q1 Portfolio",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kyuwonweon.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Q1 Portfolio (Alt + H)">Q1 Portfolio</a>
+            <a href="https://kyuwonweon.github.io/" accesskey="h" title="Q1 Portfolio (Alt + H)">Q1 Portfolio</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -98,22 +168,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/projects/" title="Projects">
+                <a href="https://kyuwonweon.github.io/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/resume.pdf" title="Resume">
+                <a href="https://kyuwonweon.github.io/resume.pdf" title="Resume">
                     <span>Resume</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about" title="About">
+                <a href="https://kyuwonweon.github.io/about" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/contact" title="Contact">
+                <a href="https://kyuwonweon.github.io/contact" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
@@ -245,19 +315,19 @@ Over a sustained run in an unknown environment, pure wheel odometry accumulated 
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/slam/">SLAM</a></li>
-      <li><a href="http://localhost:1313/tags/state-estimation/">State Estimation</a></li>
-      <li><a href="http://localhost:1313/tags/ekf/">EKF</a></li>
-      <li><a href="http://localhost:1313/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
-      <li><a href="http://localhost:1313/tags/ros-2/">ROS 2</a></li>
-      <li><a href="http://localhost:1313/tags/turtlebot3/">TurtleBot3</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/slam/">SLAM</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/state-estimation/">State Estimation</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/ekf/">EKF</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/ros-2/">ROS 2</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/turtlebot3/">TurtleBot3</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/">Q1 Portfolio</a></span> · 
+        <span>&copy; 2026 <a href="https://kyuwonweon.github.io/">Q1 Portfolio</a></span> · 
 
     <span>
         Powered by

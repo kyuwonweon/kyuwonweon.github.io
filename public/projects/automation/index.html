@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="dark">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>Packaging Automation: Siemens Healthineers | Q1 Portfolio</title>
 <meta name="keywords" content="Automation, Manufacturing, Mechanical Design, Embedded Systems, MicroPython, Mechatronics">
 <meta name="description" content="A servo-driven robotic folding station that automates shipping-box assembly on a manufacturing packaging line, reclaiming 41 hours/month of manual labor.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/projects/automation/">
+<link rel="canonical" href="https://kyuwonweon.github.io/projects/automation/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.8261b668c68d3a9fdaf3ec8500a299ffd5c83df2260887b3c013e8b9f6f4f7fd.css" integrity="sha256-gmG2aMaNOp/a8&#43;yFAKKZ/9XIPfImCIezwBPoufb09/0=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://kyuwonweon.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://kyuwonweon.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://kyuwonweon.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://kyuwonweon.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://kyuwonweon.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/automation/">
+<link rel="alternate" hreflang="en" href="https://kyuwonweon.github.io/projects/automation/">
 <noscript>
     <style>
         #theme-toggle,
@@ -43,13 +43,83 @@
     }
 </style>
 
+<meta property="og:url" content="https://kyuwonweon.github.io/projects/automation/">
+  <meta property="og:site_name" content="Q1 Portfolio">
+  <meta property="og:title" content="Packaging Automation: Siemens Healthineers">
+  <meta property="og:description" content="A servo-driven robotic folding station that automates shipping-box assembly on a manufacturing packaging line, reclaiming 41 hours/month of manual labor.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2026-07-24T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-07-24T00:00:00+00:00">
+    <meta property="article:tag" content="Automation">
+    <meta property="article:tag" content="Manufacturing">
+    <meta property="article:tag" content="Mechanical Design">
+    <meta property="article:tag" content="Embedded Systems">
+    <meta property="article:tag" content="MicroPython">
+    <meta property="article:tag" content="Mechatronics">
+    <meta property="og:image" content="https://kyuwonweon.github.io/projects/automation/videos/automation/prototype_video.mp4">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://kyuwonweon.github.io/projects/automation/videos/automation/prototype_video.mp4">
+<meta name="twitter:title" content="Packaging Automation: Siemens Healthineers">
+<meta name="twitter:description" content="A servo-driven robotic folding station that automates shipping-box assembly on a manufacturing packaging line, reclaiming 41 hours/month of manual labor.">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Projects",
+      "item": "https://kyuwonweon.github.io/projects/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Packaging Automation: Siemens Healthineers",
+      "item": "https://kyuwonweon.github.io/projects/automation/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Packaging Automation: Siemens Healthineers",
+  "name": "Packaging Automation: Siemens Healthineers",
+  "description": "A servo-driven robotic folding station that automates shipping-box assembly on a manufacturing packaging line, reclaiming 41 hours/month of manual labor.",
+  "keywords": [
+    "Automation", "Manufacturing", "Mechanical Design", "Embedded Systems", "MicroPython", "Mechatronics"
+  ],
+  "articleBody": "Project Overview This project was developed during my manufacturing internship at Siemens Healthineers, where a packaging line was folding shipping boxes entirely by hand: roughly 10 seconds per box across 15,000 units a month, tying up about 41 hours/month in repetitive labor and repetitive-motion strain. The goal was to design and prototype a robotic station that could fold the box automatically and free that time for higher-value work.\nYour browser does not support the video tag. The solution follows a simple Feed → Fold → Drop pipeline: boxes are loaded from a stack, the station erects the box and folds the bottom flaps into a sealed shape, and the finished box is moved off to a bin.\nMechanical Design Frame — 2020 T-slot aluminum rails on a 3D-printed base with alignment features Servo motor — drives the folding actuations Rack \u0026 pinion — converts servo rotation into the linear stroke needed for bottom folding Vacuum pump + suction cup — holds the box securely in position during feeding and folding Crank-slider — allows linear motion for pneumatic pump to feed box from stack to fold Main actuation mechanisms were paired to the motion each fold step demands: a linkage drives bottom-folding, a rack \u0026 pinion for linear actuation.\nYour browser does not support the video tag. Your browser does not support the video tag. Control System The station runs on MicroPython on a Raspberry Pi Pico 2. Servos are driven over I2C through a PCA9685 16-channel PWM driver, with the pump and solenoid valve switched through an optocoupled relay so the Pico’s GPIO never carries load current directly. Power is split across two isolated rails — 6V for the servos and driver, 12V for the pump and valve — sharing a common ground, with actuation sequenced rather than simultaneous to keep peak draw within each rail’s rating.\nA small command interface (Run [stage], Set , Pump on/off) drives an 12-step execution sequence per box:\nFeed the box Form the square Push the bottom fold down Fold side tabs in Half bottom fold (60°) Fold tuck tab in Pull side-tab fixtures out Second bottom fold to seat the tuck tab (80°) Pull the tuck flap out Final full bottom fold Move the box placement guide Drop the box Future Work for the remainder of Internship Industrialization — move the design from a rapid prototype to a mechanism reliable enough for continuous use on an industrial manufacturing floor ",
+  "wordCount" : "407",
+  "inLanguage": "en",
+  "image":"https://kyuwonweon.github.io/projects/automation/videos/automation/prototype_video.mp4","datePublished": "2026-07-24T00:00:00Z",
+  "dateModified": "2026-07-24T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kyuwonweon.github.io/projects/automation/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Q1 Portfolio",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kyuwonweon.github.io/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 <body id="top">
     <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Q1 Portfolio (Alt + H)">Q1 Portfolio</a>
+            <a href="https://kyuwonweon.github.io/" accesskey="h" title="Q1 Portfolio (Alt + H)">Q1 Portfolio</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -75,22 +145,22 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/projects/" title="Projects">
+                <a href="https://kyuwonweon.github.io/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/resume.pdf" title="Resume">
+                <a href="https://kyuwonweon.github.io/resume.pdf" title="Resume">
                     <span>Resume</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about" title="About">
+                <a href="https://kyuwonweon.github.io/about" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/contact" title="Contact">
+                <a href="https://kyuwonweon.github.io/contact" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
@@ -122,13 +192,8 @@
                 <li>
                     <a href="#control-system" aria-label="Control System">Control System</a></li>
                 <li>
-                    <a href="#future-work-for-the-remainder-of-internship" aria-label="Future Work for the remainder of Internship">Future Work for the remainder of Internship</a><ul>
-                        
-                <li>
-                    <a href="#progress-so-far" aria-label="Progress So Far">Progress So Far</a>
+                    <a href="#future-work-for-the-remainder-of-internship" aria-label="Future Work for the remainder of Internship">Future Work for the remainder of Internship</a>
                 </li>
-            </ul>
-            </li>
             </ul>
         </div>
     </details>
@@ -137,85 +202,77 @@
   <div class="post-content"><h2 id="project-overview">Project Overview<a hidden class="anchor" aria-hidden="true" href="#project-overview">#</a></h2>
 <p>This project was developed during my manufacturing internship at <strong>Siemens Healthineers</strong>, where a packaging line was folding shipping boxes entirely by hand: roughly 10 seconds per box across 15,000 units a month, tying up about <strong>41 hours/month</strong> in repetitive labor and repetitive-motion strain. The goal was to design and prototype a robotic station that could fold the box automatically and free that time for higher-value work.</p>
 <video width="100%" autoplay loop muted playsinline controls>
-    <source src="/videos/automation/prototype_video.mp4" type="video/mp4">
+    <source src="/videos/automation/folding.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 <p>The solution follows a simple <strong>Feed → Fold → Drop</strong> pipeline: boxes are loaded from a stack, the station erects the box and folds the bottom flaps into a sealed shape, and the finished box is moved off to a bin.</p>
 <hr>
 <h2 id="mechanical-design">Mechanical Design<a hidden class="anchor" aria-hidden="true" href="#mechanical-design">#</a></h2>
-<p>The folding station is built around a small set of key components:</p>
-<img src="/images/boxfoldingcad.png" alt="Packaging Automation Folding Station CAD" width="100%">
+<div style="display: flex; gap: 1rem;">
+    <img src="/images/folding_prototype_cad_final.png" alt="CAD Design" width="50%">
+    <img src="/images/folding prototype_final.png" alt="Real 3D Printed Prototype" width="50%">
+</div>
 <ol>
 <li><strong>Frame</strong> — 2020 T-slot aluminum rails on a 3D-printed base with alignment features</li>
-<li><strong>Servo motor</strong> — drives the folding actuation</li>
+<li><strong>Servo motor</strong> — drives the folding actuations</li>
 <li><strong>Rack &amp; pinion</strong> — converts servo rotation into the linear stroke needed for bottom folding</li>
-<li><strong>Vacuum pump + suction cup</strong> — holds the box securely in position during folding</li>
-<li><strong>Base enclosure</strong> — houses the electronics and mounting hardware</li>
+<li><strong>Vacuum pump + suction cup</strong> — holds the box securely in position during feeding and folding</li>
+<li><strong>Crank-slider</strong> — allows linear motion for pneumatic pump to feed box from stack to fold</li>
 </ol>
-<p>Three actuation mechanisms were paired to the motion each fold step demands: a <strong>linkage</strong> drives box erection and bottom-folding, a <strong>rack &amp; pinion</strong> executes the side-tab tuck, and a <strong>rotary</strong> actuator completes the tuck-in tab fold.</p>
-<video width="100%" autoplay loop muted playsinline controls>
-    <source src="/videos/automation/squaring.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-<video width="100%" autoplay loop muted playsinline controls>
-    <source src="/videos/automation/tuck_in.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-<video width="100%" autoplay loop muted playsinline controls>
-    <source src="/videos/automation/tucktab.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+<p>Main actuation mechanisms were paired to the motion each fold step demands: a <strong>linkage</strong> drives bottom-folding, a <strong>rack &amp; pinion</strong> for linear actuation.</p>
+<div style="display: flex; gap: 1rem;">
+    <video style="width: 50%; min-width: 0; max-width: 100%;" autoplay loop muted playsinline controls>
+        <source src="/videos/automation/squaring.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <video style="width: 50%; min-width: 0; max-width: 100%;" autoplay loop muted playsinline controls>
+        <source src="/videos/automation/tuck_in.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 <hr>
 <h2 id="control-system">Control System<a hidden class="anchor" aria-hidden="true" href="#control-system">#</a></h2>
 <img src="/images/automationschematic.png" alt="Packaging Automation Folding Station CAD" width="100%">
 <p>The station runs on <strong>MicroPython</strong> on a Raspberry Pi Pico 2. Servos are driven over I2C through a PCA9685 16-channel PWM driver, with the pump and solenoid valve switched through an optocoupled relay so the Pico&rsquo;s GPIO never carries load current directly. Power is split across two isolated rails — 6V for the servos and driver, 12V for the pump and valve — sharing a common ground, with actuation sequenced rather than simultaneous to keep peak draw within each rail&rsquo;s rating.</p>
-<p>A small command interface (<code>Run [stage]</code>, <code>Set &lt;servo&gt; &lt;value&gt;</code>, <code>Pump on/off</code>) drives an 8-step execution sequence per box:</p>
-<ol>
-<li>Form the square</li>
-<li>Fold side tabs in</li>
-<li>Half bottom fold (60°)</li>
-<li>Fold tuck tab in</li>
-<li>Pull side-tab fixtures out</li>
-<li>Second bottom fold to seat the tuck tab (80°)</li>
-<li>Pull the tuck flap out</li>
-<li>Final full bottom fold</li>
+<p>A small command interface (<code>Run [stage]</code>, <code>Set &lt;servo&gt; &lt;value&gt;</code>, <code>Pump on/off</code>) drives an 12-step execution sequence per box:</p>
+<ol style="columns: 2; column-gap: 2rem; font-size: 0.95rem; line-height: 1.4; margin: 0.5rem 0;">
+    <li>Feed the box</li>
+    <li>Form the square</li>
+    <li>Push the bottom fold down</li>
+    <li>Fold side tabs in</li>
+    <li>Half bottom fold (60°)</li>
+    <li>Fold tuck tab in</li>
+    <li>Pull side-tab fixtures out</li>
+    <li>Second bottom fold to seat the tuck tab (80°)</li>
+    <li>Pull the tuck flap out</li>
+    <li>Final full bottom fold</li>
+    <li>Move the box placement guide</li>
+    <li>Drop the box</li>
 </ol>
-<p>The full sequence completes in about <strong>3 seconds per box</strong>.</p>
 <hr>
 <h2 id="future-work-for-the-remainder-of-internship">Future Work for the remainder of Internship<a hidden class="anchor" aria-hidden="true" href="#future-work-for-the-remainder-of-internship">#</a></h2>
 <ul>
-<li><strong>Feeding mechanism</strong> — prototype a servo crank-slider to automate loading boxes into the station</li>
-<li><strong>Drop mechanism</strong> — automate moving the finished box off to the bin</li>
 <li><strong>Industrialization</strong> — move the design from a rapid prototype to a mechanism reliable enough for continuous use on an industrial manufacturing floor</li>
 </ul>
-<video width="100%" autoplay loop muted playsinline controls>
-    <source src="/videos/automation/futurework.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-<h3 id="progress-so-far">Progress So Far<a hidden class="anchor" aria-hidden="true" href="#progress-so-far">#</a></h3>
-<div style="display: flex; gap: 1rem;">
-    <img src="/images/automationcad%20in%20progress.png" alt="Automation CAD In Progress" width="50%">
-    <img src="/images/realprototype.png" alt="Real Prototype" width="50%">
-</div>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/automation/">Automation</a></li>
-      <li><a href="http://localhost:1313/tags/manufacturing/">Manufacturing</a></li>
-      <li><a href="http://localhost:1313/tags/mechanical-design/">Mechanical Design</a></li>
-      <li><a href="http://localhost:1313/tags/embedded-systems/">Embedded Systems</a></li>
-      <li><a href="http://localhost:1313/tags/micropython/">MicroPython</a></li>
-      <li><a href="http://localhost:1313/tags/mechatronics/">Mechatronics</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/automation/">Automation</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/manufacturing/">Manufacturing</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/mechanical-design/">Mechanical Design</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/embedded-systems/">Embedded Systems</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/micropython/">MicroPython</a></li>
+      <li><a href="https://kyuwonweon.github.io/tags/mechatronics/">Mechatronics</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/">Q1 Portfolio</a></span> · 
+        <span>&copy; 2026 <a href="https://kyuwonweon.github.io/">Q1 Portfolio</a></span> · 
 
     <span>
         Powered by
