@@ -16,10 +16,12 @@ cover:
 
 This project was developed during my manufacturing internship at **Siemens Healthineers**, where a packaging line was folding shipping boxes entirely by hand: roughly 10 seconds per box across 15,000 units a month, tying up about **41 hours/month** in repetitive labor and repetitive-motion strain. The goal was to design and prototype a robotic station that could fold the box automatically and free that time for higher-value work.
 
-<video width="100%" autoplay loop muted playsinline controls>
-    <source src="/videos/automation/folding.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+<div class="video-bleed">
+    <video class="folding-video" width="100%" autoplay loop muted playsinline controls>
+        <source src="/videos/automation/folding.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
 The solution follows a simple **Feed → Fold → Drop** pipeline: boxes are loaded from a stack, the station erects the box and folds the bottom flaps into a sealed shape, and the finished box is moved off to a bin.
 

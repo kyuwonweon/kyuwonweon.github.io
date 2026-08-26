@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Product Dev on Q1 Portfolio</title>
-    <link>https://kyuwonweon.github.io/tags/product-dev/</link>
+    <link>http://localhost:1313/tags/product-dev/</link>
     <description>Recent content in Product Dev on Q1 Portfolio</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 05 Jul 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://kyuwonweon.github.io/tags/product-dev/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/product-dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Product Design &amp; Statistical Validation</title>
-      <link>https://kyuwonweon.github.io/projects/alcon/</link>
+      <link>http://localhost:1313/projects/alcon/</link>
       <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>https://kyuwonweon.github.io/projects/alcon/</guid>
+      <guid>http://localhost:1313/projects/alcon/</guid>
       <description>Engineered surgical devices for cateract procedures</description>
     </item>
   </channel>

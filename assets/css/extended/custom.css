@@ -219,7 +219,7 @@ body .social-icons {
     margin: 20px auto !important;
 }
 
-.post-content iframe, 
+.post-content iframe,
 .post-content video {
     width: 100% !important;
     aspect-ratio: 16 / 9 !important;
@@ -227,6 +227,19 @@ body .social-icons {
     display: block !important;
     margin: 20px auto !important;
     border: none !important;
+}
+
+/* Matches the folding.mp4 crop ratio so it fills its full width
+   instead of being letterboxed inside the default 16:9 box. */
+.post-content video.folding-video {
+    aspect-ratio: 1080 / 1248 !important;
+}
+
+/* Scales the folding video down to 75% of the text column, centered. */
+.post-content .video-bleed {
+    width: 75% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 /* =========================================
