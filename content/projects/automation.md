@@ -6,7 +6,7 @@ summary: "A servo-driven robotic folding station that automates shipping-box ass
 tags: ["Automation", "Manufacturing", "Mechanical Design", "Embedded Systems", "MicroPython", "Mechatronics"]
 weight: 1
 cover:
-    image: "/videos/automation/prototype_video.mp4"
+    image: "/videos/automation/cover.mp4"
     alt: "Packaging Automation Folding Station"
     relative: true
     hiddenInSingle: true
@@ -24,6 +24,8 @@ This project was developed during my manufacturing internship at **Siemens Healt
 </div>
 
 The solution follows a simple **Feed → Fold → Drop** pipeline: boxes are loaded from a stack, the station erects the box and folds the bottom flaps into a sealed shape, and the finished box is moved off to a bin.
+
+[![View Code on GitHub](https://img.shields.io/badge/View%20Code-GitHub-181717?style=for-the-badge&logo=github)](https://github.com/kyuwonweon/package-automation/tree/main)
 
 ---
 
