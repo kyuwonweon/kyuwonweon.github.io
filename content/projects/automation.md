@@ -4,7 +4,7 @@ date: 2026-07-24
 math: false
 summary: "A servo-driven robotic folding station that automates shipping-box assembly on a manufacturing packaging line, reclaiming 41 hours/month of manual labor."
 tags: ["Automation", "Manufacturing", "Mechanical Design", "Embedded Systems", "MicroPython", "Mechatronics"]
-weight: 1
+weight: 2
 cover:
     image: "/videos/automation/cover.mp4"
     alt: "Packaging Automation Folding Station"

@@ -4,7 +4,7 @@ date: 2026-05-28
 math: true
 summary: "Assistive pediatric exoskeleton research for gait rehabilitation in collaboration with Shirley Ryan AbilityLab."
 tags: ["Exoskeleton", "Rehabilitation", "Control", "ROS 2", "Python", "Mechanical Design", "Biomechanics"]
-weight: 4
+weight: 1
 cover:
     image: "/videos/exoskeleton.webm"
     alt: "Lower-Limb Exoskeleton"
@@ -14,11 +14,15 @@ cover:
 
 ## Project Overview
 
-This project is part of ongoing assistive robotics research at **Shirley Ryan AbilityLab**, focused on developing a lower-limb pediatric exoskeleton for gait rehabilitation for children with cerebral palsy. 
+This project is part of ongoing assistive robotics research in developing a lower-limb pediatric exoskeleton for children with cerebral palsy. 
 
-My contributions span two areas: **feedforward motor control** to reduce resistive drag from back-EMF and rotor inertia, and **mechanical design** of the hip joint assembly to accommodate pediatric anatomy and natural gait kinematics.
+**My contributions:**
 
-**Hardware:** AKE60-8 KV80 brushless motor (CubeMars) · Novanta Everest CORE servo drive
+  **(1) feedforward motor control** to reduce resistive drag from back-EMF and rotor inertia 
+
+  **(2) mechanical design** of the hip joint assembly to accommodate pediatric anatomy and natural gait kinematics.
+
+**Hardware:** CubeMars QDD BLDC motor · Novanta Everest CORE servo drive
 
 ---
 

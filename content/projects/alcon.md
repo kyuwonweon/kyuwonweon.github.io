@@ -4,7 +4,7 @@ draft: false
 date: 2025-07-05
 summary: "3 years of industry experience building surgical devices for cateract surgery" 
 tags: ["Creo", "DFSS", "Product Dev"]
-weight: 9
+weight: 8
 cover:
     image: "images/alcon_cover.jpg" 
     alt: "CAD rendering of surgical mechanism"
