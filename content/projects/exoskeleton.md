@@ -6,7 +6,7 @@ summary: "Assistive pediatric exoskeleton research for gait rehabilitation in co
 tags: ["Exoskeleton", "Rehabilitation", "Control", "ROS 2", "Python", "Mechanical Design", "Biomechanics"]
 weight: 1
 cover:
-    image: "/videos/exoskeleton.webm"
+    image: "/videos/Exoskeleton.mp4"
     alt: "Lower-Limb Exoskeleton"
     relative: true
     hiddenInSingle: true

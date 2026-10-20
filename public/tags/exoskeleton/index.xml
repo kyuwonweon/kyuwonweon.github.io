@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Exoskeleton on Q1 Portfolio</title>
-    <link>https://kyuwonweon.github.io/tags/exoskeleton/</link>
+    <link>http://localhost:1313/tags/exoskeleton/</link>
     <description>Recent content in Exoskeleton on Q1 Portfolio</description>
     <generator>Hugo -- 0.152.0</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://kyuwonweon.github.io/tags/exoskeleton/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/exoskeleton/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lower-Limb Pediatric Exoskeleton: Shirley Ryan AbilityLab</title>
-      <link>https://kyuwonweon.github.io/projects/exoskeleton/</link>
+      <link>http://localhost:1313/projects/exoskeleton/</link>
       <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>https://kyuwonweon.github.io/projects/exoskeleton/</guid>
+      <guid>http://localhost:1313/projects/exoskeleton/</guid>
       <description>Assistive pediatric exoskeleton research for gait rehabilitation in collaboration with Shirley Ryan AbilityLab.</description>
     </item>
   </channel>

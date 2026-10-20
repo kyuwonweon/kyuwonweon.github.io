@@ -9,6 +9,13 @@
     <lastBuildDate>Fri, 24 Jul 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Lower-Limb Pediatric Exoskeleton: Shirley Ryan AbilityLab</title>
+      <link>http://localhost:1313/projects/exoskeleton/</link>
+      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/exoskeleton/</guid>
+      <description>Assistive pediatric exoskeleton research for gait rehabilitation in collaboration with Shirley Ryan AbilityLab.</description>
+    </item>
+    <item>
       <title>Packaging Automation: Siemens Healthineers</title>
       <link>http://localhost:1313/projects/automation/</link>
       <pubDate>Fri, 24 Jul 2026 00:00:00 +0000</pubDate>
@@ -28,13 +35,6 @@
       <pubDate>Fri, 20 Mar 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/projects/slam/</guid>
       <description>ROS 2 pipeline for SLAM using an Extended Kalman Filter and unknown data association</description>
-    </item>
-    <item>
-      <title>Lower-Limb Pediatric Exoskeleton: Shirley Ryan AbilityLab</title>
-      <link>http://localhost:1313/projects/exoskeleton/</link>
-      <pubDate>Thu, 28 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/exoskeleton/</guid>
-      <description>Assistive pediatric exoskeleton research for gait rehabilitation in collaboration with Shirley Ryan AbilityLab.</description>
     </item>
     <item>
       <title>Jigsaw Puzzle Solving Robot</title>
